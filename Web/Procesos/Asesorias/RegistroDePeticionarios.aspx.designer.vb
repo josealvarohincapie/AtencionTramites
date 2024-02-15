@@ -149,49 +149,31 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents txtRangoEdad As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control LabelTipoPeticion.
+    '''Control TextBox1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LabelTipoPeticion As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control TxtTipoPeticion.
+    '''Control txtTipoPeticion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TxtTipoPeticion As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtTipoPeticion As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control LabelAreaDerecho.
+    '''Control txtAreaDerecho.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LabelAreaDerecho As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control DropDownListAreaDerecho.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents DropDownListAreaDerecho As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''Control LabelDerechos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents LabelDerechos As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtAreaDerecho As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control txtDerechos.
@@ -203,40 +185,22 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents txtDerechos As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control LabelDescripcionAsesoria.
+    '''Control txtDescripcionAsesoria.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LabelDescripcionAsesoria As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtDescripcionAsesoria As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control TxtDescripcionAsesoria.
+    '''Control txtObservaciones.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TxtDescripcionAsesoria As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control LabelObservaciones.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents LabelObservaciones As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control TxtObservaciones.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents TxtObservaciones As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtObservaciones As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control respuestaEscritaSi.
@@ -257,15 +221,6 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents respuestaEscritaNo As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''Control LabelConclusionAsesoria.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents LabelConclusionAsesoria As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''Control txtConclusionAsesoria.
     '''</summary>
     '''<remarks>
@@ -275,15 +230,6 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents txtConclusionAsesoria As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control lblDecision.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lblDecision As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''Control txtDecision.
     '''</summary>
     '''<remarks>
@@ -291,15 +237,6 @@ Partial Public Class RegistroSolicitud
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtDecision As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control lblComentarios.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lblComentarios As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control txtComentarios.

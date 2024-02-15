@@ -13,10 +13,9 @@
     <link href="../../Styles/toastr.min.css" rel="stylesheet" />
     <link href="../../Styles/dashboard.css" rel="stylesheet" />
     <link href="../../Styles/font-awesome.min.css" rel="stylesheet" />
-    <!--<link href="../../Plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />-->
+    <link href="../../Plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     
     <link href="Content/font-awesome.css" rel="stylesheet" />
-    
     <link href="Content/jquery-ui.css" rel="stylesheet" />
     <link href="Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
     <link href="Content/DataTables/css/select.bootstrap.min.css" rel="stylesheet" />
@@ -27,7 +26,18 @@
     <!--<link href="Content/Ultimus.css" rel="stylesheet" />-->
     <link href="Content/dashboard.css" rel="stylesheet" />
     <script src="../../Plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Inclusión de jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Inclusión de Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Inclusión de Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
+       
+    
+
     <script type="text/javascript">
         function imprimirPagina() {
             window.print();
@@ -37,6 +47,13 @@
         function limpiarCampo(textBoxClientId) {
             document.getElementById(textBoxClientId).value = '';
         }
+        //Inicializacion manual de pestañas
+        $(document).ready(function () {
+            $('.nav-pills a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+        });
     </script>
     
     <title>Formulario de Asesoría</title>
@@ -408,35 +425,36 @@
                                         <h3 class="TituloAcordeon"><i class="fa fa-chevron-circle-down"></i>&nbsp;Anexos del Radicado Enviado</h3>
                                         <div class="row">
                                         <div class="col-md-6">
-                                            <h2>Anexos</h2>
+                                            <h3>Anexos</h3>
                                             
                                             <table class="table">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
-                                                        <th scope="col">First</th>
-                                                        <th scope="col">Last</th>
-                                                        <th scope="col">Handle</th>
+                                                        <th scope="col">Título</th>
+                                                        <th scope="col">Fecha</th>
+                                                        <th scope="col">Usuario</th>
+                                                        <th scope="col">Opciones</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">1</th>
-                                                        <td>Mark</td>
-                                                        <td>Otto</td>
-                                                        <td>@mdo</td>
+                                                        <td>2024001000000071.pdf</td>
+                                                        <td>2024001000000071.pdf</td>
+                                                        <td>@2024001000000071.pdf</td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">2</th>
-                                                        <td>Jacob</td>
-                                                        <td>Thornton</td>
-                                                        <td>@fat</td>
+                                                        <td>25-Enero-2024 18:05:59</td>
+                                                        <td>26-Enero-2024 18:05:59</td>
+                                                        <td>27-Enero-2024 18:05:59</td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">3</th>
-                                                        <td>Larry</td>
-                                                        <td>the Bird</td>
-                                                        <td>@twitter</td>
+                                                        <td>DACARTEC</td>
+                                                        <td>DACARTEC</td>
+                                                        <td>DACARTEC</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -446,154 +464,127 @@
                                 </div>
                                 <div id="menu2" class="tab-pane fade">
                                     <div id="divMenu2">
-                                        <h3 class="TituloAcordeon"><i class="fa fa-chevron-circle-down"></i>&nbsp;Anexos del Radicado Enviado</h3>
-                                        <div class="row">
-                                        <div class="col-md-6">
-                                             <div class="help-text">
-         ASESORÍA: La asesoría consiste en orientar al peticionario en el ejercicio y defensa de los derechos humanos, ante las autoridades competentes o ante las entidades de carácter privado.
-     </div>
-     <div style="display: flex; justify-content: center; align-items: center; height: 100%;" />
-     <table style="width: 20%;">
-         <tr>
-             <td>
-                 <asp:Label ID="LabelTipoPeticion" runat="server" Text="Tipo de petición:"></asp:Label></td>
-             <td>
-                 <asp:TextBox ID="TxtTipoPeticion" runat="server"></asp:TextBox>
-             </td>
-                 <td><span class="input-group-btn">
-                     <button type="button" id="tnLimpiarConclusionAsesoria" onclick="limpiarCampo('<%= TxtTipoPeticion.ClientID %>')" class="btn btn-default btn-medium">
-                         <i class="fa fa-close"></i>
-                     </button>
-                     <button type="button" id="tnBuscarConclusionAsesoria" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
-                         <i class="fa fa-search"></i>&nbsp;
-                     </button>
-                 </span></td>
-         
-         </tr>
-         <tr>
-             <td>
-                 <div class="form-row auto-style1">
-                     <asp:Label ID="LabelAreaDerecho" runat="server" Text="Área de derecho:"></asp:Label>
-
-                 </div>
-             </td>
-             <td>
-                 <asp:DropDownList ID="DropDownListAreaDerecho" runat="server" DataTextField="TextFieldName" DataValueField="ValueFieldName" AppendDataBoundItems="true">
-                     <asp:ListItem Text="-- Seleccione un valor --" Value=""></asp:ListItem>
-                 </asp:DropDownList></td>
-             <td>&nbsp;</td>
-         </tr>
-         <tr>
-             <td>
-                 <asp:Label ID="LabelDerechos" runat="server" Text="Derechos:"></asp:Label>
-             </td>
-             <td>
-                 <asp:TextBox ID="txtDerechos" runat="server" Text="mateo"></asp:TextBox></td>
-             <td><span class="input-group-btn">
-                 <button type="button" id="btnLimpiarDerechos" onclick="limpiarCampo('<%= txtDerechos.ClientID %>')" class="btn btn-default btn-medium">
-                     <i class="fa fa-close"></i>
-                 </button>
-                 <button type="button" id="btnBuscarDerechos" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
-                     <i class="fa fa-search"></i>&nbsp;
-                 </button>
-             </span></td>
-         </tr>
-         <tr>
-             <td>&nbsp;</td>
-             <td>&nbsp;</td>
-             <td>&nbsp;</td>
-         </tr>
-         <tr>
-             <td>
-                 <asp:Label ID="LabelDescripcionAsesoria" runat="server" Text="Descripción de asesoría:"></asp:Label>
-             </td>
-             <td>
-                 <asp:TextBox ID="TxtDescripcionAsesoria" runat="server" TextMode="MultiLine"></asp:TextBox></td>
-             <td>&nbsp;</td>
-         </tr>
-         <tr>
-             <td>
-                 <div class="form-row auto-style1">
-                     <asp:Label ID="LabelObservaciones" runat="server" Text="Observaciones:"></asp:Label>
-
-                 </div>
-             </td>
-             <td>
-                 <asp:TextBox ID="TxtObservaciones" runat="server" TextMode="MultiLine" Text='<%# Bind("Observaciones") %>'></asp:TextBox></td>
-             <td>&nbsp;</td>
-         </tr>
-         <tr>
-             <td>
-                 <asp:Label runat="server" Text="¿La asesoría debe generar respuesta por escrito?"></asp:Label>
-
-             </td>
-             <td>
-                 <div class="radio-group">
-                     <div>
-                         <asp:RadioButton ID="respuestaEscritaSi" runat="server" GroupName="respuestaEscrita" Text="Sí" />
-                         <asp:RadioButton ID="respuestaEscritaNo" runat="server" GroupName="respuestaEscrita" Text="No" />
-                     </div>
-                 </div>
-             </td>
-             <td>&nbsp;</td>
-         </tr>
-         <tr>
-             <td>
-                 <asp:Label ID="LabelConclusionAsesoria" runat="server" CssClass="control-label col-sm-4" Text="Conclusión de asesoría:"></asp:Label>
-
-             </td>
-             <td>
-                 <asp:TextBox ID="txtConclusionAsesoria" runat="server" TextMode="MultiLine" Rows="4" Columns="50" Text='<%# Bind("ConclusionAsesoria") %>'></asp:TextBox></td>
-             <td>
-                 <span class="input-group-btn">
-                     <button type="button" id="btnLimpiarConclusionAsesoria" onclick="limpiarCampo('<%= txtConclusionAsesoria.ClientID %>')"" class="btn btn-default btn-medium">
-                         <i class="fa fa-close"></i>
-                     </button>
-                     <button type="button" id="btnBuscarConclusionAsesoria" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
-                         <i class="fa fa-search"></i>&nbsp;
-                     </button>
-                 </span></td>
-         </tr>
-     </table>
-     </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div id="menu3" class="tab-pane fade">
-                                    <div id="divMenu4">
-                                        <h3 class="TituloAcordeon"><i class="fa fa-chevron-circle-down"></i>&nbsp;Anexos del Radicado Enviado</h3>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <h2>Decisión</h2>
-                                                <table>
-                                                <tr>
-                                                    <td>
-                                                        <asp:Label ID="lblDecision" runat="server" Text="Decisión:"></asp:Label>
-                                                    </td>
-                                                    <td>
-                                                        <asp:TextBox ID="txtDecision" runat="server" Text=""></asp:TextBox>
-                                                    </td>
-                                                    <td>
+                                        <h3 class="TituloAcordeon"><i class="fa fa-chevron-circle-down"></i>&nbsp;Registro de peticionarios</h3>
+                                        <div class="row" >
+                                                
+                                                <div class="form-group " id="divAsesorias">
+                                                        <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblAsesoria" name="lblAsesoria" default_label="Asesorías:">Asesorías:</label>
+                                                    <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 help-text">
+                                                        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework" Text="La asesoría consiste en orientar al peticionario en el ejercicio y defensa de los derechos humanos, ante las autoridades competentes o ante las entidades de carácter privado." ReadOnly="true"></asp:TextBox>
+                                                    </div>
+                                            </div>
+                                                <div class="form-group" id="divTipoPeticion">
+                                                    <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblTipoPeticion" name="lblTipoPeticion" default_label="Tipo de petición:">Tipo de petición:</label>
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="hidden" id="hiddenTipoPeticion" value="" />
+                                                        <asp:TextBox ID="txtTipoPeticion" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                         <span class="input-group-btn">
-                                                            <button type="button" id="btnLimpiarDecision" onclick="limpiarCampo('<%= txtDecision.ClientID %>')" class="btn btn-default btn-medium">
+                                                            <button type="button" id="btn_LimpiarTipoPeticion" onclick="limpiarCampo('<%= txtTipoPeticion.ClientID %>')" class="btn btn-default btn-medium">
                                                                 <i class="fa fa-close"></i>
                                                             </button>
-                                                            <button type="button" id="btnDecision" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                            <button type="button" id="btn_TipoPeticion" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
                                                                 <i class="fa fa-search"></i>&nbsp;
                                                             </button>
                                                         </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <asp:Label ID="lblComentarios" runat="server" Text="Comentarios:"></asp:Label>
-                                                    </td>
-                                                    <td colspan="2">
-                                                        <asp:TextBox ID="txtComentarios" runat="server" TextMode="MultiLine" Rows="4" Columns="50"></asp:TextBox>
-                                                    </td>
-                                                </tr>
-                                            </table>            
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" id="divAreaDerecho">
+                                                    <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblAreaDerecho" name="lblAreaDerecho" default_label="Área de derecho:">Área de derecho:</label>
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="hidden" id="hiddenAreaDerecho" value="" />
+                                                        <asp:TextBox ID="txtAreaDerecho" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                        <span class="input-group-btn">
+                                                            <button type="button" id="btn_LimpiarAreaDerecho" onclick="limpiarCampo('<%= txtAreaDerecho.ClientID %>')" class="btn btn-default btn-medium">
+                                                                <i class="fa fa-close"></i>
+                                                            </button>
+                                                            <button type="button" id="btn_AreaDerecho" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                <i class="fa fa-search"></i>&nbsp;
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" id="divDerechos">
+                                                     <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblDerechos" name="lblDerechos" default_label="Derechos:">Derechos:</label>
+                                                     <div class="input-group input-group-sm">
+                                                         <input type="hidden" id="hiddenDerechos" value="" />
+                                                         <asp:TextBox ID="txtDerechos" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                         <span class="input-group-btn">
+                                                             <button type="button" id="btn_LimpiarDerechos" onclick="limpiarCampo('<%= txtDerechos.ClientID %>')" class="btn btn-default btn-medium">
+                                                                 <i class="fa fa-close"></i>
+                                                             </button>
+                                                             <button type="button" id="btn_Derechos" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                 <i class="fa fa-search"></i>&nbsp;
+                                                             </button>
+                                                         </span>
+                                                     </div>
+                                                 </div>
+                                                <div class="form-group " id="divDescripcionAsesoria">
+                                                    <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblDescripcionAsesoria" name="lblDescripcionAsesoria" default_label="Descripción de asesoría:">Descripción de asesoría:</label>
+                                                    <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+                                                        <asp:TextBox ID="txtDescripcionAsesoria" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group " id="divObservaciones">
+                                                    <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblObservaciones" name="lblObservaciones" default_label="Observaciones:">Observaciones:</label>
+                                                    <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+                                                        <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group " id="divAsesoriaEscrita">
+                                                    <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblAsesoriaEscrita" name="lblAsesoriaEscrita" default_label="¿La asesoría debe generar respuesta por escrito?">¿La asesoría debe generar respuesta por escrito?</label>
+                                                    <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+                                                        <asp:RadioButton ID="respuestaEscritaSi" runat="server" ReadOnly="true" GroupName="respuestaEscrita" Text="Sí" />
+                                                        <asp:RadioButton ID="respuestaEscritaNo" runat="server" ReadOnly="true" GroupName="respuestaEscrita" Text="No" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" id="divConclusionAsesoria">
+                                                 <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblConclusionAsesoria" name="lblConclusionAsesoria" default_label="Conclusión Asesoria:">Conclusión Asesoria:</label>
+                                                 <div class="input-group input-group-sm">
+                                                     <input type="hidden" id="hiddenConclusionAsesoria" value="" />
+                                                     <asp:TextBox ID="txtConclusionAsesoria" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                     <span class="input-group-btn">
+                                                         <button type="button" id="btn_LimpiarConclusionAsesoria" onclick="limpiarCampo('<%= txtConclusionAsesoria.ClientID %>')" class="btn btn-default btn-medium">
+                                                             <i class="fa fa-close"></i>
+                                                         </button>
+                                                         <button type="button" id="btn_ConclusionAsesoria" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                             <i class="fa fa-search"></i>&nbsp;
+                                                         </button>
+                                                     </span>
+                                                 </div>
+                                             </div>
+                                            
+                                        </div>
+                                    </div>
+                                  </div>
+                                <div id="menu3" class="tab-pane fade">
+                                    <div id="divMenu3">
+                                        <h3 class="TituloAcordeon"><i class="fa fa-chevron-circle-down"></i>&nbsp;Decisión</h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                               <div class="form-group" id="divDecision">
+                                                   <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblDecision" name="lblDecision" default_label="Decisión:">Decisión:</label>
+                                                   <div class="input-group input-group-sm">
+                                                       <input type="hidden" id="hiddenDecision" value="" />
+                                                       <asp:TextBox ID="txtDecision" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                       <span class="input-group-btn">
+                                                           <button type="button" id="btn_LimpiarDecision" onclick="limpiarCampo('<%= txtDecision.ClientID %>')" class="btn btn-default btn-medium">
+                                                               <i class="fa fa-close"></i>
+                                                           </button>
+                                                           <button type="button" id="btn_Decision" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                               <i class="fa fa-search"></i>&nbsp;
+                                                           </button>
+                                                       </span>
+                                                   </div>
+                                               </div>
+                                               <div class="form-group " id="divComentarios">
+                                                   <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblComentarios" name="lblComentarios" default_label="Comentarios:">Comentarios:</label>
+                                                   <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+                                                       <asp:TextBox ID="txtComentarios" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
+                                                   </div>
+                                               </div>
+
+
                                             </div>
                                         </div>
                                     </div>
