@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.ultimus.com/BIS" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.ultimus.com/BIS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ultimus(r) Business Intelligence Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.ultimus.com/BIS">
+      <s:element name="GetBPMSchema">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBPMSchemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBPMSchemaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBPMQuerySchema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xquery" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBPMQuerySchemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBPMQuerySchemaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessQuerySchema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="process" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xquery" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessQuerySchemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProcessQuerySchemaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessStepQuerySchema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="process" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="step" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xquery" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessStepQuerySchemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProcessStepQuerySchemaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessSchema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="process" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessSchemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProcessSchemaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessStepSchema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="process" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="step" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessStepSchemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProcessStepSchemaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunBPMQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xquery" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="use_archived_data" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunBPMQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunBPMQueryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunProcessQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="process" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xquery" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="use_archived_data" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunProcessQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunProcessQueryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunProcessStepQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="process" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="version" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="step" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xquery" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="use_archived_data" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunProcessStepQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunProcessStepQueryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetBPMSchemaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBPMSchema" />
+  </wsdl:message>
+  <wsdl:message name="GetBPMSchemaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBPMSchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBPMQuerySchemaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBPMQuerySchema" />
+  </wsdl:message>
+  <wsdl:message name="GetBPMQuerySchemaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBPMQuerySchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessQuerySchemaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProcessQuerySchema" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessQuerySchemaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProcessQuerySchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessStepQuerySchemaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProcessStepQuerySchema" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessStepQuerySchemaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProcessStepQuerySchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessSchemaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProcessSchema" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessSchemaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProcessSchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessStepSchemaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProcessStepSchema" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessStepSchemaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProcessStepSchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunBPMQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:RunBPMQuery" />
+  </wsdl:message>
+  <wsdl:message name="RunBPMQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:RunBPMQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunProcessQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:RunProcessQuery" />
+  </wsdl:message>
+  <wsdl:message name="RunProcessQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:RunProcessQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunProcessStepQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:RunProcessStepQuery" />
+  </wsdl:message>
+  <wsdl:message name="RunProcessStepQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:RunProcessStepQueryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UltimusBISSoap">
+    <wsdl:operation name="GetBPMSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the standard BIS schema</wsdl:documentation>
+      <wsdl:input message="tns:GetBPMSchemaSoapIn" />
+      <wsdl:output message="tns:GetBPMSchemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBPMQuerySchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the schema of the resulting XML generated by the given XQuery</wsdl:documentation>
+      <wsdl:input message="tns:GetBPMQuerySchemaSoapIn" />
+      <wsdl:output message="tns:GetBPMQuerySchemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessQuerySchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the schema of the resulting XML generated by the given XQuery executed on the specified process</wsdl:documentation>
+      <wsdl:input message="tns:GetProcessQuerySchemaSoapIn" />
+      <wsdl:output message="tns:GetProcessQuerySchemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStepQuerySchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the schema of the resulting XML generated by the given XQuery executed on the specified process and step </wsdl:documentation>
+      <wsdl:input message="tns:GetProcessStepQuerySchemaSoapIn" />
+      <wsdl:output message="tns:GetProcessStepQuerySchemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the schema of a specific process</wsdl:documentation>
+      <wsdl:input message="tns:GetProcessSchemaSoapIn" />
+      <wsdl:output message="tns:GetProcessSchemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStepSchema">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the schema that includes the schemas of the specified process and step </wsdl:documentation>
+      <wsdl:input message="tns:GetProcessStepSchemaSoapIn" />
+      <wsdl:output message="tns:GetProcessStepSchemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunBPMQuery">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Run XQuery</wsdl:documentation>
+      <wsdl:input message="tns:RunBPMQuerySoapIn" />
+      <wsdl:output message="tns:RunBPMQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunProcessQuery">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Runs XQuery that can access the schema of the process name given </wsdl:documentation>
+      <wsdl:input message="tns:RunProcessQuerySoapIn" />
+      <wsdl:output message="tns:RunProcessQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunProcessStepQuery">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Run XQuery that can access the schemas of the process and step names specified</wsdl:documentation>
+      <wsdl:input message="tns:RunProcessStepQuerySoapIn" />
+      <wsdl:output message="tns:RunProcessStepQuerySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UltimusBISSoap" type="tns:UltimusBISSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBPMSchema">
+      <soap:operation soapAction="http://www.ultimus.com/BIS/GetBPMSchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBPMQuerySchema">
+      <soap:operation soapAction="http://www.ultimus.com/BIS/GetBPMQuerySchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessQuerySchema">
+      <soap:operation soapAction="http://www.ultimus.com/BIS/GetProcessQuerySchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStepQuerySchema">
+      <soap:operation soapAction="http://www.ultimus.com/BIS/GetProcessStepQuerySchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessSchema">
+      <soap:operation soapAction="http://www.ultimus.com/BIS/GetProcessSchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStepSchema">
+      <soap:operation soapAction="http://www.ultimus.com/BIS/GetProcessStepSchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunBPMQuery">
+      <soap:operation soapAction="http://www.ultimus.com/BIS/RunBPMQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunProcessQuery">
+      <soap:operation soapAction="http://www.ultimus.com/BIS/RunProcessQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunProcessStepQuery">
+      <soap:operation soapAction="http://www.ultimus.com/BIS/RunProcessStepQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UltimusBISSoap12" type="tns:UltimusBISSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBPMSchema">
+      <soap12:operation soapAction="http://www.ultimus.com/BIS/GetBPMSchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBPMQuerySchema">
+      <soap12:operation soapAction="http://www.ultimus.com/BIS/GetBPMQuerySchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessQuerySchema">
+      <soap12:operation soapAction="http://www.ultimus.com/BIS/GetProcessQuerySchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStepQuerySchema">
+      <soap12:operation soapAction="http://www.ultimus.com/BIS/GetProcessStepQuerySchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessSchema">
+      <soap12:operation soapAction="http://www.ultimus.com/BIS/GetProcessSchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStepSchema">
+      <soap12:operation soapAction="http://www.ultimus.com/BIS/GetProcessStepSchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunBPMQuery">
+      <soap12:operation soapAction="http://www.ultimus.com/BIS/RunBPMQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunProcessQuery">
+      <soap12:operation soapAction="http://www.ultimus.com/BIS/RunProcessQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunProcessStepQuery">
+      <soap12:operation soapAction="http://www.ultimus.com/BIS/RunProcessStepQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UltimusBIS">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ultimus(r) Business Intelligence Service</wsdl:documentation>
+    <wsdl:port name="UltimusBISSoap" binding="tns:UltimusBISSoap">
+      <soap:address location="http://win-v1rsh4cm56v/UltWeb/UltimusBIS/UltimusBIS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UltimusBISSoap12" binding="tns:UltimusBISSoap12">
+      <soap12:address location="http://win-v1rsh4cm56v/UltWeb/UltimusBIS/UltimusBIS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

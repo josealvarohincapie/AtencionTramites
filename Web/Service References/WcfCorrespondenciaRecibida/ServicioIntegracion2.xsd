@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BANCOLDEX.IntegracionOnbase.Model.Classes" />
+  <xs:import schemaLocation="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BANCOLDEX.IntegracionOnbase.Model.BANCOLDEXIntegracionOnbaseModel" />
+  <xs:element name="IntegracionOnbase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BANCOLDEX.IntegracionOnbase.Model.Classes" minOccurs="0" name="comunicacionEntrada" nillable="true" type="q1:ComunicacionEntrada" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IntegracionOnbaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IntegracionOnbaseResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarComunicacionRecibida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BANCOLDEX.IntegracionOnbase.Model.BANCOLDEXIntegracionOnbaseModel" minOccurs="0" name="comunicacionRecibida" nillable="true" type="q2:ComunicacionRecibida" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarComunicacionRecibidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ModificarComunicacionRecibidaResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverCorrespondencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idComunicacion" type="xs:long" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comentarios" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DevolverCorrespondenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DevolverCorrespondenciaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsociarCorrespondencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idComunicacion" type="xs:long" />
+        <xs:element minOccurs="0" name="proceso" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="incidente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AsociarCorrespondenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AsociarCorrespondenciaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

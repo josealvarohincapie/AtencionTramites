@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="T24WebServicesImpl" targetNamespace="T24WebServicesImpl" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ULTALADIBANCOS" type="tns:ULTALADIBANCOS" />
+  <xs:element name="ULTALADIBANCOSResponse" type="tns:ULTALADIBANCOSResponse" />
+  <xs:element name="ULTALADIPAISES" type="tns:ULTALADIPAISES" />
+  <xs:element name="ULTALADIPAISESResponse" type="tns:ULTALADIPAISESResponse" />
+  <xs:element name="ULTBANCOSCORRESP" type="tns:ULTBANCOSCORRESP" />
+  <xs:element name="ULTBANCOSCORRESPResponse" type="tns:ULTBANCOSCORRESPResponse" />
+  <xs:element name="ULTCARTACREDVERIFICA" type="tns:ULTCARTACREDVERIFICA" />
+  <xs:element name="ULTCARTACREDVERIFICAResponse" type="tns:ULTCARTACREDVERIFICAResponse" />
+  <xs:element name="ULTCLIENTESID" type="tns:ULTCLIENTESID" />
+  <xs:element name="ULTCLIENTESIDResponse" type="tns:ULTCLIENTESIDResponse" />
+  <xs:element name="ULTCLIENTESVERIFICA" type="tns:ULTCLIENTESVERIFICA" />
+  <xs:element name="ULTCLIENTESVERIFICAResponse" type="tns:ULTCLIENTESVERIFICAResponse" />
+  <xs:element name="ULTCOMPRADOCVERIFICA" type="tns:ULTCOMPRADOCVERIFICA" />
+  <xs:element name="ULTCOMPRADOCVERIFICAResponse" type="tns:ULTCOMPRADOCVERIFICAResponse" />
+  <xs:element name="ULTCUENTACLIENTES" type="tns:ULTCUENTACLIENTES" />
+  <xs:element name="ULTCUENTACLIENTESResponse" type="tns:ULTCUENTACLIENTESResponse" />
+  <xs:element name="ULTGARANTIASVERIFICA" type="tns:ULTGARANTIASVERIFICA" />
+  <xs:element name="ULTGARANTIASVERIFICAResponse" type="tns:ULTGARANTIASVERIFICAResponse" />
+  <xs:element name="ULTLIMITECLIENTES" type="tns:ULTLIMITECLIENTES" />
+  <xs:element name="ULTLIMITECLIENTESResponse" type="tns:ULTLIMITECLIENTESResponse" />
+  <xs:complexType name="ULTCLIENTESIDType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gULTCLIENTESIDDetailType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="mULTCLIENTESIDDetailType">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="selFldID" type="xs:string" />
+                  <xs:element minOccurs="0" name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLNUMID" type="xs:string" />
+                </xs:sequence>
+                <xs:attribute name="m" type="xs:positiveInteger" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="g" type="xs:positiveInteger" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTBANCOSCORRESPType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gULTBANCOSCORRESPDetailType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="mULTBANCOSCORRESPDetailType">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="CUSTOMER" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLNUMID" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLSOCIALNAME" type="xs:string" />
+                  <xs:element minOccurs="0" name="NATIONALITY" type="xs:string" />
+                  <xs:element minOccurs="0" name="COUNTRYNAME" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLADDCITY" type="xs:string" />
+                  <xs:element minOccurs="0" name="CITYNAME" type="xs:string" />
+                </xs:sequence>
+                <xs:attribute name="m" type="xs:positiveInteger" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="g" type="xs:positiveInteger" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCOMPRADOCVERIFICAType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gULTCOMPRADOCVERIFICADetailType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="mULTCOMPRADOCVERIFICADetailType">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="selFldID" type="xs:string" />
+                  <xs:element minOccurs="0" name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="AMOUNT" type="xs:string" />
+                  <xs:element minOccurs="0" name="CURRENCY" type="xs:string" />
+                  <xs:element minOccurs="0" name="BILLTYPE" type="xs:string" />
+                  <xs:element minOccurs="0" name="DISCOUNT" type="xs:string" />
+                  <xs:element minOccurs="0" name="INSURER" type="xs:string" />
+                  <xs:element minOccurs="0" name="ACCEPTOR" type="xs:string" />
+                  <xs:element minOccurs="0" name="DRAWER" type="xs:string" />
+                  <xs:element minOccurs="0" name="DRAWEE" type="xs:string" />
+                  <xs:element minOccurs="0" name="EMISOR" type="xs:string" />
+                </xs:sequence>
+                <xs:attribute name="m" type="xs:positiveInteger" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="g" type="xs:positiveInteger" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCLIENTESVERIFICAType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gULTCLIENTESVERIFICADetailType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="mULTCLIENTESVERIFICADetailType">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="selFldCOLNUMID" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLNUMID" type="xs:string" />
+                  <xs:element minOccurs="0" name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLIDTYPE" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLCUSTYPE" type="xs:string" />
+                  <xs:element minOccurs="0" name="AMLCHECK" type="xs:string" />
+                  <xs:element minOccurs="0" name="AMLRESULT" type="xs:string" />
+                  <xs:element minOccurs="0" name="LASTAMLRESULTDATE" type="xs:string" />
+                  <xs:element minOccurs="0" name="CUSTOMERTYPE" type="xs:string" />
+                  <xs:element minOccurs="0" name="NATIONALITY" type="xs:string" />
+                  <xs:element minOccurs="0" name="COUNTRYNAME" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLADDCITY" type="xs:string" />
+                  <xs:element minOccurs="0" name="CITYNAME" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLSOCIALNAME" type="xs:string" />
+                  <xs:element minOccurs="0" name="EMAIL1" type="xs:string" />
+                  <xs:element minOccurs="0" name="TAXID" type="xs:string" />
+                </xs:sequence>
+                <xs:attribute name="m" type="xs:positiveInteger" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="g" type="xs:positiveInteger" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTALADIBANCOSType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gULTALADIBANCOSDetailType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="mULTALADIBANCOSDetailType">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="IDPARTICIPE" type="xs:string" />
+                </xs:sequence>
+                <xs:attribute name="m" type="xs:positiveInteger" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="g" type="xs:positiveInteger" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTLIMITECLIENTESType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gULTLIMITECLIENTESDetailType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="mULTLIMITECLIENTESDetailType">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="selFldLIABILITYNUMBER" type="xs:string" />
+                  <xs:element minOccurs="0" name="LIABILITYNUMBER" type="xs:string" />
+                  <xs:element minOccurs="0" name="LIMITPRODUCT" type="xs:string" />
+                  <xs:element minOccurs="0" name="CREDITLINE" type="xs:string" />
+                  <xs:element minOccurs="0" name="MAXIMUMTOTAL" type="xs:string" />
+                  <xs:element minOccurs="0" name="TOTALOS" type="xs:string" />
+                  <xs:element minOccurs="0" name="AVAILAMT" type="xs:string" />
+                </xs:sequence>
+                <xs:attribute name="m" type="xs:positiveInteger" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="g" type="xs:positiveInteger" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTGARANTIASVERIFICAType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gULTGARANTIASVERIFICADetailType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="mULTGARANTIASVERIFICADetailType">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="selFldID" type="xs:string" />
+                  <xs:element minOccurs="0" name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="PRINCIPALAMOUNT" type="xs:string" />
+                  <xs:element minOccurs="0" name="CURRENCY" type="xs:string" />
+                  <xs:element minOccurs="0" name="CONTRACTTYPE" type="xs:string" />
+                  <xs:element minOccurs="0" name="DEALSUBTYPE" type="xs:string" />
+                  <xs:element minOccurs="0" name="CUSTOMER" type="xs:string" />
+                  <xs:element minOccurs="0" name="BENEFCUST1" type="xs:string" />
+                  <xs:element minOccurs="0" name="BENADDRESS" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLAPPLICNAME" type="xs:string" />
+                  <xs:element minOccurs="0" name="LIMITUPDREQD" type="xs:string" />
+                  <xs:element minOccurs="0" name="PRINMOVEMENT" type="xs:string" />
+                  <xs:element minOccurs="0" name="MATURITYDATE" type="xs:string" />
+                  <xs:element minOccurs="0" name="STATUS" type="xs:string" />
+                </xs:sequence>
+                <xs:attribute name="m" type="xs:positiveInteger" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="g" type="xs:positiveInteger" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCARTACREDVERIFICAType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gULTCARTACREDVERIFICADetailType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="mULTCARTACREDVERIFICADetailType">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="selFldID" type="xs:string" />
+                  <xs:element minOccurs="0" name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="LCAMOUNT" type="xs:string" />
+                  <xs:element minOccurs="0" name="LCCURRENCY" type="xs:string" />
+                  <xs:element minOccurs="0" name="OPERATION" type="xs:string" />
+                  <xs:element minOccurs="0" name="LCTYPE" type="xs:string" />
+                  <xs:element minOccurs="0" name="LCTYPESDESC" type="xs:string" />
+                  <xs:element minOccurs="0" name="COLLCTYPEID" type="xs:string" />
+                  <xs:element minOccurs="0" name="CONFIRMINST" type="xs:string" />
+                  <xs:element minOccurs="0" name="APPLICANTCUSTNO" type="xs:string" />
+                  <xs:element minOccurs="0" name="BENEFICIARYCUSTNO" type="xs:string" />
+                  <xs:element minOccurs="0" name="ISSBANKREF" type="xs:string" />
+                  <xs:element minOccurs="0" name="BENEFICIARY" type="xs:string" />
+                  <xs:element minOccurs="0" name="APPLICANT" type="xs:string" />
+                  <xs:element minOccurs="0" name="ADVISETHRUCUSTNO" type="xs:string" />
+                  <xs:element minOccurs="0" name="THIRDPARTYCUSTNO" type="xs:string" />
+                  <xs:element minOccurs="0" name="ISSUINGBANKNO" type="xs:string" />
+                  <xs:element minOccurs="0" name="ADVISINGBKCUSTNO" type="xs:string" />
+                  <xs:element minOccurs="0" name="AVAILWITHCUSTNO" type="xs:string" />
+                  <xs:element minOccurs="0" name="DRAWEECUSTNO" type="xs:string" />
+                  <xs:element minOccurs="0" name="LIABILITYAMT" type="xs:string" />
+                </xs:sequence>
+                <xs:attribute name="m" type="xs:positiveInteger" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="g" type="xs:positiveInteger" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCUENTACLIENTESType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gULTCUENTACLIENTESDetailType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="mULTCUENTACLIENTESDetailType">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="CUSTOMER" type="xs:string" />
+                  <xs:element minOccurs="0" name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="ACCOUNTTITLE1" type="xs:string" />
+                  <xs:element minOccurs="0" name="CATEGORY" type="xs:string" />
+                  <xs:element minOccurs="0" name="CATEGORYDESC" type="xs:string" />
+                  <xs:element minOccurs="0" name="CURRENCY" type="xs:string" />
+                </xs:sequence>
+                <xs:attribute name="m" type="xs:positiveInteger" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="g" type="xs:positiveInteger" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTALADIPAISESType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gULTALADIPAISESDetailType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="mULTALADIPAISESDetailType">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="ALADIPAISES" type="xs:string" />
+                </xs:sequence>
+                <xs:attribute name="m" type="xs:positiveInteger" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="g" type="xs:positiveInteger" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCARTACREDVERIFICA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRequestCommon" type="tns:webRequestCommon" />
+      <xs:element minOccurs="0" name="ULTCARTACREDVERIFICAType" type="tns:enquiryInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="webRequestCommon">
+    <xs:sequence>
+      <xs:element name="userName" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="company" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enquiryInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="enquiryInputCollection" nillable="true" type="tns:enquiryInputCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enquiryInputCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="columnName" type="xs:string" />
+      <xs:element minOccurs="0" name="criteriaValue" type="xs:string" />
+      <xs:element minOccurs="0" name="operand" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCARTACREDVERIFICAResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULTCARTACREDVERIFICAType" type="tns:ULTCARTACREDVERIFICAType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionId" type="xs:string" />
+      <xs:element minOccurs="0" name="messageId" type="xs:string" />
+      <xs:element minOccurs="0" name="successIndicator" type="tns:successIndicator" />
+      <xs:element minOccurs="0" name="application" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="messages" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCUENTACLIENTES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRequestCommon" type="tns:webRequestCommon" />
+      <xs:element minOccurs="0" name="ULTCUENTACLIENTESType" type="tns:enquiryInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCUENTACLIENTESResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULTCUENTACLIENTESType" type="tns:ULTCUENTACLIENTESType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTALADIPAISES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRequestCommon" type="tns:webRequestCommon" />
+      <xs:element minOccurs="0" name="ULTALADIPAISESType" type="tns:enquiryInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTALADIPAISESResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULTALADIPAISESType" type="tns:ULTALADIPAISESType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTGARANTIASVERIFICA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRequestCommon" type="tns:webRequestCommon" />
+      <xs:element minOccurs="0" name="ULTGARANTIASVERIFICAType" type="tns:enquiryInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTGARANTIASVERIFICAResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULTGARANTIASVERIFICAType" type="tns:ULTGARANTIASVERIFICAType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTLIMITECLIENTES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRequestCommon" type="tns:webRequestCommon" />
+      <xs:element minOccurs="0" name="ULTLIMITECLIENTESType" type="tns:enquiryInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTLIMITECLIENTESResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULTLIMITECLIENTESType" type="tns:ULTLIMITECLIENTESType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCOMPRADOCVERIFICA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRequestCommon" type="tns:webRequestCommon" />
+      <xs:element minOccurs="0" name="ULTCOMPRADOCVERIFICAType" type="tns:enquiryInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCOMPRADOCVERIFICAResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULTCOMPRADOCVERIFICAType" type="tns:ULTCOMPRADOCVERIFICAType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCLIENTESVERIFICA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRequestCommon" type="tns:webRequestCommon" />
+      <xs:element minOccurs="0" name="ULTCLIENTESVERIFICAType" type="tns:enquiryInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCLIENTESVERIFICAResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULTCLIENTESVERIFICAType" type="tns:ULTCLIENTESVERIFICAType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTALADIBANCOS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRequestCommon" type="tns:webRequestCommon" />
+      <xs:element minOccurs="0" name="ULTALADIBANCOSType" type="tns:enquiryInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTALADIBANCOSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULTALADIBANCOSType" type="tns:ULTALADIBANCOSType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTBANCOSCORRESP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRequestCommon" type="tns:webRequestCommon" />
+      <xs:element minOccurs="0" name="ULTBANCOSCORRESPType" type="tns:enquiryInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTBANCOSCORRESPResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULTBANCOSCORRESPType" type="tns:ULTBANCOSCORRESPType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCLIENTESID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="WebRequestCommon" type="tns:webRequestCommon" />
+      <xs:element minOccurs="0" name="ULTCLIENTESIDType" type="tns:enquiryInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ULTCLIENTESIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ULTCLIENTESIDType" type="tns:ULTCLIENTESIDType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="successIndicator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="TWSError" />
+      <xs:enumeration value="T24Error" />
+      <xs:enumeration value="T24Override" />
+      <xs:enumeration value="T24Offline" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

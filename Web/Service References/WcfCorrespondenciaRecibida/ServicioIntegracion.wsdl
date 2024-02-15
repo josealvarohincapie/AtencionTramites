@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioIntegracion" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BANCOLDEX.IntegracionOnbase.Model.Classes" />
+      <xsd:import schemaLocation="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BANCOLDEX.IntegracionOnbase.Model.BANCOLDEXIntegracionOnbaseModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioIntegracion_IntegracionOnbase_InputMessage">
+    <wsdl:part name="parameters" element="tns:IntegracionOnbase" />
+  </wsdl:message>
+  <wsdl:message name="IServicioIntegracion_IntegracionOnbase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IntegracionOnbaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioIntegracion_ModificarComunicacionRecibida_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarComunicacionRecibida" />
+  </wsdl:message>
+  <wsdl:message name="IServicioIntegracion_ModificarComunicacionRecibida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificarComunicacionRecibidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioIntegracion_DevolverCorrespondencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverCorrespondencia" />
+  </wsdl:message>
+  <wsdl:message name="IServicioIntegracion_DevolverCorrespondencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DevolverCorrespondenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioIntegracion_AsociarCorrespondencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsociarCorrespondencia" />
+  </wsdl:message>
+  <wsdl:message name="IServicioIntegracion_AsociarCorrespondencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsociarCorrespondenciaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioIntegracion">
+    <wsdl:operation name="IntegracionOnbase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioIntegracion/IntegracionOnbase" message="tns:IServicioIntegracion_IntegracionOnbase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioIntegracion/IntegracionOnbaseResponse" message="tns:IServicioIntegracion_IntegracionOnbase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarComunicacionRecibida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioIntegracion/ModificarComunicacionRecibida" message="tns:IServicioIntegracion_ModificarComunicacionRecibida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioIntegracion/ModificarComunicacionRecibidaResponse" message="tns:IServicioIntegracion_ModificarComunicacionRecibida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DevolverCorrespondencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioIntegracion/DevolverCorrespondencia" message="tns:IServicioIntegracion_DevolverCorrespondencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioIntegracion/DevolverCorrespondenciaResponse" message="tns:IServicioIntegracion_DevolverCorrespondencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsociarCorrespondencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioIntegracion/AsociarCorrespondencia" message="tns:IServicioIntegracion_AsociarCorrespondencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioIntegracion/AsociarCorrespondenciaResponse" message="tns:IServicioIntegracion_AsociarCorrespondencia_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioIntegracion" type="tns:IServicioIntegracion">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IntegracionOnbase">
+      <soap:operation soapAction="http://tempuri.org/IServicioIntegracion/IntegracionOnbase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarComunicacionRecibida">
+      <soap:operation soapAction="http://tempuri.org/IServicioIntegracion/ModificarComunicacionRecibida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevolverCorrespondencia">
+      <soap:operation soapAction="http://tempuri.org/IServicioIntegracion/DevolverCorrespondencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsociarCorrespondencia">
+      <soap:operation soapAction="http://tempuri.org/IServicioIntegracion/AsociarCorrespondencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioIntegracion">
+    <wsdl:port name="BasicHttpBinding_IServicioIntegracion" binding="tns:BasicHttpBinding_IServicioIntegracion">
+      <soap:address location="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

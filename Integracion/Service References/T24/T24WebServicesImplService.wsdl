@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="T24WebServicesImpl" name="T24WebServicesImplService" targetNamespace="T24WebServicesImpl" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="mockT24WebServicesImplPortBinding?WSDL&amp;interface=T24WebServicesImplPortBinding&amp;part=services.xsd" namespace="http://jaxb.dev.java.net/array" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="mockT24WebServicesImplPortBinding?WSDL&amp;interface=T24WebServicesImplPortBinding&amp;part=services_1.xsd" namespace="T24WebServicesImpl" />
+    </xsd:schema>
+  </types>
+  <message name="ULTCUENTACLIENTESResponse">
+    <part name="parameters" element="tns:ULTCUENTACLIENTESResponse" />
+  </message>
+  <message name="ULTALADIBANCOSResponse">
+    <part name="parameters" element="tns:ULTALADIBANCOSResponse" />
+  </message>
+  <message name="ULTCARTACREDVERIFICAResponse">
+    <part name="parameters" element="tns:ULTCARTACREDVERIFICAResponse" />
+  </message>
+  <message name="ULTCLIENTESVERIFICA">
+    <part name="parameters" element="tns:ULTCLIENTESVERIFICA" />
+  </message>
+  <message name="ULTALADIPAISESResponse">
+    <part name="parameters" element="tns:ULTALADIPAISESResponse" />
+  </message>
+  <message name="ULTALADIBANCOS">
+    <part name="parameters" element="tns:ULTALADIBANCOS" />
+  </message>
+  <message name="ULTBANCOSCORRESPResponse">
+    <part name="parameters" element="tns:ULTBANCOSCORRESPResponse" />
+  </message>
+  <message name="ULTLIMITECLIENTESResponse">
+    <part name="parameters" element="tns:ULTLIMITECLIENTESResponse" />
+  </message>
+  <message name="ULTBANCOSCORRESP">
+    <part name="parameters" element="tns:ULTBANCOSCORRESP" />
+  </message>
+  <message name="ULTCLIENTESVERIFICAResponse">
+    <part name="parameters" element="tns:ULTCLIENTESVERIFICAResponse" />
+  </message>
+  <message name="ULTALADIPAISES">
+    <part name="parameters" element="tns:ULTALADIPAISES" />
+  </message>
+  <message name="ULTGARANTIASVERIFICA">
+    <part name="parameters" element="tns:ULTGARANTIASVERIFICA" />
+  </message>
+  <message name="ULTCLIENTESID">
+    <part name="parameters" element="tns:ULTCLIENTESID" />
+  </message>
+  <message name="ULTCARTACREDVERIFICA">
+    <part name="parameters" element="tns:ULTCARTACREDVERIFICA" />
+  </message>
+  <message name="ULTLIMITECLIENTES">
+    <part name="parameters" element="tns:ULTLIMITECLIENTES" />
+  </message>
+  <message name="ULTCOMPRADOCVERIFICA">
+    <part name="parameters" element="tns:ULTCOMPRADOCVERIFICA" />
+  </message>
+  <message name="ULTGARANTIASVERIFICAResponse">
+    <part name="parameters" element="tns:ULTGARANTIASVERIFICAResponse" />
+  </message>
+  <message name="ULTCUENTACLIENTES">
+    <part name="parameters" element="tns:ULTCUENTACLIENTES" />
+  </message>
+  <message name="ULTCOMPRADOCVERIFICAResponse">
+    <part name="parameters" element="tns:ULTCOMPRADOCVERIFICAResponse" />
+  </message>
+  <message name="ULTCLIENTESIDResponse">
+    <part name="parameters" element="tns:ULTCLIENTESIDResponse" />
+  </message>
+  <portType name="T24WebServicesImpl">
+    <operation name="ULTBANCOSCORRESP">
+      <input message="tns:ULTBANCOSCORRESP" />
+      <output message="tns:ULTBANCOSCORRESPResponse" />
+    </operation>
+    <operation name="ULTCLIENTESVERIFICA">
+      <input message="tns:ULTCLIENTESVERIFICA" />
+      <output message="tns:ULTCLIENTESVERIFICAResponse" />
+    </operation>
+    <operation name="ULTALADIPAISES">
+      <input message="tns:ULTALADIPAISES" />
+      <output message="tns:ULTALADIPAISESResponse" />
+    </operation>
+    <operation name="ULTCOMPRADOCVERIFICA">
+      <input message="tns:ULTCOMPRADOCVERIFICA" />
+      <output message="tns:ULTCOMPRADOCVERIFICAResponse" />
+    </operation>
+    <operation name="ULTLIMITECLIENTES">
+      <input message="tns:ULTLIMITECLIENTES" />
+      <output message="tns:ULTLIMITECLIENTESResponse" />
+    </operation>
+    <operation name="ULTGARANTIASVERIFICA">
+      <input message="tns:ULTGARANTIASVERIFICA" />
+      <output message="tns:ULTGARANTIASVERIFICAResponse" />
+    </operation>
+    <operation name="ULTCLIENTESID">
+      <input message="tns:ULTCLIENTESID" />
+      <output message="tns:ULTCLIENTESIDResponse" />
+    </operation>
+    <operation name="ULTALADIBANCOS">
+      <input message="tns:ULTALADIBANCOS" />
+      <output message="tns:ULTALADIBANCOSResponse" />
+    </operation>
+    <operation name="ULTCARTACREDVERIFICA">
+      <input message="tns:ULTCARTACREDVERIFICA" />
+      <output message="tns:ULTCARTACREDVERIFICAResponse" />
+    </operation>
+    <operation name="ULTCUENTACLIENTES">
+      <input message="tns:ULTCUENTACLIENTES" />
+      <output message="tns:ULTCUENTACLIENTESResponse" />
+    </operation>
+  </portType>
+  <binding name="T24WebServicesImplPortBinding" type="tns:T24WebServicesImpl">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ULTBANCOSCORRESP">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ULTCLIENTESVERIFICA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ULTALADIPAISES">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ULTCOMPRADOCVERIFICA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ULTLIMITECLIENTES">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ULTGARANTIASVERIFICA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ULTCLIENTESID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ULTALADIBANCOS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ULTCARTACREDVERIFICA">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ULTCUENTACLIENTES">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="T24WebServicesImplService">
+    <port name="T24WebServicesImplPort" binding="tns:T24WebServicesImplPortBinding">
+      <soap:address location="http://LENOVO:8089/mockT24WebServicesImplPortBinding" />
+    </port>
+  </service>
+</definitions>

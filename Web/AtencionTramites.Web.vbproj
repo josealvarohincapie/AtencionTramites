@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{B3D24241-7292-4D1C-84A2-F64A0EEF5942}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Web.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Web.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Plugins\bootstrap\js\bootstrap-datepicker.js" />
+    <Content Include="Plugins\datatables-plugins\dataTables.bootstrap.css" />
+    <Content Include="Plugins\datatables-plugins\dataTables.bootstrap.js" />
+    <Content Include="Plugins\datatables-plugins\dataTables.bootstrap.min.js" />
+    <Content Include="Plugins\datatables-plugins\index.html" />
+    <Content Include="Plugins\datatables-responsive\dataTables.responsive.css" />
+    <Content Include="Plugins\datatables-responsive\dataTables.responsive.js" />
+    <Content Include="Plugins\datatables\css\buttons.dataTables.min.css" />
+    <Content Include="Plugins\datatables\css\dataTables.bootstrap.css" />
+    <Content Include="Plugins\datatables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Plugins\datatables\css\dataTables.bootstrap4.css" />
+    <Content Include="Plugins\datatables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Plugins\datatables\css\dataTables.foundation.css" />
+    <Content Include="Plugins\datatables\css\dataTables.foundation.min.css" />
+    <Content Include="Plugins\datatables\css\dataTables.jqueryui.css" />
+    <Content Include="Plugins\datatables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Plugins\datatables\css\dataTables.material.css" />
+    <Content Include="Plugins\datatables\css\dataTables.material.min.css" />
+    <Content Include="Plugins\datatables\css\dataTables.semanticui.css" />
+    <Content Include="Plugins\datatables\css\dataTables.semanticui.min.css" />
+    <Content Include="Plugins\datatables\css\dataTables.uikit.css" />
+    <Content Include="Plugins\datatables\css\dataTables.uikit.min.css" />
+    <Content Include="Plugins\datatables\css\jquery.dataTables.css" />
+    <Content Include="Plugins\datatables\css\jquery.dataTables.min.css" />
+    <Content Include="Plugins\datatables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Plugins\datatables\images\favicon.ico" />
+    <Content Include="Plugins\datatables\images\sort_asc.png" />
+    <Content Include="Plugins\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Plugins\datatables\images\sort_both.png" />
+    <Content Include="Plugins\datatables\images\sort_desc.png" />
+    <Content Include="Plugins\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Plugins\datatables\js\buttons.html5.min.js" />
+    <Content Include="Plugins\datatables\js\dataTables.bootstrap.js" />
+    <Content Include="Plugins\datatables\js\dataTables.bootstrap.min.js" />
+    <Content Include="Plugins\datatables\js\dataTables.bootstrap4.js" />
+    <Content Include="Plugins\datatables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Plugins\datatables\js\dataTables.buttons.min.js" />
+    <Content Include="Plugins\datatables\js\dataTables.foundation.js" />
+    <Content Include="Plugins\datatables\js\dataTables.foundation.min.js" />
+    <Content Include="Plugins\datatables\js\dataTables.jqueryui.js" />
+    <Content Include="Plugins\datatables\js\dataTables.jqueryui.min.js" />
+    <Content Include="Plugins\datatables\js\dataTables.material.js" />
+    <Content Include="Plugins\datatables\js\dataTables.material.min.js" />
+    <Content Include="Plugins\datatables\js\dataTables.semanticui.js" />
+    <Content Include="Plugins\datatables\js\dataTables.semanticui.min.js" />
+    <Content Include="Plugins\datatables\js\dataTables.uikit.js" />
+    <Content Include="Plugins\datatables\js\dataTables.uikit.min.js" />
+    <Content Include="Plugins\datatables\js\jquery.dataTables.js" />
+    <Content Include="Plugins\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Plugins\datatables\js\jquery.js" />
+    <Content Include="Plugins\datatables\js\jszip.min.js" />
+    <Content Include="Plugins\datatables\js\pdfmake.min.js" />
+    <Content Include="Plugins\datatables\js\vfs_fonts.js" />
+    <Content Include="Plugins\filestyle\bootstrap-filestyle.js" />
+    <Content Include="Plugins\filestyle\bootstrap-filestyle.min.js" />
+    <Content Include="Plugins\jquery-ui\images\calendar.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Plugins\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="Plugins\jquery\jquery.validate.js" />
+    <Content Include="Plugins\jquery\jquery.validate.min.js" />
+    <Content Include="Plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Plugins\bootstrap\js\npm.js" />
+    <Content Include="Plugins\jquery\jquery.min.js" />
+    <Content Include="Procesos\Asesorias\RegistroDePeticionarios.aspx" />
+    <Content Include="Procesos\Asesorias\RadicadoSolicitud.aspx" />
+    <Content Include="Scripts\ActividadDialog.js" />
+    <Content Include="Scripts\Complementarios.js" />
+    <Content Include="Scripts\Documentacion.js" />
+    <Content Include="Scripts\Metodos.js" />
+    <Content Include="Scripts\RadicadoSolicitud.js" />
+    <None Include="Service References\WcfCorrespondenciaRecibida\ServicioIntegracion.disco" />
+    <None Include="Service References\WcfCorrespondenciaRecibida\configuration91.svcinfo" />
+    <None Include="Service References\WcfCorrespondenciaRecibida\configuration.svcinfo" />
+    <None Include="Service References\WcfCorrespondenciaRecibida\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\dashboard.css" />
+    <Content Include="Styles\font-awesome.min.css" />
+    <Content Include="Styles\images\4573_BAN_logo_HZ.jpg" />
+    <Content Include="Styles\images\accept.png" />
+    <Content Include="Styles\images\ajax-loader.gif" />
+    <Content Include="Styles\images\cross.png" />
+    <Content Include="Styles\images\delete.png" />
+    <Content Include="Styles\images\inbox.png" />
+    <Content Include="Styles\images\logo_defensoria.png" />
+    <Content Include="Styles\images\magnifier.png" />
+    <Content Include="Styles\images\map.png" />
+    <Content Include="Styles\images\note.png" />
+    <Content Include="Styles\images\pdf_icon.png" />
+    <Content Include="Styles\images\pdf_icon1.png" />
+    <Content Include="Styles\images\pencil.png" />
+    <Content Include="Styles\images\save.png" />
+    <Content Include="Styles\images\table_link.png" />
+    <Content Include="Styles\images\ult_help.png" />
+    <Content Include="Styles\theme.css" />
+    <Content Include="Styles\images\ult_attachment.png" />
+    <Content Include="Styles\images\ult_notes.png" />
+    <Content Include="Styles\images\ult_print.png" />
+    <Content Include="Styles\images\ult_send.png" />
+    <Content Include="Styles\images\ult_template.png" />
+    <Content Include="Styles\toastr.min.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Service References\WcfCorrespondenciaRecibida\ServicioIntegracion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfCorrespondenciaRecibida\ServicioIntegracion1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfCorrespondenciaRecibida\ServicioIntegracion2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WcfCorrespondenciaRecibida\ServicioIntegracion3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.designer.vb">
+      <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.vb">
+      <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Procesos\Asesorias\RadicadoSolicitud.aspx.designer.vb">
+      <DependentUpon>RadicadoSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Asesorias\RadicadoSolicitud.aspx.vb">
+      <DependentUpon>RadicadoSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Service References\App_Code\Catalogo.vb" />
+    <Compile Include="Service References\App_Code\ComplementariosHelper.vb" />
+    <Compile Include="Service References\App_Code\ComunicacionRecibida.vb" />
+    <Compile Include="Service References\App_Code\CorrespondenciaRecibidaHelper.vb" />
+    <Compile Include="Service References\App_Code\DBMethods.vb" />
+    <Compile Include="Service References\App_Code\DocumentationHelper.vb" />
+    <Compile Include="Service References\App_Code\Documento.vb" />
+    <Compile Include="Service References\App_Code\Estados.vb" />
+    <Compile Include="Service References\App_Code\Etapas.vb" />
+    <Compile Include="Service References\App_Code\FormHelper.vb" />
+    <Compile Include="Service References\App_Code\Esquema.vb" />
+    <Compile Include="Service References\App_Code\Complementario.vb" />
+    <Compile Include="Service References\App_Code\SendHelper.vb" />
+    <Compile Include="Service References\App_Code\Simple3Des.vb" />
+    <Compile Include="Service References\App_Code\Solicitud.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\WcfCorrespondenciaRecibida\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="My Project\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="My Project\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="My Project\PublishProfiles\FolderProfile3.pubxml" />
+    <None Include="My Project\PublishProfiles\Profile1.pubxml" />
+    <None Include="My Project\PublishProfiles\Publish.pubxml" />
+    <None Include="Plugins\bootstrap\css\bootstrap-theme.css.map" />
+    <None Include="Plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Plugins\datatables-responsive\dataTables.responsive.scss" />
+    <Content Include="Plugins\datatables\images\Sorting icons.psd" />
+    <None Include="Service References\WcfCorrespondenciaRecibida\ServicioIntegracion.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.vbproj">
+      <Project>{6F9294C6-9942-4D9B-99EF-571EB439B12F}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Integracion\Integracion.vbproj">
+      <Project>{CD39EB55-38EA-4FCE-A202-1050240E9BE7}</Project>
+      <Name>Integracion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogWriterHelper\LogWriterHelper.vbproj">
+      <Project>{c862592c-c334-4a7c-b2c9-d3fec5ff5be6}</Project>
+      <Name>LogWriterHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UltimusEIK\UltimusEIK.vbproj">
+      <Project>{D229368F-A466-4085-BE15-96A661076A67}</Project>
+      <Name>UltimusEIK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WcfCorrespondenciaRecibida\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Procesos\Quejas\" />
+    <Folder Include="Procesos\Solicitudes\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59894</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59896/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

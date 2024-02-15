@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BANCOLDEX.IntegracionOnbase.Model.BANCOLDEXIntegracionOnbaseModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BANCOLDEX.IntegracionOnbase.Model.BANCOLDEXIntegracionOnbaseModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ComunicacionRecibida">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AsociacionComunicacionIncidente" nillable="true" type="tns:ArrayOfAsociacionComunicacionIncidente" />
+      <xs:element minOccurs="0" name="Asunto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CantidadAnexos" type="xs:int" />
+      <xs:element minOccurs="0" name="DocumentHandle" type="xs:long" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaRadicacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FunsionarioAsignado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HistoricoComunicacionRecibida" nillable="true" type="tns:ArrayOfHistoricoComunicacionRecibida" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdAnexos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreAnexos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreRazonSocial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroIdentificacion" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroRadicado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroReferenciaRelacionada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ComunicacionRecibida" nillable="true" type="tns:ComunicacionRecibida" />
+  <xs:complexType name="ArrayOfAsociacionComunicacionIncidente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AsociacionComunicacionIncidente" nillable="true" type="tns:AsociacionComunicacionIncidente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAsociacionComunicacionIncidente" nillable="true" type="tns:ArrayOfAsociacionComunicacionIncidente" />
+  <xs:complexType name="AsociacionComunicacionIncidente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComunicacionRecibida" type="xs:long" />
+      <xs:element minOccurs="0" name="ComunicacionRecibida1" nillable="true" type="tns:ComunicacionRecibida" />
+      <xs:element minOccurs="0" name="Creado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Incidente" type="xs:int" />
+      <xs:element minOccurs="0" name="Proceso" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AsociacionComunicacionIncidente" nillable="true" type="tns:AsociacionComunicacionIncidente" />
+  <xs:complexType name="ArrayOfHistoricoComunicacionRecibida">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoricoComunicacionRecibida" nillable="true" type="tns:HistoricoComunicacionRecibida" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoricoComunicacionRecibida" nillable="true" type="tns:ArrayOfHistoricoComunicacionRecibida" />
+  <xs:complexType name="HistoricoComunicacionRecibida">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asunto" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ComunicacionRecibida" type="xs:long" />
+      <xs:element minOccurs="0" name="ComunicacionRecibida1" nillable="true" type="tns:ComunicacionRecibida" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="NombreRazonSocial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroIdentificacion" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroReferenciaRelacionada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoricoComunicacionRecibida" nillable="true" type="tns:HistoricoComunicacionRecibida" />
+</xs:schema>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://centinela/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://centinela/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://centinela/">
+      <s:element name="ConsultaIndividual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Consulta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaIndividualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaIndividualResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaIndividualSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaIndividual" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIndividualSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaIndividualResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ConsultaIndividualSoap">
+    <wsdl:operation name="ConsultaIndividual">
+      <wsdl:input message="tns:ConsultaIndividualSoapIn" />
+      <wsdl:output message="tns:ConsultaIndividualSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaIndividualSoap" type="tns:ConsultaIndividualSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaIndividual">
+      <soap:operation soapAction="http://centinela/ConsultaIndividual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConsultaIndividualSoap12" type="tns:ConsultaIndividualSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaIndividual">
+      <soap12:operation soapAction="http://centinela/ConsultaIndividual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaIndividual">
+    <wsdl:port name="ConsultaIndividualSoap12" binding="tns:ConsultaIndividualSoap12">
+      <soap12:address location="http://LENOVO:8081/" />
+    </wsdl:port>
+    <wsdl:port name="ConsultaIndividualSoap" binding="tns:ConsultaIndividualSoap">
+      <soap:address location="http://localhost/VigiaII/Service/ConsultaIndividual.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

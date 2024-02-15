@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="7e347e7e-ff53-4024-9799-44d61731bf40" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioIntegracion.wsdl" MetadataType="Wsdl" ID="060ca03c-ed72-4f38-a43e-8da41b62e31a" SourceId="1" SourceUrl="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?wsdl" />
+    <MetadataFile FileName="ServicioIntegracion.disco" MetadataType="Disco" ID="d43e341d-6be2-4c65-bb64-45504e4a41c0" SourceId="1" SourceUrl="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?disco" />
+    <MetadataFile FileName="ServicioIntegracion.xsd" MetadataType="Schema" ID="29670e70-b2ae-4abc-aa88-d43434701f9b" SourceId="1" SourceUrl="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioIntegracion1.xsd" MetadataType="Schema" ID="045dd3e1-b775-4c21-9a7b-502b581c4390" SourceId="1" SourceUrl="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServicioIntegracion2.xsd" MetadataType="Schema" ID="7364b65b-81f5-4c87-8dfa-a3db826cb786" SourceId="1" SourceUrl="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicioIntegracion3.xsd" MetadataType="Schema" ID="29a95264-61de-4710-8218-3403ec84c750" SourceId="1" SourceUrl="http://localhost/BANCOLDEX.IntegracionOnbase.WCF/ServicioIntegracion.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
