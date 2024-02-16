@@ -51,10 +51,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionExplicit>On</OptionExplicit>
+    <OptionExplicit>Off</OptionExplicit>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionCompare>Binary</OptionCompare>
+    <OptionCompare>Text</OptionCompare>
   </PropertyGroup>
   <PropertyGroup>
     <OptionStrict>Off</OptionStrict>
@@ -181,8 +181,8 @@
     <Content Include="Plugins\bootstrap\js\bootstrap.min.js" />
     <Content Include="Plugins\bootstrap\js\npm.js" />
     <Content Include="Plugins\jquery\jquery.min.js" />
-    <Content Include="Procesos\Asesorias\RegistroDePeticionarios.aspx" />
     <Content Include="Procesos\Asesorias\RadicadoSolicitud.aspx" />
+    <Content Include="Procesos\Asesorias\RegistroDePeticionarios.aspx" />
     <Content Include="Scripts\ActividadDialog.js" />
     <Content Include="Scripts\Complementarios.js" />
     <Content Include="Scripts\Documentacion.js" />
@@ -244,18 +244,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.designer.vb">
-      <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.vb">
-      <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
+    <Compile Include="DB\RadicadoDB.vb" />
+    <Compile Include="dto\CatalogoDTO.vb" />
+    <Compile Include="dto\RadicadoDTO.vb" />
+    <Compile Include="Helpers\RadicadoHelper.vb" />
     <Compile Include="Procesos\Asesorias\RadicadoSolicitud.aspx.designer.vb">
       <DependentUpon>RadicadoSolicitud.aspx</DependentUpon>
     </Compile>
     <Compile Include="Procesos\Asesorias\RadicadoSolicitud.aspx.vb">
       <DependentUpon>RadicadoSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.designer.vb">
+      <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.vb">
+      <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Service References\App_Code\Catalogo.vb" />
