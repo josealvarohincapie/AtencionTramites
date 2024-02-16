@@ -12,6 +12,7 @@
     
     <link href="../../Styles/toastr.min.css" rel="stylesheet" />
     <link href="../../Styles/dashboard.css" rel="stylesheet" />
+
     <link href="../../Styles/font-awesome.min.css" rel="stylesheet" />
     <link href="../../Plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     
