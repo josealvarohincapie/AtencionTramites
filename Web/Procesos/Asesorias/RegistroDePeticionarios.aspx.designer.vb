@@ -41,6 +41,15 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
+    '''Control hddCodigoCanalAtencion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoCanalAtencion As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control txtCanalAtencion.
     '''</summary>
     '''<remarks>
@@ -68,6 +77,15 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents txtFecha As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control hddCodigoTipoSolicitante.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoTipoSolicitante As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control txtTipoSolicitante.
     '''</summary>
     '''<remarks>
@@ -93,6 +111,15 @@ Partial Public Class RegistroSolicitud
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents chkEsAnonimo As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''Control hddCodigoTipoDocumento.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoTipoDocumento As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
     '''Control txtTipoDocumento.
@@ -158,6 +185,15 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents rblGrupoEtnico As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
+    '''Control hddCodigoSexoAsignado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoSexoAsignado As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control txtSexoAsignado.
     '''</summary>
     '''<remarks>
@@ -174,6 +210,15 @@ Partial Public Class RegistroSolicitud
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator7 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Control hddCodigoIdentidadGenero.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoIdentidadGenero As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
     '''Control txtIdentidadGenero.
@@ -194,6 +239,15 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents RequiredFieldValidator8 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
+    '''Control hddCodigoOrientacionSexual.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoOrientacionSexual As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control txtOrientacionSexual.
     '''</summary>
     '''<remarks>
@@ -212,6 +266,15 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents RequiredFieldValidator9 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
+    '''Control hddCodigoExpresionGenero.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoExpresionGenero As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control txtExpresionGenero.
     '''</summary>
     '''<remarks>
@@ -228,6 +291,15 @@ Partial Public Class RegistroSolicitud
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator10 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Control hddCodigoRangoEdad.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoRangoEdad As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
     '''Control txtRangoEdad.
@@ -257,6 +329,15 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents txtAsesoria As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control hddCodigoTipoPeticion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoTipoPeticion As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control txtTipoPeticion.
     '''</summary>
     '''<remarks>
@@ -275,6 +356,15 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents RequiredFieldValidator12 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
+    '''Control hddCodigoAreaDerecho.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoAreaDerecho As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control txtAreaDerecho.
     '''</summary>
     '''<remarks>
@@ -291,6 +381,15 @@ Partial Public Class RegistroSolicitud
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator13 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Control hddCodigoDerechos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoDerechos As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
     '''Control txtDerechos.
@@ -365,6 +464,15 @@ Partial Public Class RegistroSolicitud
     Protected WithEvents respuestaEscritaNo As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
+    '''Control hddCodigoConclusionAsesoria.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoConclusionAsesoria As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control txtConclusionAsesoria.
     '''</summary>
     '''<remarks>
@@ -381,6 +489,15 @@ Partial Public Class RegistroSolicitud
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator17 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Control hddCodigoDecision.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoDecision As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
     '''Control txtDecision.

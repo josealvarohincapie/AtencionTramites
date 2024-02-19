@@ -315,7 +315,7 @@
                                                         <div class="form-group" id="divCanalAtencion">
                                                             <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblCanalAtencion" name="lblCanalAtencion" default_label="Canal de atención:">Canal de atención:</label>
                                                             <div class="input-group input-group-sm">
-                                                                <input type="hidden" id="hiddenCanalAtencion" value="" />
+                                                                <asp:HiddenField ID="hddCodigoCanalAtencion" runat="server" />
                                                                 <asp:TextBox ID="txtCanalAtencion" runat="server" ReadOnly="true" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtCanalAtencion" ErrorMessage="El canal de atención es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                 <span class="input-group-btn">
@@ -337,7 +337,7 @@
                                                         <div class="form-group" id="divTipoSolicitante">
                                                             <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblTipoSolicitante" name="lblTipoSolicitante" default_label="Tipo de solicitante:">Tipo de solicitante:</label>
                                                             <div class="input-group input-group-sm">
-                                                                <input type="hidden" id="hiddenTipoSolicitante" value="" />
+                                                                <asp:HiddenField ID="hddCodigoTipoSolicitante" runat="server" />
                                                                 <asp:TextBox ID="txtTipoSolicitante" runat="server" Text=""  CssClass="form-control TextBoxCatalogo inputSuccess" ReadOnly="true"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtTipoSolicitante" ErrorMessage="El tipo de solicitante es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                 <span class="input-group-btn">
@@ -359,7 +359,7 @@
                                                         <div class="form-group" id="divTipoDocumento">
                                                             <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblTipoDocumento" name="lblTipoDocumento" default_label="Tipo documento de identificación:">Tipo documento de identificación:</label>
                                                             <div class="input-group input-group-sm">
-                                                                <input type="hidden" id="hiddenTipoDocumento" value="" />
+                                                                <asp:HiddenField ID="hddCodigoTipoDocumento" runat="server" />
                                                                 <asp:TextBox ID="txtTipoDocumento" runat="server" Text="" ReadOnly="true" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtTipoDocumento" ErrorMessage="El tipo de documento es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                 <span class="input-group-btn">
@@ -408,7 +408,7 @@
                                                         <div class="form-group" id="divSexoAsignado">
                                                             <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblSexoAsignado" name="lblSexoAsignado" default_label="Sexo asignado:">Sexo asignado:</label>
                                                             <div class="input-group input-group-sm">
-                                                                <input type="hidden" id="hiddenSexoAsignado" value="" />
+                                                                <asp:HiddenField ID="hddCodigoSexoAsignado" runat="server" />
                                                                 <asp:TextBox ID="txtSexoAsignado" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtSexoAsignado" ErrorMessage="El sexo asignado es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                 <span class="input-group-btn">
@@ -424,7 +424,7 @@
                                                         <div class="form-group" id="divIdentidadGenero">
                                                             <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblIdentidadGenero" name="lblIdentidadGenero" default_label="Identidad de género:">Identidad de género:</label>
                                                             <div class="input-group input-group-sm">
-                                                                <input type="hidden" id="hiddenIdentidadGenero" value="" />
+                                                                <asp:HiddenField ID="hddCodigoIdentidadGenero" runat="server" />
                                                                 <asp:TextBox ID="txtIdentidadGenero" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtIdentidadGenero" ErrorMessage="La identidad de género es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                 <span class="input-group-btn">
@@ -440,7 +440,7 @@
                                                         <div class="form-group" id="divOrientacionSexual">
                                                             <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblOrientacionSexual" name="lblOrientacionSexual" default_label="Orientación sexual:">Orientación sexual:</label>
                                                             <div class="input-group input-group-sm">
-                                                                <input type="hidden" id="hiddenOrientacionSexual" value="" />
+                                                                <asp:HiddenField ID="hddCodigoOrientacionSexual" runat="server" />
                                                                 <asp:TextBox ID="txtOrientacionSexual" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtOrientacionSexual" ErrorMessage="La orientación sexual es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                 <span class="input-group-btn">
@@ -456,7 +456,7 @@
                                                         <div class="form-group" id="divExpresionGenero">
                                                             <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblExpresionGenero" name="lblExpresionGenero" default_label="Expresión de género :">Expresión de género :</label>
                                                             <div class="input-group input-group-sm">
-                                                                <input type="hidden" id="hiddenExpresionGenero" value="" />
+                                                                <asp:HiddenField ID="hddCodigoExpresionGenero" runat="server" />
                                                                 <asp:TextBox ID="txtExpresionGenero" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtExpresionGenero" ErrorMessage="La expresión de género es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                 <span class="input-group-btn">
@@ -472,7 +472,7 @@
                                                         <div class="form-group" id="divRangoEdad">
                                                             <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblRangoEdad" name="lblRangoEdad" default_label="Rango de edad:">Rango de edad:</label>
                                                             <div class="input-group input-group-sm">
-                                                                <input type="hidden" id="hiddenRangoEdad" value="" />
+                                                                <asp:HiddenField ID="hddCodigoRangoEdad" runat="server" />
                                                                 <asp:TextBox ID="txtRangoEdad" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtRangoEdad" ErrorMessage="El rango de edad es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                 <span class="input-group-btn">
@@ -547,9 +547,9 @@
                                                 <div class="form-group" id="divTipoPeticion">
                                                     <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblTipoPeticion" name="lblTipoPeticion" default_label="Tipo de petición:">Tipo de petición:</label>
                                                     <div class="input-group input-group-sm">
-                                                        <input type="hidden" id="hiddenTipoPeticion" value="" />
+                                                        <asp:HiddenField ID="hddCodigoTipoPeticion" runat="server" />
                                                         <asp:TextBox ID="txtTipoPeticion"  runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
-                                                       <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtTipoPeticion" ErrorMessage="El tipo de petición es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtTipoPeticion" ErrorMessage="El tipo de petición es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                         <span class="input-group-btn">
                                                             <button type="button" id="btn_LimpiarTipoPeticion" onclick="limpiarCampo('<%= txtTipoPeticion.ClientID %>')" class="btn btn-default btn-medium">
                                                                 <i class="fa fa-close"></i>
@@ -563,7 +563,7 @@
                                                 <div class="form-group" id="divAreaDerecho">
                                                     <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblAreaDerecho" name="lblAreaDerecho" default_label="Área de derecho:">Área de derecho:</label>
                                                     <div class="input-group input-group-sm">
-                                                        <input type="hidden" id="hiddenAreaDerecho" value="" />
+                                                        <asp:HiddenField ID="hddCodigoAreaDerecho" runat="server" />
                                                         <asp:TextBox ID="txtAreaDerecho"  runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtAreaDerecho" ErrorMessage="El Remitente es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                         <span class="input-group-btn">
@@ -579,7 +579,7 @@
                                                 <div class="form-group" id="divDerechos">
                                                      <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblDerechos" name="lblDerechos" default_label="Derechos:">Derechos:</label>
                                                      <div class="input-group input-group-sm">
-                                                         <input type="hidden" id="hiddenDerechos" value="" />
+                                                         <asp:HiddenField ID="hddCodigoDerechos" runat="server" />
                                                          <asp:TextBox ID="txtDerechos"  runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                          <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtDerechos" ErrorMessage="El derecho es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                          <span class="input-group-btn">
@@ -617,7 +617,7 @@
                                                 <div class="form-group" id="divConclusionAsesoria">
                                                  <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblConclusionAsesoria" name="lblConclusionAsesoria" default_label="Conclusión Asesoria:">Conclusión Asesoria:</label>
                                                  <div class="input-group input-group-sm">
-                                                     <input type="hidden" id="hiddenConclusionAsesoria" value="" />
+                                                     <asp:HiddenField ID="hddCodigoConclusionAsesoria" runat="server" />
                                                      <asp:TextBox ID="txtConclusionAsesoria" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="txtConclusionAsesoria" ErrorMessage="La conclusión de la asesoría es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                      <span class="input-group-btn">
@@ -642,7 +642,7 @@
                                                <div class="form-group" id="divDecision">
                                                    <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblDecision" name="lblDecision" default_label="Decisión:">Decisión:</label>
                                                    <div class="input-group input-group-sm">
-                                                       <input type="hidden" id="hiddenDecision" value="" />
+                                                       <asp:HiddenField ID="hddCodigoDecision" runat="server" />
                                                        <asp:TextBox ID="txtDecision" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="txtDecision" ErrorMessage="La decisión es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                        <span class="input-group-btn">
