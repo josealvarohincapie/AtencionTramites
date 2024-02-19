@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" ValidateRequest="false" CodeBehind="RegistroDePeticionarios.aspx.vb" Inherits="Web.RegistroSolicitud" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" ValidateRequest="false" CodeBehind="RegistroDePeticionarios.aspx.vb" Inherits="Web.RegistroDePeticionarios" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <script runat="server">
     Dim item As Integer = 0
@@ -58,6 +58,7 @@
         function imprimirPagina() {
             window.print();
         }
+        /*
         function validarFormulario() {
             var mensajeError = "";
 
@@ -86,12 +87,12 @@
             //Pestaña 4
             var decision = document.getElementById('txtDecision').text;
             var comentario = document.getElementById('txtComentarios').text;
-            
+            mensajeError ='';
             //validaciones
             if ((tipoPeticion == "" || tipoPeticion == undefined) || (areaDerecho == "" || areaDerecho == undefined) ||
                 (derechos == "" || derechos == undefined) || (descripcionAsesorias == "" || descripcionAsesorias == undefined) ||
                 (observacion == "" || observacion == undefined) || (conclusionAsesoria == "" || conclusionAsesoria == undefined)) {
-                mensajeError = 'Falta información en Registro de peticionarios, favor completar para continuar'
+                mensajeError = 'Falta información en Clasificación de la petición, favor completar para continuar'
                 
                 if ((decision == "" || decision == undefined) || (comentario == "" || comentario == undefined)) {
                     mensajeError = mensajeError + '\nFalta información en la pestaña de Decisión, favor completar para continuar'
@@ -103,7 +104,61 @@
             }
            
         }
-    
+    */
+                function validarFormulario() {
+    // Forzar la validación de ASP.NET
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator1.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator2.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator3.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator4.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator5.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator6.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator7.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator8.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator9.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator10.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator11.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator12.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator13.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator14.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator15.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator16.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator17.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator18.ClientID%>'));
+	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator19.ClientID%>'));
+   
+
+    // Verificar si el validador está válido
+	
+    var esValidoList = [];
+	esValidoList[0]=document.getElementById('<%=RequiredFieldValidator1.ClientID%>').isvalid;
+	esValidoList[1]=document.getElementById('<%=RequiredFieldValidator2.ClientID%>').isvalid;
+	esValidoList[2]=document.getElementById('<%=RequiredFieldValidator3.ClientID%>').isvalid;
+	esValidoList[3]=document.getElementById('<%=RequiredFieldValidator4.ClientID%>').isvalid;
+	esValidoList[4]=document.getElementById('<%=RequiredFieldValidator5.ClientID%>').isvalid;
+	esValidoList[5]=document.getElementById('<%=RequiredFieldValidator6.ClientID%>').isvalid;
+	esValidoList[6]=document.getElementById('<%=RequiredFieldValidator7.ClientID%>').isvalid;
+	esValidoList[7]=document.getElementById('<%=RequiredFieldValidator8.ClientID%>').isvalid;
+	esValidoList[8]=document.getElementById('<%=RequiredFieldValidator9.ClientID%>').isvalid;
+	esValidoList[9]=document.getElementById('<%=RequiredFieldValidator10.ClientID%>').isvalid;
+	esValidoList[10]=document.getElementById('<%=RequiredFieldValidator11.ClientID%>').isvalid;
+	esValidoList[11]=document.getElementById('<%=RequiredFieldValidator12.ClientID%>').isvalid;
+	esValidoList[12]=document.getElementById('<%=RequiredFieldValidator13.ClientID%>').isvalid;
+	esValidoList[13]=document.getElementById('<%=RequiredFieldValidator14.ClientID%>').isvalid;
+	esValidoList[14]=document.getElementById('<%=RequiredFieldValidator15.ClientID%>').isvalid;
+	esValidoList[15]=document.getElementById('<%=RequiredFieldValidator16.ClientID%>').isvalid;
+	esValidoList[16]=document.getElementById('<%=RequiredFieldValidator17.ClientID%>').isvalid;
+	esValidoList[17]=document.getElementById('<%=RequiredFieldValidator18.ClientID%>').isvalid;
+	esValidoList[18]=document.getElementById('<%=RequiredFieldValidator19.ClientID%>').isvalid;
+var salida =true;
+for(i=0,i< esValidoList.length, i++){
+		if(esValidoList[i]==false){
+				salida= false;
+				break;
+		}
+		
+}
+ return salida;
 
        
     </script>
@@ -273,8 +328,8 @@
                     <button type="button" class="btn btn-success btn-sm" id="btnBotones_Archivar">
                         <strong>&nbsp;<i class="fa fa-circle-o"></i><span class="hidden-sm hidden-xs">&nbsp;Archivar</span></strong>
                     </button>
-                    <button type="button" class="btn btn-danger btn-sm" id="btnBotones_Completar" onclick="return validarFormulario();">
-                        <strong>&nbsp;<i class="fa fa-circle-o"></i><span class="hidden-sm hidden-xs" >&nbsp;Enviar</span></strong>
+                    <button type="button" class="btn btn-danger btn-sm" id="btnBotones_Completar" onclick="return validarFormulario()">
+                        <strong> <i class="fa fa-circle-o"></i><span class="hidden-sm hidden-xs" >&nbsp;Enviar</span></strong>
                     </button>
 
                 </div>
@@ -541,7 +596,7 @@
                                                 <div class="form-group " id="divAsesorias">
                                                         <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblAsesoria" name="lblAsesoria" default_label="Asesorías:">Asesorías:</label>
                                                     <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 help-text">
-                                                        <asp:TextBox ID="txtAsesoria" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework" Text="La asesoría consiste en orientar al peticionario en el ejercicio y defensa de los derechos humanos, ante las autoridades competentes o ante las entidades de carácter privado." ReadOnly="true"></asp:TextBox>
+                                                        <asp:TextBox ID="txtAsesoria" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework" Text="La asesoría consiste en orientar al peticionario en el ejercicio y defensa de los derechos humanos, ante las autoridades competentes o ante las entidades de carácter privado." ></asp:TextBox>
                                                     </div>
                                             </div>
                                                 <div class="form-group" id="divTipoPeticion">
@@ -549,7 +604,7 @@
                                                     <div class="input-group input-group-sm">
                                                         <asp:HiddenField ID="hddCodigoTipoPeticion" runat="server" />
                                                         <asp:TextBox ID="txtTipoPeticion"  runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
-                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtTipoPeticion" ErrorMessage="El tipo de petición es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtTipoPeticion" ErrorMessage="El tipo de petición es obligatorio" ToolTip="El tipo de petición es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>
                                                         <span class="input-group-btn">
                                                             <button type="button" id="btn_LimpiarTipoPeticion" onclick="limpiarCampo('<%= txtTipoPeticion.ClientID %>')" class="btn btn-default btn-medium">
                                                                 <i class="fa fa-close"></i>
@@ -602,7 +657,7 @@
                                                 <div class="form-group " id="divObservaciones">
                                                     <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblObservaciones" name="lblObservaciones" default_label="Observaciones:">Observaciones:</label>
                                                     <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                        <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
+                                                        <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework" ></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ControlToValidate="txtObservaciones" ErrorMessage="La observación es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                         </div>
                                                 </div>
@@ -618,7 +673,7 @@
                                                  <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblConclusionAsesoria" name="lblConclusionAsesoria" default_label="Conclusión Asesoria:">Conclusión Asesoria:</label>
                                                  <div class="input-group input-group-sm">
                                                      <asp:HiddenField ID="hddCodigoConclusionAsesoria" runat="server" />
-                                                     <asp:TextBox ID="txtConclusionAsesoria" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                     <asp:TextBox ID="txtConclusionAsesoria" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ControlToValidate="txtConclusionAsesoria" ErrorMessage="La conclusión de la asesoría es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                      <span class="input-group-btn">
                                                          <button type="button" id="btn_LimpiarConclusionAsesoria" onclick="limpiarCampo('<%= txtConclusionAsesoria.ClientID %>')" class="btn btn-default btn-medium">
@@ -643,7 +698,7 @@
                                                    <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblDecision" name="lblDecision" default_label="Decisión:">Decisión:</label>
                                                    <div class="input-group input-group-sm">
                                                        <asp:HiddenField ID="hddCodigoDecision" runat="server" />
-                                                       <asp:TextBox ID="txtDecision" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                       <asp:TextBox ID="txtDecision"  runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ControlToValidate="txtDecision" ErrorMessage="La decisión es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                        <span class="input-group-btn">
                                                            <button type="button" id="btn_LimpiarDecision" onclick="limpiarCampo('<%= txtDecision.ClientID %>')" class="btn btn-default btn-medium">
@@ -658,7 +713,7 @@
                                                <div class="form-group " id="divComentarios">
                                                    <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblComentarios" name="lblComentarios" default_label="Comentarios:">Comentarios:</label>
                                                    <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                       <asp:TextBox ID="txtComentarios" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
+                                                       <asp:TextBox ID="txtComentarios" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework" ></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="txtComentarios" ErrorMessage="El comentario es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                    </div>
                                                </div>

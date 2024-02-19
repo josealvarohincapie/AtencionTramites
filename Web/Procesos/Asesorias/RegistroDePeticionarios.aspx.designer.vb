@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class RegistroSolicitud
+Partial Public Class RegistroDePeticionarios
 
     '''<summary>
     '''Control frmRadicado.
@@ -21,15 +21,6 @@ Partial Public Class RegistroSolicitud
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents frmRadicado As Global.System.Web.UI.HtmlControls.HtmlForm
-
-    '''<summary>
-    '''Control txtNumeroRadicado.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtNumeroRadicado As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control RequiredFieldValidator1.
@@ -534,13 +525,4 @@ Partial Public Class RegistroSolicitud
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator19 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control txtCodigoSolicitud.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtCodigoSolicitud As Global.System.Web.UI.WebControls.HiddenField
 End Class
