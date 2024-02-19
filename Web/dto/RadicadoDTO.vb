@@ -47,7 +47,8 @@ Namespace Modelo.dto
         Private _municipioHechos As CatalogoDTO
         Private _formato As CatalogoDTO
         Private _observaciones As String
-        Private _cedula As String
+        Private _canalAtencion As CatalogoDTO
+        Private _expresionGenero As CatalogoDTO
 
         Public Property CodigoSolicitud As Long
             Get
@@ -460,6 +461,24 @@ Namespace Modelo.dto
             End Get
             Set(value As String)
                 _identificacion = value
+            End Set
+        End Property
+
+        Public Property CanalAtencion As CatalogoDTO
+            Get
+                Return _canalAtencion
+            End Get
+            Set(value As CatalogoDTO)
+                _canalAtencion = value
+            End Set
+        End Property
+
+        Public Property ExpresionGenero As CatalogoDTO
+            Get
+                Return _expresionGenero
+            End Get
+            Set(value As CatalogoDTO)
+                _expresionGenero = value
             End Set
         End Property
     End Class

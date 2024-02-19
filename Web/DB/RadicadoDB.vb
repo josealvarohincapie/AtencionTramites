@@ -23,7 +23,7 @@ Public Class RadicadoDB
                     Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
                     LogWriter.WriteLog("RadicadoDB", nombreMetodo & ":" & "Query no return data.")
                 Else
-                    s = ParseSolicitud(dataSet.Tables(0).Rows(0))
+                    radicado = ParseSolicitud(dataSet.Tables(0).Rows(0))
                 End If
             Else
                 Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
@@ -38,7 +38,7 @@ Public Class RadicadoDB
             dataSet = Nothing
         End Try
 
-        Return s
+        Return radicado
     End Function
 
     ''' <summary>
@@ -49,58 +49,259 @@ Public Class RadicadoDB
     Private Shared Function ParseSolicitud(ByRef row As DataRow) As RadicadoDTO
         Dim radicado As New RadicadoDTO()
         radicado.CodigoSolicitud = ParseInteger(row("CodigoSolicitud"))
-        'radicado.TipoTramite = ParseString(row("AREA"))
-        'radicado.Fuente = ParseString(row("TIPOPRODUCTO"))
-        'radicado.Incidente = ParseBoolean(row("PARTICIPACIONACC"))
-        'radicado.NumeroRadicado = ParseInteger(row("TIPOID"))
-        'radicado.Fecha = ParseString(row("TIPOIDDES"))
-        'radicado.Remitente = ParseString(row("IDENTIFICACION"))
-        'radicado.Asunto = ParseString(row("RAZONSOCIAL"))
-        'radicado.Direccion = ParseString(row("PAIS"))
-        'radicado.Telefono = ParseString(row("CIUDAD"))
-        'radicado.Identificacion = ParseString(row("CORREO"))
-        'radicado.Entidad = ParseString(row("DIRECCION"))
-        'radicado.Correo = ParseString(row("TELEFONO"))
-        'radicado.Folios = ParseString(row("ACTIVIDADID"))
-        'radicado.Anexos = ParseString(row("ACTIVIDADID")) + " - " + ParseString(row("ACTIVIDADDES"))
-        'radicado.EsUrgente = ParseString(row("TIPOCOINCIDENCIA")).Split(New String() {","}, StringSplitOptionradicado.RemoveEmptyEntries)
-        'radicado.TipoDocumento = ParseString(row("REPORTE"))
-        'radicado.SubTipoDocumento = ParseInteger(row("SEMEJANZA"))
-        'radicado.GrupoEtnico = ParseString(row("RESPONSABLE_CLIENTE"))
-        'radicado.SituacionDiscapacidad = ParseString(row("RESPONSABLE_SOLICITUD"))
-        'radicado.SujetoEspecialProteccion = ParseInteger(row("DIVISA"))
-        'radicado.EstadoCivil = ParseDecimal(row("VALOR_DIVISA"))
-        'radicado.NivelEstudio = ParseDate(row("FECHA_SOLICITUD"))
-        'radicado.Discapacidad = ParseInteger(row("TIPOPERSONA"))
-        'radicado.GrupoEtnicoReconoce = ParseInteger(row("DIVISA"))
-        'radicado.Genero = ParseDecimal(row("VALOR_DIVISA"))
-        'radicado.Sexo = ParseDate(row("FECHA_SOLICITUD"))
-        'radicado.OrientacionSexual = ParseInteger(row("TIPOPERSONA"))
-        'radicado.Procedencia = ParseInteger(row("DIVISA"))
-        'radicado.RangoEdad = ParseDecimal(row("VALOR_DIVISA"))
-        'radicado.TipoSolicitante = ParseDate(row("FECHA_SOLICITUD"))
-        'radicado.EsAnonimo = ParseInteger(row("TIPOPERSONA"))
 
-        'radicado.TipoDocId = ParseInteger(row("DIVISA"))
-        'radicado.Pais = ParseDecimal(row("VALOR_DIVISA"))
-        'radicado.Dpto = ParseDate(row("FECHA_SOLICITUD"))
-        'radicado.Ciudad = ParseInteger(row("TIPOPERSONA"))
-        'radicado.MedioRespuesta = ParseInteger(row("DIVISA"))
-        'radicado.TipoPqrs = ParseDecimal(row("VALOR_DIVISA"))
-        'radicado.Resumen = ParseDate(row("FECHA_SOLICITUD"))
-        'radicado.DescripcionHechos = ParseInteger(row("TIPOPERSONA"))
-        'radicado.DptoHechos = ParseInteger(row("DIVISA"))
-        'radicado.MunicipioHechos = ParseDecimal(row("VALOR_DIVISA"))
-        'radicado.Formato = ParseDate(row("FECHA_SOLICITUD"))
-        'radicado.Observaciones = ParseInteger(row("TIPOPERSONA"))
+        If IsDBNull(row("CodigoTipoTramite")) Then
+            radicado.TipoTramite = Nothing
+        Else
+            radicado.TipoTramite = New CatalogoDTO()
+            radicado.TipoTramite.Codigo = ParseString(row("CodigoTipoTramite"))
+            radicado.TipoTramite.Nombre = ParseString(row("NombreTipoTramite"))
+        End If
 
-        ''If IsDBNull(row("MONTO_RECOMENDADO")) Then
-        '' radicado.MontoRecomendado = Nothing
-        ''Else
-        '' radicado.MontoRecomendado = DirectCast(row("MONTO_RECOMENDADO"), Decimal)
-        ''End If
+        If IsDBNull(row("CodigoFuente")) Then
+            radicado.Fuente = Nothing
+        Else
+            radicado.Fuente = New CatalogoDTO()
+            radicado.Fuente.Codigo = ParseString(row("CodigoFuente"))
+            radicado.Fuente.Nombre = ParseString(row("NombreFuente"))
+        End If
 
-        Return s
+        radicado.Incidente = ParseInteger(row("Incidente"))
+
+        If IsDBNull(row("NumeroRadicado")) Then
+            radicado.NumeroRadicado = ""
+        Else
+            radicado.NumeroRadicado = ParseString(row("NumeroRadicado"))
+        End If
+
+        If IsDBNull(row("Fecha")) Then
+            radicado.Fecha = Nothing
+        Else
+            radicado.Fecha = ParseDate(row("Fecha"))
+        End If
+
+        radicado.Remitente = ParseString(row("Remitente"))
+        radicado.Asunto = ParseString(row("Asunto"))
+        radicado.Direccion = ParseString(row("Direccion"))
+        radicado.Telefono = ParseString(row("Telefono"))
+        radicado.Identificacion = ParseString(row("NumeroDocumentoIdentificacion"))
+
+        If IsDBNull(row("CodigoEntidad")) Then
+            radicado.Entidad = Nothing
+        Else
+            radicado.Entidad = New CatalogoDTO()
+            radicado.Entidad.Codigo = ParseString(row("CodigoEntidad"))
+            radicado.Entidad.Nombre = ParseString(row("NombreEntidad"))
+        End If
+
+        radicado.Correo = ParseString(row("Correo"))
+        radicado.Folios = ParseInteger(row("Folios"))
+        radicado.Anexos = ParseString(row("Anexos"))
+        radicado.EsUrgente = ParseBoolean(row("EsUrgente"))
+
+        If IsDBNull(row("CodigoTipoDocumento")) Then
+            radicado.TipoDocumento = Nothing
+        Else
+            radicado.TipoDocumento = New CatalogoDTO()
+            radicado.TipoDocumento.Codigo = ParseString(row("CodigoTipoDocumento"))
+            radicado.TipoDocumento.Nombre = ParseString(row("NombreTipoDocumento"))
+        End If
+
+        If IsDBNull(row("CodigoSubTipoDocumento")) Then
+            radicado.SubTipoDocumento = Nothing
+        Else
+            radicado.SubTipoDocumento = New CatalogoDTO()
+            radicado.SubTipoDocumento.Codigo = ParseString(row("CodigoSubTipoDocumento"))
+            radicado.SubTipoDocumento.Nombre = ParseString(row("NombreSubTipoDocumento"))
+        End If
+
+        If IsDBNull(row("CodigoGrupoEtnico")) Then
+            radicado.GrupoEtnico = Nothing
+        Else
+            radicado.GrupoEtnico = New CatalogoDTO()
+            radicado.GrupoEtnico.Codigo = ParseString(row("CodigoGrupoEtnico"))
+            radicado.GrupoEtnico.Nombre = ParseString(row("NombreGrupoEtnico"))
+        End If
+
+        If IsDBNull(row("CodigoSituacionDiscapacidad")) Then
+            radicado.SituacionDiscapacidad = Nothing
+        Else
+            radicado.SituacionDiscapacidad = New CatalogoDTO()
+            radicado.SituacionDiscapacidad.Codigo = ParseString(row("CodigoSituacionDiscapacidad"))
+            radicado.SituacionDiscapacidad.Nombre = ParseString(row("NombreSituacionDiscapacidad"))
+        End If
+
+        If IsDBNull(row("CodigoSujetoEspecialProteccion")) Then
+            radicado.SujetoEspecialProteccion = Nothing
+        Else
+            radicado.SujetoEspecialProteccion = New CatalogoDTO()
+            radicado.SujetoEspecialProteccion.Codigo = ParseString(row("CodigoSujetoEspecialProteccion"))
+            radicado.SujetoEspecialProteccion.Nombre = ParseString(row("NombreSujetoEspecialProteccion"))
+        End If
+
+        If IsDBNull(row("CodigoEstadoCivil")) Then
+            radicado.EstadoCivil = Nothing
+        Else
+            radicado.EstadoCivil = New CatalogoDTO()
+            radicado.EstadoCivil.Codigo = ParseString(row("CodigoEstadoCivil"))
+            radicado.EstadoCivil.Nombre = ParseString(row("NombreEstadoCivil"))
+        End If
+
+        If IsDBNull(row("CodigoNivelEstudio")) Then
+            radicado.NivelEstudio = Nothing
+        Else
+            radicado.NivelEstudio = New CatalogoDTO()
+            radicado.NivelEstudio.Codigo = ParseString(row("CodigoNivelEstudio"))
+            radicado.NivelEstudio.Nombre = ParseString(row("NombreNivelEstudio"))
+        End If
+
+        radicado.Discapacidad = ParseBoolean(row("Discapacidad"))
+        radicado.GrupoEtnicoReconoce = ParseBoolean(row("GrupoEtnicoReconoce"))
+
+        If IsDBNull(row("CodigoGenero")) Then
+            radicado.Genero = Nothing
+        Else
+            radicado.Genero = New CatalogoDTO()
+            radicado.Genero.Codigo = ParseString(row("CodigoGenero"))
+            radicado.Genero.Nombre = ParseString(row("NombreGenero"))
+        End If
+
+        If IsDBNull(row("CodigoSexo")) Then
+            radicado.Sexo = Nothing
+        Else
+            radicado.Sexo = New CatalogoDTO()
+            radicado.Sexo.Codigo = ParseString(row("CodigoSexo"))
+            radicado.Sexo.Nombre = ParseString(row("NombreSexo"))
+        End If
+
+        If IsDBNull(row("CodigoOrientacionSexual")) Then
+            radicado.OrientacionSexual = Nothing
+        Else
+            radicado.OrientacionSexual = New CatalogoDTO()
+            radicado.OrientacionSexual.Codigo = ParseString(row("CodigoOrientacionSexual"))
+            radicado.OrientacionSexual.Nombre = ParseString(row("NombreOrientacionSexual"))
+        End If
+
+        If IsDBNull(row("CodigoProcedencia")) Then
+            radicado.Procedencia = Nothing
+        Else
+            radicado.Procedencia = New CatalogoDTO()
+            radicado.Procedencia.Codigo = ParseString(row("CodigoProcedencia"))
+            radicado.Procedencia.Nombre = ParseString(row("NombreProcedencia"))
+        End If
+
+        If IsDBNull(row("CodigoRangoEdad")) Then
+            radicado.RangoEdad = Nothing
+        Else
+            radicado.RangoEdad = New CatalogoDTO()
+            radicado.RangoEdad.Codigo = ParseString(row("CodigoRangoEdad"))
+            radicado.RangoEdad.Nombre = ParseString(row("NombreRangoEdad"))
+        End If
+
+        If IsDBNull(row("CodigoTipoSolicitante")) Then
+            radicado.TipoSolicitante = Nothing
+        Else
+            radicado.TipoSolicitante = New CatalogoDTO()
+            radicado.TipoSolicitante.Codigo = ParseString(row("CodigoTipoSolicitante"))
+            radicado.TipoSolicitante.Nombre = ParseString(row("NombreTipoSolicitante"))
+        End If
+
+        radicado.EsAnonimo = ParseBoolean(row("EsAnonimo"))
+
+        If IsDBNull(row("CodigoTipoDocId")) Then
+            radicado.TipoDocId = Nothing
+        Else
+            radicado.TipoDocId = New CatalogoDTO()
+            radicado.TipoDocId.Codigo = ParseString(row("CodigoTipoDocId"))
+            radicado.TipoDocId.Nombre = ParseString(row("NombreTipoDocId"))
+        End If
+
+        If IsDBNull(row("CodigoPais")) Then
+            radicado.Pais = Nothing
+        Else
+            radicado.Pais = New CatalogoDTO()
+            radicado.Pais.Codigo = ParseString(row("CodigoPais"))
+            radicado.Pais.Nombre = ParseString(row("NombrePais"))
+        End If
+
+        If IsDBNull(row("CodigoDpto")) Then
+            radicado.TipoTramite = Nothing
+        Else
+            radicado.Dpto = New CatalogoDTO()
+            radicado.Dpto.Codigo = ParseString(row("CodigoDpto"))
+            radicado.Dpto.Nombre = ParseString(row("NombreDpto"))
+        End If
+
+        If IsDBNull(row("CodigoCiudad")) Then
+            radicado.Ciudad = Nothing
+        Else
+            radicado.Ciudad = New CatalogoDTO()
+            radicado.Ciudad.Codigo = ParseString(row("CodigoCiudad"))
+            radicado.Ciudad.Nombre = ParseString(row("NombreCiudad"))
+        End If
+
+        If IsDBNull(row("CodigoMedioRespuesta")) Then
+            radicado.MedioRespuesta = Nothing
+        Else
+            radicado.MedioRespuesta = New CatalogoDTO()
+            radicado.MedioRespuesta.Codigo = ParseString(row("CodigoMedioRespuesta"))
+            radicado.MedioRespuesta.Nombre = ParseString(row("NombreMedioRespuesta"))
+        End If
+
+        If IsDBNull(row("CodigoTipoPqrs")) Then
+            radicado.TipoPqrs = Nothing
+        Else
+            radicado.TipoPqrs = New CatalogoDTO()
+            radicado.TipoPqrs.Codigo = ParseString(row("CodigoTipoPqrs"))
+            radicado.TipoPqrs.Nombre = ParseString(row("NombreTipoPqrs"))
+        End If
+
+        radicado.Resumen = ParseString(row("Resumen"))
+        radicado.DescripcionHechos = ParseString(row("DescripcionHechos"))
+
+        If IsDBNull(row("CodigoDptoHechos")) Then
+            radicado.DptoHechos = Nothing
+        Else
+            radicado.DptoHechos = New CatalogoDTO()
+            radicado.DptoHechos.Codigo = ParseString(row("CodigoDptoHechos"))
+            radicado.DptoHechos.Nombre = ParseString(row("NombreDptoHechos"))
+        End If
+
+        If IsDBNull(row("CodigoMunicipioHechos")) Then
+            radicado.MunicipioHechos = Nothing
+        Else
+            radicado.MunicipioHechos = New CatalogoDTO()
+            radicado.MunicipioHechos.Codigo = ParseString(row("CodigoMunicipioHechos"))
+            radicado.MunicipioHechos.Nombre = ParseString(row("NombreMunicipioHechos"))
+        End If
+
+        If IsDBNull(row("CodigoFormato")) Then
+            radicado.Formato = Nothing
+        Else
+            radicado.Formato = New CatalogoDTO()
+            radicado.Formato.Codigo = ParseString(row("CodigoFormato"))
+            radicado.Formato.Nombre = ParseString(row("NombreFormato"))
+        End If
+
+        radicado.Observaciones = ParseString(row("Observaciones"))
+
+        If IsDBNull(row("CodigoCanalAtencion")) Then
+            radicado.CanalAtencion = Nothing
+        Else
+            radicado.CanalAtencion = New CatalogoDTO()
+            radicado.CanalAtencion.Codigo = ParseString(row("CodigoCanalAtencion"))
+            radicado.CanalAtencion.Nombre = ParseString(row("NombreCanalAtencion"))
+        End If
+
+        If IsDBNull(row("CodigoExpresionGenero")) Then
+            radicado.ExpresionGenero = Nothing
+        Else
+            radicado.ExpresionGenero = New CatalogoDTO()
+            radicado.ExpresionGenero.Codigo = ParseString(row("CodigoExpresionGenero"))
+            radicado.ExpresionGenero.Nombre = ParseString(row("NombreExpresionGenero"))
+        End If
+
+        Return radicado
     End Function
 
     Public Shared Function ParseInteger(ByVal o As Object) As Integer

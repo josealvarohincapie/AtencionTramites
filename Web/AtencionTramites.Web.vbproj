@@ -248,19 +248,19 @@
     <Compile Include="dto\CatalogoDTO.vb" />
     <Compile Include="dto\RadicadoDTO.vb" />
     <Compile Include="Helpers\RadicadoHelper.vb" />
-    <Compile Include="Procesos\Asesorias\RadicadoSolicitud.aspx.designer.vb">
-      <DependentUpon>RadicadoSolicitud.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Procesos\Asesorias\RadicadoSolicitud.aspx.vb">
-      <DependentUpon>RadicadoSolicitud.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.designer.vb">
       <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.vb">
       <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Procesos\Asesorias\RadicadoSolicitud.aspx.designer.vb">
+      <DependentUpon>RadicadoSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\Asesorias\RadicadoSolicitud.aspx.vb">
+      <DependentUpon>RadicadoSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Service References\App_Code\Catalogo.vb" />
     <Compile Include="Service References\App_Code\ComplementariosHelper.vb" />

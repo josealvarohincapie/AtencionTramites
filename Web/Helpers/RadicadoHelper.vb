@@ -19,7 +19,6 @@ Public Class RadicadoHelper
 
         Try
             Dim radicado As RadicadoDTO = RadicadoHelper.ConsultarDatosRadicadoPorCodigo(form.TxtCodigoSolicitud.Value)
-            form.TxtNumeroRadicado.Text = radicado.NumeroRadicado
         Catch ex As Exception
             Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
             LogWriter.WriteLog("RadicadoHelper - " & nombreMetodo, ex)
@@ -27,8 +26,15 @@ Public Class RadicadoHelper
 
     End Sub
 
-    Private Shared Function ConsultarDatosRadicadoPorCodigo(codigoSolicitud As Int64) As RadicadoDTO
-        Dim radicado As RadicadoDTO = RadicadoDB.ConsultarDatosRadicadoPorCodigo(codigoSolicitud)
+    Public Shared Function ConsultarDatosRadicadoPorCodigo(codigoSolicitud As Int64) As RadicadoDTO
+        Dim radicado As RadicadoDTO = Nothing
+        Try
+            radicado = RadicadoDB.ConsultarDatosRadicadoPorCodigo(codigoSolicitud)
+        Catch ex As Exception
+            Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
+            LogWriter.WriteLog("RadicadoHelper -" & nombreMetodo, ex)
+        End Try
+
         Return radicado
     End Function
 

@@ -4,6 +4,7 @@ Imports System.Data.SqlClient
 Imports System.Configuration.ConfigurationManager
 Imports System.Web.UI.WebControls
 Imports LogWriterHelper
+Imports System.Web.Configuration
 
 Public Class HelperSQL
 
