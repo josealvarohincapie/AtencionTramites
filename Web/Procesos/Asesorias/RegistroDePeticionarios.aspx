@@ -105,61 +105,61 @@
            
         }
     */
-                function validarFormulario() {
-    // Forzar la validación de ASP.NET
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator1.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator2.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator3.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator4.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator5.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator6.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator7.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator8.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator9.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator10.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator11.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator12.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator13.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator14.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator15.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator16.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator17.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator18.ClientID%>'));
-	ValidatorValidate(document.getElementById('<%=RequiredFieldValidator19.ClientID%>'));
-   
+        function validarFormulario() {
+            // Forzar la validación de ASP.NET
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator1.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator2.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator3.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator4.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator5.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator6.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator7.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator8.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator9.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator10.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator11.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator12.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator13.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator14.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator15.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator16.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator17.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator18.ClientID%>'));
+            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator19.ClientID%>'));
 
-    // Verificar si el validador está válido
-	
-    var esValidoList = [];
-	esValidoList[0]=document.getElementById('<%=RequiredFieldValidator1.ClientID%>').isvalid;
-	esValidoList[1]=document.getElementById('<%=RequiredFieldValidator2.ClientID%>').isvalid;
-	esValidoList[2]=document.getElementById('<%=RequiredFieldValidator3.ClientID%>').isvalid;
-	esValidoList[3]=document.getElementById('<%=RequiredFieldValidator4.ClientID%>').isvalid;
-	esValidoList[4]=document.getElementById('<%=RequiredFieldValidator5.ClientID%>').isvalid;
-	esValidoList[5]=document.getElementById('<%=RequiredFieldValidator6.ClientID%>').isvalid;
-	esValidoList[6]=document.getElementById('<%=RequiredFieldValidator7.ClientID%>').isvalid;
-	esValidoList[7]=document.getElementById('<%=RequiredFieldValidator8.ClientID%>').isvalid;
-	esValidoList[8]=document.getElementById('<%=RequiredFieldValidator9.ClientID%>').isvalid;
-	esValidoList[9]=document.getElementById('<%=RequiredFieldValidator10.ClientID%>').isvalid;
-	esValidoList[10]=document.getElementById('<%=RequiredFieldValidator11.ClientID%>').isvalid;
-	esValidoList[11]=document.getElementById('<%=RequiredFieldValidator12.ClientID%>').isvalid;
-	esValidoList[12]=document.getElementById('<%=RequiredFieldValidator13.ClientID%>').isvalid;
-	esValidoList[13]=document.getElementById('<%=RequiredFieldValidator14.ClientID%>').isvalid;
-	esValidoList[14]=document.getElementById('<%=RequiredFieldValidator15.ClientID%>').isvalid;
-	esValidoList[15]=document.getElementById('<%=RequiredFieldValidator16.ClientID%>').isvalid;
-	esValidoList[16]=document.getElementById('<%=RequiredFieldValidator17.ClientID%>').isvalid;
-	esValidoList[17]=document.getElementById('<%=RequiredFieldValidator18.ClientID%>').isvalid;
-	esValidoList[18]=document.getElementById('<%=RequiredFieldValidator19.ClientID%>').isvalid;
-var salida =true;
-for(i=0,i< esValidoList.length, i++){
-		if(esValidoList[i]==false){
-				salida= false;
-				break;
-		}
-		
-}
- return salida;
 
+            // Verificar si el validador está válido
+
+            var esValidoList = [];
+            esValidoList[0] = document.getElementById('<%=RequiredFieldValidator1.ClientID%>').isvalid;
+            esValidoList[1] = document.getElementById('<%=RequiredFieldValidator2.ClientID%>').isvalid;
+            esValidoList[2] = document.getElementById('<%=RequiredFieldValidator3.ClientID%>').isvalid;
+            esValidoList[3] = document.getElementById('<%=RequiredFieldValidator4.ClientID%>').isvalid;
+            esValidoList[4] = document.getElementById('<%=RequiredFieldValidator5.ClientID%>').isvalid;
+            esValidoList[5] = document.getElementById('<%=RequiredFieldValidator6.ClientID%>').isvalid;
+            esValidoList[6] = document.getElementById('<%=RequiredFieldValidator7.ClientID%>').isvalid;
+            esValidoList[7] = document.getElementById('<%=RequiredFieldValidator8.ClientID%>').isvalid;
+            esValidoList[8] = document.getElementById('<%=RequiredFieldValidator9.ClientID%>').isvalid;
+            esValidoList[9] = document.getElementById('<%=RequiredFieldValidator10.ClientID%>').isvalid;
+            esValidoList[10] = document.getElementById('<%=RequiredFieldValidator11.ClientID%>').isvalid;
+            esValidoList[11] = document.getElementById('<%=RequiredFieldValidator12.ClientID%>').isvalid;
+            esValidoList[12] = document.getElementById('<%=RequiredFieldValidator13.ClientID%>').isvalid;
+            esValidoList[13] = document.getElementById('<%=RequiredFieldValidator14.ClientID%>').isvalid;
+            esValidoList[14] = document.getElementById('<%=RequiredFieldValidator15.ClientID%>').isvalid;
+            esValidoList[15] = document.getElementById('<%=RequiredFieldValidator16.ClientID%>').isvalid;
+            esValidoList[16] = document.getElementById('<%=RequiredFieldValidator17.ClientID%>').isvalid;
+            esValidoList[17] = document.getElementById('<%=RequiredFieldValidator18.ClientID%>').isvalid;
+            esValidoList[18] = document.getElementById('<%=RequiredFieldValidator19.ClientID%>').isvalid;
+            var salida = true;
+            for (i = 0; i < esValidoList.length; i++) {
+                if (esValidoList[i] == false) {
+                    salida = false;
+                    break;
+                }
+
+            }
+            return salida;
+        }
        
     </script>
     
@@ -354,8 +354,16 @@ for(i=0,i< esValidoList.length, i++){
 
                                 <div id="menu0" class="tab-pane fade in active">  
                                     <div id="divMenu0">
-                                    <h3 class="TituloAcordeon"><i class="fa fa-chevron-circle-down"></i>&nbsp;Radicado Enviado</h3>
-                                        <div class="contenedor">
+                                    <h3 class="TituloAcordeon">
+                                        <a data-toggle="collapse" href="#divCollapse0">
+                                        <i class="fa fa-chevron-circle-down">
+                                        </i>
+                                        &nbsp;Radicado Enviado
+                                        </a>
+                                        </h3>
+                                        <div id="divCollapse0" class="panel-collapse collapse">
+                                    
+                                            <div class="contenedor">
                                             <div class="columna" >
                                                 <div class="row">
                                                     <div class="col-md-10">
@@ -543,6 +551,7 @@ for(i=0,i< esValidoList.length, i++){
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
