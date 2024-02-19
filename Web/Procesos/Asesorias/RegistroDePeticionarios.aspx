@@ -69,7 +69,7 @@
             var tipoSolicitante = document.getElementById('txtTipoSolicitante').text;
             var esAnonimo = document.getElementById('chkEsAnonimo').value;
             var tipoDocumento = document.getElementById('txtTipoDocumento').text;
-            var cedula = document.getElementById('txtCedula').text;
+            var identificacion = document.getElementById('txtIdentificacion').text;
             var remitente = document.getElementById('txtRemitente').text;
             var grupoEtnico = document.getElementById('rblGrupoEtnico').value;
             var sexoAsignado = document.getElementById('txtSexoAsignado').text;
@@ -435,11 +435,11 @@
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group " id="divCedula">
-                                                            <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblCedula" name="lblEsAnonimo" default_label="Número documento de identificación:">Número documento de identificación:</label>
+                                                        <div class="form-group " id="divIdentificacion">
+                                                            <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblIdentificacion" name="lblIdentificacion" default_label="Número documento de identificación:">Número documento de identificación:</label>
                                                             <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                                <asp:TextBox ID="txtCedula" runat="server" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
-                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtCedula" ErrorMessage="El número de identificación es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                <asp:TextBox ID="txtIdentificacion" runat="server" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
+                                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtIdentificacion" ErrorMessage="El número de identificación es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                              </div>
                                                         </div>
                                                         <div class="form-group " id="divRemitente">

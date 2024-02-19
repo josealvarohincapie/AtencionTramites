@@ -31,8 +31,6 @@ Partial Public Class RegistroDePeticionarios
     '''</remarks>
     Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
-
-
     '''<summary>
     '''Control RequiredFieldValidator2.
     '''</summary>
@@ -41,8 +39,6 @@ Partial Public Class RegistroDePeticionarios
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-
 
     '''<summary>
     '''Control RequiredFieldValidator3.
@@ -53,8 +49,6 @@ Partial Public Class RegistroDePeticionarios
     '''</remarks>
     Protected WithEvents RequiredFieldValidator3 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
-
-
     '''<summary>
     '''Control RequiredFieldValidator4.
     '''</summary>
@@ -63,8 +57,6 @@ Partial Public Class RegistroDePeticionarios
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator4 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-
 
     '''<summary>
     '''Control RequiredFieldValidator5.
@@ -75,7 +67,6 @@ Partial Public Class RegistroDePeticionarios
     '''</remarks>
     Protected WithEvents RequiredFieldValidator5 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
-
     '''<summary>
     '''Control RequiredFieldValidator6.
     '''</summary>
@@ -84,8 +75,6 @@ Partial Public Class RegistroDePeticionarios
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator6 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-
 
     '''<summary>
     '''Control RequiredFieldValidator7.
@@ -122,24 +111,6 @@ Partial Public Class RegistroDePeticionarios
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RequiredFieldValidator8 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control hddCodigoOrientacionSexual.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents hddCodigoOrientacionSexual As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
-    '''Control txtOrientacionSexual.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtOrientacionSexual As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control RequiredFieldValidator9.

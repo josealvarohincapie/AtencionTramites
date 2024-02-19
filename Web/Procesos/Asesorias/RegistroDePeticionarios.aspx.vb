@@ -107,13 +107,13 @@ Public Class RegistroDePeticionarios
     Protected WithEvents txtTipoDocumento As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txtCedula.
+    '''Control txtIdentificacion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtCedula As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtIdentificacion As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control txtRemitente.
@@ -150,6 +150,25 @@ Public Class RegistroDePeticionarios
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtSexoAsignado As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control hddCodigoOrientacionSexual.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hddCodigoOrientacionSexual As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''Control txtOrientacionSexual.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtOrientacionSexual As Global.System.Web.UI.WebControls.TextBox
+
 
     Private Sub InitUltDataFromRequest()
 
@@ -204,7 +223,7 @@ Public Class RegistroDePeticionarios
             chkEsAnonimo.Checked = radicado.EsAnonimo
             txtTipoDocumento.Text = radicado.TipoDocId.Nombre
             hddCodigoTipoDocumento.Value = radicado.TipoDocumento.Codigo
-            txtCedula.Text = radicado.Identificacion
+            txtIdentificacion.Text = radicado.Identificacion
             txtRemitente.Text = radicado.Remitente
             'rblGrupoEtnico.Select
             txtSexoAsignado.Text = radicado.Sexo.Nombre
