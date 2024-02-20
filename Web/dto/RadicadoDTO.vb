@@ -446,15 +446,6 @@ Namespace Modelo.dto
             End Set
         End Property
 
-        Public Property Cedula As String
-            Get
-                Return _cedula
-            End Get
-            Set(value As String)
-                _cedula = value
-            End Set
-        End Property
-
         Public Property Identificacion As String
             Get
                 Return _identificacion

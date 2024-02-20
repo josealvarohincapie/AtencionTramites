@@ -244,9 +244,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB\DocumentoDB.vb" />
     <Compile Include="DB\RadicadoDB.vb" />
     <Compile Include="dto\CatalogoDTO.vb" />
+    <Compile Include="dto\DocumentoDTO.vb" />
     <Compile Include="dto\RadicadoDTO.vb" />
+    <Compile Include="Helpers\DocumentoHelper.vb" />
     <Compile Include="Helpers\RadicadoHelper.vb" />
     <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.designer.vb">
       <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>

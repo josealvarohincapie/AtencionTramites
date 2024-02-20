@@ -30,9 +30,9 @@
     <script src="../../Plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- Inclusión de jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <link href="../../Plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <!-- Inclusión de Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 
     <!-- Inclusión de Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -474,6 +474,61 @@
         </div>
     </div>
     <form id="frmRadicado" runat="server">
+        <!-- Modal -->
+        <div class="modal fade" id="divmodalCatalogo" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" style="display: none;">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Catálogo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="form-group">
+                                    <div class="btn-group col-lg-8 col-md-8 col-sm-8">
+                                        <input type="hidden" id="hiddenFiltroCod">
+                                        <input type="text" id="txtDescripcion" name="txtLugarFiltro" class="form-control imput-xs" data-role="btnBuscarNacionalidad" fdprocessedid="7tqfvw">
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" id="btnBuscar" class="btn btn-info btn-xs" fdprocessedid="kosw7m">
+                                            <i class="fa fa-search"></i>&nbsp;Buscar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div id="tableCatalogo_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="tableCatalogo_length"><label>Mostrar <select name="tableCatalogo_length" aria-controls="tableCatalogo" class="" fdprocessedid="ia0i4de"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="-1">All</option></select> registros</label></div><table id="tableCatalogo" class="table table-striped no-footer dataTable" role="grid" style="width: 0px;">
+                                    <thead>
+                                        <tr role="row"><th class="center sorting" tabindex="0" aria-controls="tableCatalogo" rowspan="1" colspan="1" aria-label=": Activar para ordenar la columna de manera ascendente" style="width: 0px;" aria-sort="descending"></th><th class="sorting" tabindex="0" aria-controls="tableCatalogo" rowspan="1" colspan="1" aria-label="Código: Activar para ordenar la columna de manera ascendente" style="width: 0px;">Código</th><th class="sorting" tabindex="0" aria-controls="tableCatalogo" rowspan="1" colspan="1" aria-label="Descripción: Activar para ordenar la columna de manera ascendente" style="width: 0px;">Descripción</th></tr>
+                                    </thead>
+                                <tbody><tr role="row" class="odd"><td class="center sorting_1">
+            <button type="button" id="btnSeleccionar" class="btn btn-default btn-xs" fdprocessedid="1qcc3b">
+                <i class="fa fa-check"></i>&nbsp;&nbsp;...
+            </button>
+        </td><td>-860093103</td><td>DEFENSORIA DEL PUEBLO</td></tr><tr role="row" class="even"><td class="center sorting_1">
+            <button type="button" id="btnSeleccionar" class="btn btn-default btn-xs" fdprocessedid="hml65v">
+                <i class="fa fa-check"></i>&nbsp;&nbsp;...
+            </button>
+        </td><td>-1298458332</td><td>PRUEBAS</td></tr></tbody></table><div class="dataTables_paginate paging_simple_numbers" id="tableCatalogo_paginate"><a class="paginate_button previous disabled" aria-controls="tableCatalogo" data-dt-idx="0" tabindex="0" id="tableCatalogo_previous">Anterior</a><span><a class="paginate_button current" aria-controls="tableCatalogo" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="tableCatalogo" data-dt-idx="2" tabindex="0" id="tableCatalogo_next">Siguiente</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="display:none;">
+                        <button type="button" class="btn btn-success btn-sm" data-dismiss="modal" id="btnGuardarCatalogo">
+                            <strong>&nbsp;<i class="fa fa-floppy-o"></i>&nbsp;Guardar</strong>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">
+                            <strong>&nbsp;<i class="fa fa-reply"></i>&nbsp;Cerrar</strong>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="frmBody" class="row" style="position: relative; top: 210px">
             <div class="col-xs-12 col-md-12 col-lg-12  ">
                 <div class="starter-template" id="divStarterTemplate2">
@@ -600,8 +655,8 @@
                                                                     </label>
                                                                     <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
                                                                         <asp:RadioButtonList ID="rblGrupoEtnico" runat="server" RepeatDirection="Horizontal">
-                                                                            <asp:ListItem Text="Sí" Value="Si"></asp:ListItem>
-                                                                            <asp:ListItem Text="No" Value="No"></asp:ListItem>
+                                                                            <asp:ListItem Text="Sí" Value="1"></asp:ListItem>
+                                                                            <asp:ListItem Text="No" Value="0"></asp:ListItem>
                                                                         </asp:RadioButtonList>
                                                                     </div>
                                                                 </div>
@@ -702,40 +757,35 @@
                                              </h3>
                                             <div id="divCollapse1" class="panel-collapse collapse in">
                                             <div class="row">
-                                                <div class="col-md-6">
-                                                    <h3>Anexos</h3>
-
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">Título</th>
-                                                                <th scope="col">Fecha</th>
-                                                                <th scope="col">Usuario</th>
-                                                                <th scope="col">Opciones</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <th scope="row">1</th>
-                                                                <td>2024001000000071.pdf</td>
-                                                                <td>2024001000000071.pdf</td>
-                                                                <td>@2024001000000071.pdf</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">2</th>
-                                                                <td>25-Enero-2024 18:05:59</td>
-                                                                <td>26-Enero-2024 18:05:59</td>
-                                                                <td>27-Enero-2024 18:05:59</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">3</th>
-                                                                <td>DACARTEC</td>
-                                                                <td>DACARTEC</td>
-                                                                <td>DACARTEC</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                <div class="col-md-12">
+                                                    <div id="divListaDocumentos" class="dataTables_wrapper no-footer">                                                    
+                                                        <asp:GridView ID="grdDocumentos"
+                                                        emptyDataText="No existen documentos asociados al radicado"
+                                                        runat="server" 
+                                                        AutoGenerateColumns="false"
+                                                        AllowSorting="True"
+                                                        AllowPaging="true"
+                                                        PageSize="2"
+                                                        CssClass="table table-striped no-footer dataTable"
+                                                        Width="0px"
+                                                        HorizontalAlign="Center"
+                                                        UseAccessibleHeader="true">                                                        
+                                                        <Columns>
+                                                             <asp:BoundField DataField="TituloArchivo" HeaderText="Título" 
+                                                                SortExpression="TituloArchivo"  />
+                                                            <asp:BoundField DataField="FechaCreacion" HeaderText="Fecha" 
+                                                                SortExpression="FechaCreacion"/>
+                                                            <asp:BoundField DataField="NombreUsuarioCreacion" HeaderText="Usuario" 
+                                                                SortExpression="NombreUsuarioCreacion" />
+                                                            <asp:TemplateField ShowHeader="false">
+                                                            <ItemTemplate>
+                                                                <asp:Button type="button" class="btn btn-secondary" runat="server" ID="btnVer" Text="'<%= txtTipoPeticion.ClientID %>'" 
+                                                                    />
+                                                            </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                    </div>
                                                 </div>
                                             </div>
                                             </div>
@@ -862,6 +912,11 @@
                                                 </a>
                                             </h3>
                                             <div id="divCollapse3" class="panel-collapse collapse in">
+                                             <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" 
+                                                data-target="#divmodalCatalogo">
+                                              Launch demo modal
+                                            </button>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group" id="divDecision">
@@ -904,6 +959,7 @@
                 </div>
             </div>
         </div>
+
     </form>
 </body>
 </html>

@@ -79,13 +79,6 @@ Public Class RegistroDePeticionarios
     '''</remarks>
     Protected WithEvents txtTipoSolicitante As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''Control chkEsAnonimo.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Protected WithEvents chkEsAnonimo As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
@@ -169,6 +162,15 @@ Public Class RegistroDePeticionarios
     '''</remarks>
     Protected WithEvents txtOrientacionSexual As Global.System.Web.UI.WebControls.TextBox
 
+    '''<summary>
+    '''Control grdDocumentos.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Public WithEvents grdDocumentos As Global.System.Web.UI.WebControls.GridView
+
 
     Private Sub InitUltDataFromRequest()
 
@@ -213,6 +215,20 @@ Public Class RegistroDePeticionarios
     ''' </summary>
     Private Sub Inicializacion()
         Try
+            InicializacionRadicado()
+            InicializacionDocumentos()
+            'InicializacionClasificacionPeticion()
+        Catch ex As Exception
+            Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
+            Response.Write("<script language='javascript'>alert('" & "RegistroDePeticionarios -" & nombreMetodo & "-" & ex.Message & "');</script>")
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Permite llenar los campos de la pestaña información del radicado
+    ''' </summary>
+    Private Sub InicializacionRadicado()
+        Try
             Dim radicado As RadicadoDTO = RadicadoHelper.ConsultarDatosRadicadoPorCodigo(TxtCodigoSolicitud.Value)
             TxtNumeroRadicado.Text = radicado.NumeroRadicado
             txtCanalAtencion.Text = radicado.CanalAtencion.Nombre
@@ -225,7 +241,13 @@ Public Class RegistroDePeticionarios
             hddCodigoTipoDocumento.Value = radicado.TipoDocumento.Codigo
             txtIdentificacion.Text = radicado.Identificacion
             txtRemitente.Text = radicado.Remitente
-            'rblGrupoEtnico.Select
+
+            If radicado.GrupoEtnicoReconoce Then
+                rblGrupoEtnico.Items.FindByValue("1").Selected = True
+            Else
+                rblGrupoEtnico.Items.FindByValue("0").Selected = True
+            End If
+
             txtSexoAsignado.Text = radicado.Sexo.Nombre
             hddCodigoSexoAsignado.Value = radicado.Sexo.Codigo
             If radicado.Genero IsNot Nothing Then
@@ -246,7 +268,54 @@ Public Class RegistroDePeticionarios
                 hddCodigoRangoEdad.Value = radicado.RangoEdad.Codigo
             End If
         Catch
-            Response.Write("<script language=""javascript"">alert('Congratulations!');</script>")
+            Response.Write("<script language=""javascript"">alert('Error cargando la información del radicado!');</script>")
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Permite cargar la información de los documentos en la pestaña Anexos del radicado recibido
+    ''' </summary>
+    Private Sub InicializacionDocumentos()
+        Try
+            'Dim listaDocumentos As List(Of DocumentoDTO) = DocumentoHelper.ConsultarDocumentosPorCodigoRadicado(TxtCodigoSolicitud.Value)
+
+            ObtenerDataGridViewDocumentos()
+
+        Catch ex As Exception
+            Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
+            LogWriter.WriteLog("RegistroDePeticionarios -" & nombreMetodo, ex)
+            Throw New Exception("RegistroDePeticionarios -" & nombreMetodo & "-" & ex.Message, ex)
+        End Try
+    End Sub
+
+    Private Sub ObtenerDataGridViewDocumentos()
+        Try
+            Dim listaDocumentos As List(Of DocumentoDTO) = DocumentoHelper.ConsultarDocumentosPorCodigoRadicado(TxtCodigoSolicitud.Value)
+            Dim tabla As New DataTable
+
+            tabla.Columns.Add("TituloArchivo", Type.GetType("System.String"))
+            tabla.Columns.Add("FechaCreacion", Type.GetType("System.String"))
+            tabla.Columns.Add("NombreUsuarioCreacion", Type.GetType("System.String"))
+            tabla.Columns.Add("Ver", Type.GetType("System.String"))
+            For i As Integer = 0 To listaDocumentos.Count - 1
+
+                Dim fila As DataRow
+                ' create new row
+                fila = tabla.NewRow
+                fila("TituloArchivo") = listaDocumentos(i).TituloArchivo
+                fila("FechaCreacion") = listaDocumentos(i).FechaCreacion.ToString
+                fila("NombreUsuarioCreacion") = listaDocumentos(i).NombreUsuarioCreacion
+                fila("Ver") = listaDocumentos(i).RutaVirtualArchivo
+
+                tabla.Rows.Add(fila)
+            Next
+
+            grdDocumentos.DataSource = tabla
+            grdDocumentos.DataBind()
+        Catch ex As Exception
+            Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
+            LogWriter.WriteLog("RegistroDePeticionarios -" & nombreMetodo, ex)
+            Throw New Exception("RegistroDePeticionarios -" & nombreMetodo & "-" & ex.Message, ex)
         End Try
     End Sub
 
