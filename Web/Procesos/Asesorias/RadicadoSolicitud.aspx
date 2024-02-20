@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" ValidateRequest="false" CodeBehind="RadicadoSolicitud.aspx.vb" Inherits="Web.RegistroSolicitud" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" ValidateRequest="false" CodeBehind="RadicadoSolicitud.aspx.vb" Inherits="Web.RadicadoSolicitud" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <script runat="server">
     Dim item As Integer = 0

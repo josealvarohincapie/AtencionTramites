@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="c490c1ef-d907-4acb-8c81-355ee77537e2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="a69d867b-7d09-45ac-915c-0566bcb33f2d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -18,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://172.31.75.45/UltWeb/ClientServicesWS/Service.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://172.31.75.45/PLWebServices/AtencionTramiteSol.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="ce4c5d07-f04f-47ef-87c0-291cb00ec5f6" SourceId="1" SourceUrl="http://172.31.75.45/UltWeb/ClientServicesWS/Service.asmx?disco" />
-    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="9f68be06-ed78-45a0-911c-173ec3b012f9" SourceId="1" SourceUrl="http://172.31.75.45/UltWeb/ClientServicesWS/Service.asmx?wsdl" />
+    <MetadataFile FileName="AtencionTramiteSol.wsdl" MetadataType="Wsdl" ID="394976aa-a341-44b7-a497-e06e770543af" SourceId="1" SourceUrl="http://172.31.75.45/PLWebServices/AtencionTramiteSol.asmx?wsdl" />
+    <MetadataFile FileName="AtencionTramiteSol.disco" MetadataType="Disco" ID="485071b5-b2dc-4a49-9414-d76710bcf055" SourceId="1" SourceUrl="http://172.31.75.45/PLWebServices/AtencionTramiteSol.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

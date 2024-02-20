@@ -10,7 +10,7 @@ Imports System.Configuration.ConfigurationManager
 
 Public Class SendHelper
 
-    Public Shared Sub SaveAndSend(ByRef form As RegistroSolicitud, ByRef message As String)
+    Public Shared Sub SaveAndSend(ByRef form As RadicadoSolicitud, ByRef message As String)
 
         Dim FnUlt As New CSWS()
         Dim strError As String = String.Empty
@@ -31,16 +31,16 @@ Public Class SendHelper
             form.fuAdjunto.Enabled = True
             Save(form)
         Else
-        LogWriter.WriteLog("SendHelper", strError)
-        message = "Ocurrió un error al completar la tarea"
-        Return
+            LogWriter.WriteLog("SendHelper", strError)
+            message = "Ocurrió un error al completar la tarea"
+            Return
         End If
 
         message = IIf(form.UltData.StepLabel = Etapas.SolicitarCredito.Name And bNewInc, "Se ha creado la solicitud número " & form.UltData.IncidentNo & ".", "La tarea fue completada exitosamente.")
 
     End Sub
 
-    Public Shared Sub Save(ByRef form As RegistroSolicitud)
+    Public Shared Sub Save(ByRef form As RadicadoSolicitud)
         FormHelper.SaveForm(form)
         DocumentationHelper.CompleteDocuments(form, False, form.tbIdentificacion.Text)
         DocumentationHelper.SaveDocumentation(form, False, True, form.tbIdentificacion.Text)
@@ -51,13 +51,13 @@ Public Class SendHelper
         End If
     End Sub
 
-    Private Shared Sub SetSummary(ByRef form As RegistroSolicitud)
+    Private Shared Sub SetSummary(ByRef form As RadicadoSolicitud)
         If form.tbIdentificacion.Text <> String.Empty And form.tbNombre.Text <> String.Empty Then
             form.UltData.IncidentSummary = form.tbIdentificacion.Text & " - " & form.tbNombre.Text
         End If
     End Sub
 
-    Public Shared Sub SetSchemeSolicitudEnd(ByRef form As RegistroSolicitud, ByRef message As String)
+    Public Shared Sub SetSchemeSolicitudEnd(ByRef form As RadicadoSolicitud, ByRef message As String)
         form.UltData.setSchemeBooleanValue(Esquema.ActivarAnalizarDJU, 0)
         form.UltData.setSchemeBooleanValue(Esquema.ActivarAnalizarOCU, 0)
         form.UltData.setSchemeBooleanValue(Esquema.ActivarAnalizarDRF, 0)
@@ -65,7 +65,7 @@ Public Class SendHelper
         form.UltData.setSchemeBooleanValue(Esquema.ActivarPreviabilidadDRF, 0)
     End Sub
 
-    Private Shared Sub SetSchemeSolicitud(ByRef form As RegistroSolicitud)
+    Private Shared Sub SetSchemeSolicitud(ByRef form As RadicadoSolicitud)
 
         Dim FnUlt As New CSWS()
         Dim strError As String = String.Empty

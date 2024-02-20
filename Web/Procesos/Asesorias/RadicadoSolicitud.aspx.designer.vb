@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class RegistroSolicitud
+Partial Public Class RadicadoSolicitud
 
     '''<summary>
     '''Control hfEtapaReceptora.

@@ -7,7 +7,7 @@ Imports System.Globalization
 
 Public Class CorrespondenciaRecibidaHelper
 
-    Public Shared Sub ShowComunicacionRecibida(ByRef form As RegistroSolicitud)
+    Public Shared Sub ShowComunicacionRecibida(ByRef form As RadicadoSolicitud)
 
         Try
             If form.UltData.IncidentNo > 0 Then
