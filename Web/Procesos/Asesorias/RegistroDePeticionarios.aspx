@@ -778,8 +778,11 @@
                                                             <asp:BoundField DataField="NombreUsuarioCreacion" HeaderText="Usuario" 
                                                                 SortExpression="NombreUsuarioCreacion" />
                                                             <asp:TemplateField ShowHeader="false">
-                                                            <ItemTemplate>
-                                                                <asp:Button type="button" class="btn btn-secondary" runat="server" ID="btnVer" Text="'<%= txtTipoPeticion.ClientID %>'" 
+                                                            <ItemTemplate>                                                                
+                                                                <asp:ImageButton ID="btnVerDocumento" runat="server" 
+                                                                    ToolTip="Ver"
+                                                                    OnClick="btnVerDocumento_Click"
+                                                                    ImageUrl="~/Styles/images/fa-external-link.svg"
                                                                     />
                                                             </ItemTemplate>
                                                             </asp:TemplateField>

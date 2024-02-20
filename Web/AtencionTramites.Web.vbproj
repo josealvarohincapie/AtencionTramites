@@ -203,6 +203,7 @@
     <Content Include="Styles\images\ajax-loader.gif" />
     <Content Include="Styles\images\cross.png" />
     <Content Include="Styles\images\delete.png" />
+    <Content Include="Styles\images\fa-external-link.svg" />
     <Content Include="Styles\images\inbox.png" />
     <Content Include="Styles\images\logo_defensoria.png" />
     <Content Include="Styles\images\magnifier.png" />

@@ -319,4 +319,7 @@ Public Class RegistroDePeticionarios
         End Try
     End Sub
 
+    Protected Sub btnVerDocumento_Click(sender As Object, e As ImageClickEventArgs)
+        Response.Write("<script language=""javascript"">alert('Error cargando la información del radicado!');</script>")
+    End Sub
 End Class
