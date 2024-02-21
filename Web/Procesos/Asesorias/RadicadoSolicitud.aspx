@@ -66,7 +66,7 @@ return (evt ? evt.which : event.keyCode) != 13; }
                   <div class="collapse navbar-collapse">
                      <ul class="nav navbar-nav">
                         <li>
-                           <asp:LinkButton ID="lbEnviar" runat="server" OnClientClick="return(validarEnviar());"> <img src="../../Styles/images/ult_send.png" alt="Enviar" /> Enviar</asp:LinkButton>
+                           <asp:LinkButton ID="lbEnviar" runat="server"> <img src="../../Styles/images/ult_send.png" alt="Enviar" /> Enviar</asp:LinkButton>
                         </li>
                         <li>
                            <asp:LinkButton ID="lbGuardar" runat="server"> <img src="../../Styles/images/save.png" alt="Enviar" /> Guardar</asp:LinkButton>
