@@ -116,6 +116,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\Tramite_Asesorias\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Tramite_Quejas\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Tramite_Solicitudes\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UltimusBIS\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,7 +158,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Service References\ClientServicesWS\Service1.wsdl" />
+    <None Include="Service References\ClientServicesWS\Service.wsdl" />
     <None Include="Service References\ClientServicesWS\UltimusEIK.ClientServicesWS.ArrayOfAnyType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -193,15 +208,39 @@
     <None Include="Service References\Credito_Directo\UltimusEIK.Credito_Directo.SchemaFile.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\UltimusBIS\UltimusBIS1.wsdl" />
+    <None Include="Service References\Tramite_Asesorias\AtencionTramiteAse.wsdl" />
+    <None Include="Service References\Tramite_Quejas\AtencionTramiteQue.wsdl" />
+    <None Include="Service References\Tramite_Solicitudes\AtencionTramiteSol.wsdl" />
+    <None Include="Service References\UltimusBIS\UltimusBIS.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\UltEik.dll" />
     <Content Include="bin\UltEikClientServices.dll" />
     <Content Include="bin\UltEikStructures.dll" />
     <Content Include="bin\UltManagedStructs.dll" />
-    <None Include="Service References\UltimusBIS\UltimusBIS1.disco" />
-    <None Include="Service References\ClientServicesWS\Service1.disco" />
+    <None Include="Service References\Tramite_Solicitudes\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\Tramite_Solicitudes\configuration.svcinfo" />
+    <None Include="Service References\Tramite_Solicitudes\configuration91.svcinfo" />
+    <None Include="Service References\Tramite_Solicitudes\AtencionTramiteSol.disco" />
+    <None Include="Service References\Tramite_Quejas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\Tramite_Quejas\configuration.svcinfo" />
+    <None Include="Service References\Tramite_Quejas\configuration91.svcinfo" />
+    <None Include="Service References\Tramite_Quejas\AtencionTramiteQue.disco" />
+    <None Include="Service References\Tramite_Asesorias\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\Tramite_Asesorias\configuration.svcinfo" />
+    <None Include="Service References\Tramite_Asesorias\configuration91.svcinfo" />
+    <None Include="Service References\Tramite_Asesorias\AtencionTramiteAse.disco" />
+    <None Include="Service References\UltimusBIS\UltimusBIS.disco" />
+    <None Include="Service References\ClientServicesWS\Service.disco" />
     <None Include="Service References\Credito_Directo\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -227,6 +266,9 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ClientServicesWS\" />
     <WCFMetadataStorage Include="Service References\Credito_Directo\" />
+    <WCFMetadataStorage Include="Service References\Tramite_Asesorias\" />
+    <WCFMetadataStorage Include="Service References\Tramite_Quejas\" />
+    <WCFMetadataStorage Include="Service References\Tramite_Solicitudes\" />
     <WCFMetadataStorage Include="Service References\UltimusBIS\" />
   </ItemGroup>
   <ItemGroup>

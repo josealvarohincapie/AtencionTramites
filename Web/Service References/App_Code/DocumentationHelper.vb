@@ -13,7 +13,7 @@ Public Class DocumentationHelper
 
     End Sub
 
-    Public Shared Sub InitDocumentation(ByRef form As RegistroSolicitud, ByVal isPostBack As Boolean, ByVal Avalista As Boolean, ByVal editar As Boolean, ByVal Identificacion As String, ByVal razonSocial As String, ByVal participacionAccionaria As Boolean)
+    Public Shared Sub InitDocumentation(ByRef form As RadicadoSolicitud, ByVal isPostBack As Boolean, ByVal Avalista As Boolean, ByVal editar As Boolean, ByVal Identificacion As String, ByVal razonSocial As String, ByVal participacionAccionaria As Boolean)
 
         Try
 
@@ -57,7 +57,7 @@ Public Class DocumentationHelper
         Return documentos
     End Function
 
-    Private Shared Function CompleteFormData(ByRef form As RegistroSolicitud, ByVal documentos As List(Of Documento), ByVal Avalista As Boolean, ByVal Identificacion As String) As List(Of Documento)
+    Private Shared Function CompleteFormData(ByRef form As RadicadoSolicitud, ByVal documentos As List(Of Documento), ByVal Avalista As Boolean, ByVal Identificacion As String) As List(Of Documento)
         Dim gv As GridView
         If Avalista Then
             gv = form.gvDocumentacionComplementario
@@ -85,7 +85,7 @@ Public Class DocumentationHelper
         Return documentos
     End Function
 
-    Private Shared Function GetFormData(ByRef form As RegistroSolicitud, ByVal Avalista As Boolean, ByVal completar As Boolean, ByVal Identificacion As String) As List(Of Documento)
+    Private Shared Function GetFormData(ByRef form As RadicadoSolicitud, ByVal Avalista As Boolean, ByVal completar As Boolean, ByVal Identificacion As String) As List(Of Documento)
 
         Dim documentos As New List(Of Documento)
         Dim o As Object = form.Session(_DocumentationData & Identificacion)
@@ -103,7 +103,7 @@ Public Class DocumentationHelper
 
     End Function
 
-    Private Shared Sub ShowDocumentation(ByRef form As RegistroSolicitud, ByRef documentation As List(Of Documento), ByVal Avalista As Boolean, ByVal Identificacion As String)
+    Private Shared Sub ShowDocumentation(ByRef form As RadicadoSolicitud, ByRef documentation As List(Of Documento), ByVal Avalista As Boolean, ByVal Identificacion As String)
         If Not Avalista Then
             form.gvDocumentacion.DataSource = documentation
             form.gvDocumentacion.DataBind()
@@ -116,7 +116,7 @@ Public Class DocumentationHelper
         form.Session(_DocumentationData & Identificacion) = documentation
     End Sub
 
-    Public Shared Sub AddDocument(ByRef form As RegistroSolicitud, ByVal Avalista As Boolean, ByVal Identificacion As String, ByVal codigo As String)
+    Public Shared Sub AddDocument(ByRef form As RadicadoSolicitud, ByVal Avalista As Boolean, ByVal Identificacion As String, ByVal codigo As String)
         Try
 
             Dim documentos As List(Of Documento) = GetFormData(form, Avalista, True, Identificacion)
@@ -155,7 +155,7 @@ Public Class DocumentationHelper
         End Try
     End Sub
 
-    Public Shared Sub RemoveDocument(ByRef form As RegistroSolicitud, ByVal Avalista As Boolean, ByVal Identificacion As String, ByVal codigo As String, ByVal registro As String)
+    Public Shared Sub RemoveDocument(ByRef form As RadicadoSolicitud, ByVal Avalista As Boolean, ByVal Identificacion As String, ByVal codigo As String, ByVal registro As String)
         Try
 
             Dim documentos As List(Of Documento) = GetFormData(form, Avalista, True, Identificacion)
@@ -180,7 +180,7 @@ Public Class DocumentationHelper
         End Try
     End Sub
 
-    Public Shared Sub UploadDocument(ByRef form As RegistroSolicitud, ByVal Avalista As Boolean, ByVal Identificacion As String, ByVal codigo As String, ByVal registro As String)
+    Public Shared Sub UploadDocument(ByRef form As RadicadoSolicitud, ByVal Avalista As Boolean, ByVal Identificacion As String, ByVal codigo As String, ByVal registro As String)
         Try
 
             Dim documentos As List(Of Documento) = GetFormData(form, Avalista, True, Identificacion)
@@ -207,7 +207,7 @@ Public Class DocumentationHelper
         End Try
     End Sub
 
-    Public Shared Sub CompleteDocuments(ByRef form As RegistroSolicitud, ByVal Avalista As Boolean, ByVal Identificacion As String)
+    Public Shared Sub CompleteDocuments(ByRef form As RadicadoSolicitud, ByVal Avalista As Boolean, ByVal Identificacion As String)
         Try
 
             Dim documentos As List(Of Documento) = GetFormData(form, Avalista, True, Identificacion)
@@ -218,7 +218,7 @@ Public Class DocumentationHelper
         End Try
     End Sub
 
-    Public Shared Sub SaveDocumentation(ByRef form As RegistroSolicitud, ByVal Avalista As Boolean, ByVal completar As Boolean, ByVal Identificacion As String)
+    Public Shared Sub SaveDocumentation(ByRef form As RadicadoSolicitud, ByVal Avalista As Boolean, ByVal completar As Boolean, ByVal Identificacion As String)
 
         Dim documentos As List(Of Documento) = GetFormData(form, Avalista, completar, Identificacion)
 
@@ -232,7 +232,7 @@ Public Class DocumentationHelper
 
     End Sub
 
-    Public Shared Sub CreateFileONBASE(ByRef form As RegistroSolicitud)
+    Public Shared Sub CreateFileONBASE(ByRef form As RadicadoSolicitud)
         Try
             Dim transferPath As String = AppSettings("OnBaseTransferPath")
             Dim documentPath As String = AppSettings("DocumentacionPath")

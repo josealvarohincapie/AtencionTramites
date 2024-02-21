@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="c490c1ef-d907-4acb-8c81-355ee77537e2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="ea11fb13-9e35-427e-b649-a5bba9b8ea4f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -18,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://172.31.75.45/UltWeb/ClientServicesWS/Service.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://172.31.75.45//PLWebServices/AtencionTramiteAse.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="ce4c5d07-f04f-47ef-87c0-291cb00ec5f6" SourceId="1" SourceUrl="http://172.31.75.45/UltWeb/ClientServicesWS/Service.asmx?disco" />
-    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="9f68be06-ed78-45a0-911c-173ec3b012f9" SourceId="1" SourceUrl="http://172.31.75.45/UltWeb/ClientServicesWS/Service.asmx?wsdl" />
+    <MetadataFile FileName="AtencionTramiteAse.wsdl" MetadataType="Wsdl" ID="ca712e5b-a439-49b5-b6e8-21f93d7ef640" SourceId="1" SourceUrl="http://172.31.75.45/PLWebServices/AtencionTramiteAse.asmx?wsdl" />
+    <MetadataFile FileName="AtencionTramiteAse.disco" MetadataType="Disco" ID="65531101-f9af-49db-ad7c-87e0ce8ccb47" SourceId="1" SourceUrl="http://172.31.75.45/PLWebServices/AtencionTramiteAse.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

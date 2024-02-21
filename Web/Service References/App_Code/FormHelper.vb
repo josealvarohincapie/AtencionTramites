@@ -17,7 +17,7 @@ Public Class FormHelper
     Public Const _TaskStatusCompleted As Integer = 3
 
     Private Shared Function GetHelperSQL() As HelperSQL
-        Return New HelperSQL("BDCreditoDirecto")
+        Return New HelperSQL("Correspondencia")
     End Function
 
     Public Shared Sub LoadDropDownList(ByVal dropDownList As DropDownList, catalogo As Catalogo)
@@ -93,7 +93,7 @@ Public Class FormHelper
         End If
     End Sub
 
-    Private Shared Sub LoadInitialsDropDownList(ByRef form As RegistroSolicitud)
+    Private Shared Sub LoadInitialsDropDownList(ByRef form As RadicadoSolicitud)
         LoadDropDownList(form.ddlTipoProducto, Catalog.TipoDeProducto)
         LoadDropDownList(form.ddlDivisa, Catalog.Moneda)
         LoadDropDownList(form.ddlTipoIdentificacion, Catalog.TipoDeIdentificacion)
@@ -115,21 +115,21 @@ Public Class FormHelper
         Next
     End Sub
 
-    Public Shared Sub ShowNotas(ByRef form As RegistroSolicitud)
+    Public Shared Sub ShowNotas(ByRef form As RadicadoSolicitud)
         Dim strError As String = Nothing
         If Not GetHelperSQL().ConsultaGrilla(form.gvNotas, "PA_AdminObservacion_V2 1," & form.UltData.IncidentNo, strError) Then
             LogWriter.WriteLog("FormHelper", "ShowNotas: " & strError)
         End If
     End Sub
 
-    Public Shared Sub ShowAdjuntos(ByRef form As RegistroSolicitud)
+    Public Shared Sub ShowAdjuntos(ByRef form As RadicadoSolicitud)
         Dim strError As String = Nothing
         If Not GetHelperSQL().ConsultaGrilla(form.gvAdjuntos, "PA_AdminAdjunto_V2 1," & form.UltData.IncidentNo, strError) Then
             LogWriter.WriteLog("FormHelper", "ShowAdjuntos: " & strError)
         End If
     End Sub
 
-    Public Shared Sub InitForm(ByRef form As RegistroSolicitud, ByVal isPostBack As Boolean)
+    Public Shared Sub InitForm(ByRef form As RadicadoSolicitud, ByVal isPostBack As Boolean)
 
         Dim strError As String = Nothing
         Dim s As Solicitud
@@ -177,7 +177,7 @@ Public Class FormHelper
 
     End Sub
 
-    Public Shared Sub ShowFormInitialMode(ByRef form As RegistroSolicitud)
+    Public Shared Sub ShowFormInitialMode(ByRef form As RadicadoSolicitud)
 
         SetEnabledShowControls(form, True)
         form.SoloLectura.Value = "0"
@@ -189,7 +189,7 @@ Public Class FormHelper
 
     End Sub
 
-    Public Shared Sub ShowFormEditMode(ByRef form As RegistroSolicitud)
+    Public Shared Sub ShowFormEditMode(ByRef form As RadicadoSolicitud)
 
         SetEnabledShowControls(form, True)
         form.SoloLectura.Value = "0"
@@ -198,7 +198,7 @@ Public Class FormHelper
 
     End Sub
 
-    Public Shared Sub ShowFormReadOnly(ByRef form As RegistroSolicitud)
+    Public Shared Sub ShowFormReadOnly(ByRef form As RadicadoSolicitud)
 
         SetEnabledShowControls(form, False)
         form.SoloLectura.Value = "1"
@@ -236,7 +236,7 @@ Public Class FormHelper
 
     End Sub
 
-    Public Shared Sub ShowFormDisabled(ByRef form As RegistroSolicitud)
+    Public Shared Sub ShowFormDisabled(ByRef form As RadicadoSolicitud)
 
         SetEnabledShowControls(form, False)
         form.lbEnviar.Enabled = False
@@ -244,7 +244,7 @@ Public Class FormHelper
 
     End Sub
 
-    Public Shared Sub ShowDecisions(ByRef form As RegistroSolicitud)
+    Public Shared Sub ShowDecisions(ByRef form As RadicadoSolicitud)
 
         If form.UltData.IncidentNo > 0 Then
 
@@ -417,7 +417,7 @@ Public Class FormHelper
         Return s
     End Function
 
-    Private Shared Sub SetFormData(ByRef form As RegistroSolicitud, ByVal s As Solicitud)
+    Private Shared Sub SetFormData(ByRef form As RadicadoSolicitud, ByVal s As Solicitud)
 
         form.lbProceso.Text = form.UltData.ProcessName
         form.lbIncidente.Text = form.UltData.IncidentNo.ToString()
@@ -514,7 +514,7 @@ Public Class FormHelper
 
     End Sub
 
-    Public Shared Function GetFormData(ByRef form As RegistroSolicitud) As Solicitud
+    Public Shared Function GetFormData(ByRef form As RadicadoSolicitud) As Solicitud
         Dim s As New Solicitud
         s.Incidente = form.UltData.IncidentNo
         s.Area = form.ddlArea.SelectedValue
@@ -570,7 +570,7 @@ Public Class FormHelper
         Return s.Trim().ToLower().Replace("á", "a").Replace("é", "e").Replace("í", "i").Replace("ó", "o").Replace("ú", "u")
     End Function
 
-    Public Shared Function SaveForm(ByRef form As RegistroSolicitud) As Boolean
+    Public Shared Function SaveForm(ByRef form As RadicadoSolicitud) As Boolean
         Dim s As Solicitud = GetFormData(form)
         Dim result As Boolean = True
 
@@ -606,7 +606,7 @@ Public Class FormHelper
         Return result
     End Function
 
-    Public Shared Function ConsultIsExistsIncident(ByVal Avalista As Boolean, ByRef form As RegistroSolicitud, ByRef incidentData As UltData) As Boolean
+    Public Shared Function ConsultIsExistsIncident(ByVal Avalista As Boolean, ByRef form As RadicadoSolicitud, ByRef incidentData As UltData) As Boolean
         Dim result As Boolean = False
         Dim strError As String = String.Empty
         Dim strSQL As String = String.Empty
@@ -659,7 +659,7 @@ Public Class FormHelper
         Return result
     End Function
 
-    Public Shared Function ConsultT24(ByRef form As RegistroSolicitud, ByVal numDocumento As String, ByVal Avalista As Boolean, ByRef bActivo As Boolean, ByRef strNombre As String, ByRef strPais As String, ByRef strCiudad As String, ByRef strEmail As String, ByRef strError As String) As Boolean
+    Public Shared Function ConsultT24(ByRef form As RadicadoSolicitud, ByVal numDocumento As String, ByVal Avalista As Boolean, ByRef bActivo As Boolean, ByRef strNombre As String, ByRef strPais As String, ByRef strCiudad As String, ByRef strEmail As String, ByRef strError As String) As Boolean
 
         Dim result As Boolean = True
         Dim itemPais As New ListItem

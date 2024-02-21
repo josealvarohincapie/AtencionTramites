@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="49466941-6a43-4faa-8c27-c9f21469a4f7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="49466941-6a43-4faa-8c27-c9f21469a4f7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,11 +18,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://win-v1rsh4cm56v/UltWeb/UltimusBIS/UltimusBIS.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://172.31.75.45//UltWeb/UltimusBIS/UltimusBIS.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UltimusBIS1.wsdl" MetadataType="Wsdl" ID="280dbba5-902d-435e-ac38-2b2eca9b1787" SourceId="1" SourceUrl="http://win-v1rsh4cm56v/UltWeb/UltimusBIS/UltimusBIS.asmx?wsdl" />
-    <MetadataFile FileName="UltimusBIS1.disco" MetadataType="Disco" ID="e97dcedf-c581-47ac-8143-bb26c64806d1" SourceId="1" SourceUrl="http://win-v1rsh4cm56v/UltWeb/UltimusBIS/UltimusBIS.asmx?disco" />
+    <MetadataFile FileName="UltimusBIS.wsdl" MetadataType="Wsdl" ID="bd21796d-a7ff-4491-9de3-38b83e61521c" SourceId="1" SourceUrl="http://172.31.75.45/UltWeb/UltimusBIS/UltimusBIS.asmx?wsdl" />
+    <MetadataFile FileName="UltimusBIS.disco" MetadataType="Disco" ID="0d03a26f-702b-4e5d-b07f-b200f18131ca" SourceId="1" SourceUrl="http://172.31.75.45/UltWeb/UltimusBIS/UltimusBIS.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

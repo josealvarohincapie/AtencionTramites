@@ -7,7 +7,7 @@ Public Class ComplementariosHelper
 
     Private Const _ComplementariosData As String = "_ComplementariosData"
 
-    Public Shared Sub InitComplementarios(ByRef form As RegistroSolicitud, ByVal isPostBack As Boolean)
+    Public Shared Sub InitComplementarios(ByRef form As RadicadoSolicitud, ByVal isPostBack As Boolean)
 
         Try
             If form.UltData.IncidentNo = 0 And Not isPostBack Then
@@ -27,14 +27,14 @@ Public Class ComplementariosHelper
 
     End Sub
 
-    Private Shared Sub ShowComplementarios(ByRef form As RegistroSolicitud)
+    Private Shared Sub ShowComplementarios(ByRef form As RadicadoSolicitud)
         Dim data As List(Of Complementario) = GetFormData(form)
         form.gvComplementarios.DataSource = data
         form.gvComplementarios.DataBind()
         form.countComplementarios.InnerText = data.Count.ToString()
     End Sub
 
-    Public Shared Sub DeleteComplementario(ByRef form As RegistroSolicitud, ByVal Identificacion As String)
+    Public Shared Sub DeleteComplementario(ByRef form As RadicadoSolicitud, ByVal Identificacion As String)
 
         Dim complementarios As List(Of Complementario) = GetFormData(form)
         Dim s As Complementario = complementarios.FirstOrDefault(Function(i) i.Identificacion = Identificacion)
@@ -47,7 +47,7 @@ Public Class ComplementariosHelper
         End If
     End Sub
 
-    Public Shared Sub ShowComplementario(ByRef form As RegistroSolicitud, ByVal Identificacion As String)
+    Public Shared Sub ShowComplementario(ByRef form As RadicadoSolicitud, ByVal Identificacion As String)
 
         Dim complementarios As List(Of Complementario) = GetFormData(form)
         Dim s As Complementario = complementarios.FirstOrDefault(Function(i) i.Identificacion = Identificacion)
@@ -82,7 +82,7 @@ Public Class ComplementariosHelper
         End If
     End Sub
 
-    Public Shared Sub InsertComplementario(ByRef form As RegistroSolicitud)
+    Public Shared Sub InsertComplementario(ByRef form As RadicadoSolicitud)
 
         Dim isNew As Boolean = IIf(form.hfComplementarioNew.Value = "1", True, False)
         Dim complementarios As List(Of Complementario) = GetFormData(form)
@@ -107,7 +107,7 @@ Public Class ComplementariosHelper
 
     End Sub
 
-    Private Shared Sub GetDialogFormData(ByRef form As RegistroSolicitud, ByRef s As Complementario)
+    Private Shared Sub GetDialogFormData(ByRef form As RadicadoSolicitud, ByRef s As Complementario)
 
         s.IdTipoRelacion = FormHelper.StringToInteger(form.ddlComplementarioTipoComplementario.SelectedValue)
 
@@ -141,7 +141,7 @@ Public Class ComplementariosHelper
 
     End Sub
 
-    Public Shared Sub SaveComplementarios(ByRef form As RegistroSolicitud)
+    Public Shared Sub SaveComplementarios(ByRef form As RadicadoSolicitud)
 
         If form.UltData.IncidentNo = 0 Then
             Return
@@ -156,7 +156,7 @@ Public Class ComplementariosHelper
 
     End Sub
 
-    Public Shared Function GetFormData(ByRef form As RegistroSolicitud) As List(Of Complementario)
+    Public Shared Function GetFormData(ByRef form As RadicadoSolicitud) As List(Of Complementario)
         Dim complementarios As New List(Of Complementario)
 
         Dim o As Object = form.Session(_ComplementariosData)

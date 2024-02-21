@@ -12,7 +12,7 @@ Imports System.Threading
 Imports System.Web.Services
 Imports Web.WcfCorrespondenciaRecibida
 
-Public Class RegistroSolicitud
+Public Class RadicadoSolicitud
     Inherits System.Web.UI.Page
 
     Public WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
@@ -455,7 +455,7 @@ Public Class RegistroSolicitud
             Else
                 Dim strSql As String
                 Dim strError As String = String.Empty
-                Dim FnBD As New HelperSQL("BDCreditoDirecto")
+                Dim FnBD As New HelperSQL("Correspondencia")
                 Dim strEstado As String = String.Empty
                 If rbDesicion.SelectedIndex <> -1 Then strEstado = rbDesicion.SelectedItem.Text
                 strSql = "PA_AdminObservacion_V2 2," & UltData.IncidentNo & ",'" & UltData.StepLabel & "','" & UltData.UserID.Substring(UltData.UserID.IndexOf("/") + 1) & "','" & tbObservacion.Text & "','" & strEstado & "'"
@@ -476,7 +476,7 @@ Public Class RegistroSolicitud
         Try
             Dim strSql As String
             Dim strError As String = String.Empty
-            Dim FnBD As New HelperSQL("BDCreditoDirecto")
+            Dim FnBD As New HelperSQL("Correspondencia")
             If fuAdjunto.HasFile Then
                 fuAdjunto.SaveAs(AppSettings("ArchivosCredito") & UltData.IncidentNo & "-" & fuAdjunto.FileName)
                 strSql = "PA_AdminAdjunto_V2 2," & UltData.IncidentNo & ",'" & UltData.UserID & "','" & fuAdjunto.FileName & "'"
@@ -508,7 +508,7 @@ Public Class RegistroSolicitud
             Dim strSql As String
             Dim strError As String = String.Empty
             Dim row As GridViewRow = gvAdjuntos.Rows(Convert.ToInt32(e.CommandArgument))
-            Dim FnBD As New HelperSQL("BDCreditoDirecto")
+            Dim FnBD As New HelperSQL("Correspondencia")
             If e.CommandName = "Eliminar" Then
                 strSql = "PA_AdminAdjunto_V2 3," & UltData.IncidentNo & ",null,'" & row.Cells(1).Text & "'"
                 If FnBD.EjecutaAccion(strSql, strError) Then

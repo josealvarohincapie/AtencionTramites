@@ -5,7 +5,7 @@ Imports System.Data
 Public Class DBMethods
 
     Private Shared Function GetHelperSQL() As HelperSQL
-        Return New HelperSQL("BDCreditoDirecto")
+        Return New HelperSQL("Correspondencia")
     End Function
 
     Public Shared Function GetCatalog(ByVal catalogo As Catalogo) As DataTable
