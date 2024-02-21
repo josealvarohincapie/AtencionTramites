@@ -951,11 +951,6 @@
                                                 </a>
                                             </h3>
                                             <div id="divCollapse3" class="panel-collapse collapse in">
-                                             <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" 
-                                                data-target="#divmodalCatalogo">
-                                              Launch demo modal
-                                            </button>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group" id="divDecision">
