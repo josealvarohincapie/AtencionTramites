@@ -32,13 +32,13 @@
 
     <!-- Inclusión de jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="../../Plugins/jquery/jquery.minv3.6.0.js"></script>
+    <!-- <link href="../../Plugins/jquery/jquery.minv3.6.0.js"></script>-->
     <!-- Inclusión de Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-    <link href="../../Plugins/bootstrap/css/Bootstrap%20v3.4.1.min.css" rel="stylesheet" />
+    <!-- <link href="../../Plugins/bootstrap/css/Bootstrap%20v3.4.1.min.css" rel="stylesheet" />-->
     <!-- Inclusión de Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="../../Plugins/bootstrap/js/Bootstrap%20v3.4.1.min.js"></script>
+   <!--  <script src="../../Plugins/bootstrap/js/Bootstrap%20v3.4.1.min.js"></script>-->
 
 
 
@@ -952,10 +952,10 @@
                                             </h3>
                                             <div id="divCollapse3" class="panel-collapse collapse in">
                                              <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" 
-    data-target="#divmodalCatalogo">
-  Launch demo modal
-</button>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" 
+                                                data-target="#divmodalCatalogo">
+                                              Launch demo modal
+                                            </button>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group" id="divDecision">
