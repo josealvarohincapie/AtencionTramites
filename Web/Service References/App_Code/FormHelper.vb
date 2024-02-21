@@ -135,7 +135,7 @@ Public Class FormHelper
         Dim s As Solicitud
 
         If Not isPostBack Then
-            LoadInitialsDropDownList(form)
+            'LoadInitialsDropDownList(form)
 
             If form.UltData.IncidentNo > 0 Then
                 ShowNotas(form)

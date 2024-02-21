@@ -152,7 +152,7 @@ Public Class RadicadoSolicitud
         Dim strError As String = String.Empty
         Dim cm As New ClientModel()
         If Not cm.GetTaskInfo(data, strError) Then
-            LogWriter.WriteLog("RegistroSolicitud", "GetTaskInfo: " + strError)
+            LogWriter.WriteLog("RadicadoSolicitud", "GetTaskInfo: " + strError)
         End If
 
         UltData = data

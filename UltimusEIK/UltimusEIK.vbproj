@@ -50,6 +50,15 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AtencionTramites.Enumeracion">
+      <HintPath>..\AtencionTramites.Enumeracion\bin\Debug\net8.0\AtencionTramites.Enumeracion.dll</HintPath>
+    </Reference>
+    <Reference Include="AtencionTramites.Servicios.Utilidades.Excepciones">
+      <HintPath>..\AtencionTramites.Servicios.Utilidades.Excepciones\bin\Debug\net8.0\AtencionTramites.Servicios.Utilidades.Excepciones.dll</HintPath>
+    </Reference>
+    <Reference Include="AtencionTramites.Servicios.Utilidades.Mensajes">
+      <HintPath>..\AtencionTramites.Servicios.Utilidades.Mensajes\bin\Debug\net8.0\AtencionTramites.Servicios.Utilidades.Mensajes.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
@@ -137,6 +146,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="UltData.vb" />
+    <Compile Include="UltimusOperacion.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
