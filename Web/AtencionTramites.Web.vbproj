@@ -105,7 +105,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Plugins\bootstrap\js\Bootstrap v3.4.1.min.js" />
     <Content Include="Plugins\bootstrap\js\bootstrap-datepicker.js" />
+    <Content Include="Plugins\bootstrap\css\Bootstrap v3.4.1.min.css" />
+    <Content Include="Plugins\jquery\jquery.minv3.6.0.js" />
     <Content Include="Plugins\datatables-plugins\dataTables.bootstrap.css" />
     <Content Include="Plugins\datatables-plugins\dataTables.bootstrap.js" />
     <Content Include="Plugins\datatables-plugins\dataTables.bootstrap.min.js" />

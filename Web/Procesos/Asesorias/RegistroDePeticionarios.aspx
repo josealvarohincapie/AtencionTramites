@@ -23,20 +23,22 @@
     <link href="Content/DataTables/css/select.bootstrap.min.css" rel="stylesheet" />
     <link href="Content/DataTables/css/dataTables.jqueryui.min.css" rel="stylesheet" />
     <link href="Content/DataTables/css/buttons.jqueryui.min.css" rel="stylesheet" />
+    <link href="../../Plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <!--<link href="Content/inspinia.css" rel="stylesheet" />-->
     <!--<link href="Content/animate.css" rel="stylesheet" />-->
     <!--<link href="Content/Ultimus.css" rel="stylesheet" />-->
     <link href="Content/dashboard.css" rel="stylesheet" />
     <script src="../../Plugins/bootstrap/js/bootstrap.min.js"></script>
+
     <!-- Inclusión de jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="../../Plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="../../Plugins/jquery/jquery.minv3.6.0.js"></script>
     <!-- Inclusión de Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-
+    <link href="../../Plugins/bootstrap/css/Bootstrap%20v3.4.1.min.css" rel="stylesheet" />
     <!-- Inclusión de Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <script src="../../Plugins/bootstrap/js/Bootstrap%20v3.4.1.min.js"></script>
 
 
 
@@ -166,7 +168,8 @@
             editButton.className = "btn btn-primary btn-sm mr-2 btn-success btn-medium btn-margin-catalogo btn-file fa fa-search"; // Asumiendo que quieres un margen a la derecha (mr-2)
             editButton.onclick = function() {
                 // Funcionalidad de edición aquí
-                alert("Abrir modal catalogo");
+                
+                $('#divmodalCatalogo').modal('show');
             };
             cell2.appendChild(editButton);
 
@@ -180,6 +183,35 @@
             document.getElementById('<%= hiddenDerechos.ClientID %>').value = JSON.stringify(derechos);
   
         }
+         document.addEventListener("DOMContentLoaded", function() {
+                var checkbox = document.getElementById('<%= chkEsAnonimo.ClientID %>');
+                checkbox.addEventListener('click', function(e) {
+                e.preventDefault();
+                });
+        });
+        $(document).ready(function() {
+                $('#<%= rblGrupoEtnico.ClientID %> input[type=radio]').click(function(e) {
+            e.preventDefault();
+            });
+        });
+        $(document).ready(function() {
+            
+            toggleConclusionAsesoria();
+
+            
+            $('input[name$="respuestaEscrita"]').change(function() {
+                toggleConclusionAsesoria();
+            });
+
+            function toggleConclusionAsesoria() {
+                
+                if ($('#<%= respuestaEscritaNo.ClientID %>').is(':checked')) {
+                    $('#divConclusionAsesoria').show(); 
+                } else {
+                    $('#divConclusionAsesoria').hide(); 
+                }
+            }
+        });
     </script>
 
     <title>Formulario de Asesoría</title>
@@ -309,10 +341,11 @@
             opacity: 1;
         }
         .modal-dialog {
-            position: relative;
-            width: auto;
-            margin: 10px;
+           
+            width: 50%; 
+            margin: auto; 
         }
+       
         .modal-content {
             position: relative;
             background-color: #fff;
@@ -397,7 +430,10 @@
             margin: 1px 1px 1px 1px!important;
             padding: 1px 1px 1px 1px;
         }
+        .modal-backdrop {
+            opacity: 0.3 !important; 
         }
+
     </style>
 </head>
 <body>
@@ -573,10 +609,10 @@
                                                                         <asp:TextBox ID="txtCanalAtencion" runat="server" ReadOnly="true" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtCanalAtencion" ErrorMessage="El canal de atención es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                         <span class="input-group-btn">
-                                                                            <button type="button" id="btn_LimpiarCanalAtencion" onclick="limpiarCampo('<%= txtCanalAtencion.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <button type="button" disabled="disabled" id="btn_LimpiarCanalAtencion"  onclick="limpiarCampo('<%= txtCanalAtencion.ClientID %>')" class="btn btn-default btn-medium">
                                                                                 <i class="fa fa-close"></i>
                                                                             </button>
-                                                                            <button type="button" id="btn_CanalAtencion" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <button type="button" disabled="disabled" id="btn_CanalAtencion" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
                                                                                 <i class="fa fa-search"></i>&nbsp;
                                                                             </button>
                                                                         </span>
@@ -595,10 +631,10 @@
                                                                         <asp:TextBox ID="txtTipoSolicitante" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess" ReadOnly="true"></asp:TextBox>
                                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtTipoSolicitante" ErrorMessage="El tipo de solicitante es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                         <span class="input-group-btn">
-                                                                            <button type="button" id="btn_LimpiarTipoSolicitante" onclick="limpiarCampo('<%= txtTipoSolicitante.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <button type="button" disabled="disabled" id="btn_LimpiarTipoSolicitante" onclick="limpiarCampo('<%= txtTipoSolicitante.ClientID %>')" class="btn btn-default btn-medium">
                                                                                 <i class="fa fa-close"></i>
                                                                             </button>
-                                                                            <button type="button" id="btn_TipoSolicitante" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <button type="button" disabled="disabled" id="btn_TipoSolicitante" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
                                                                                 <i class="fa fa-search"></i>&nbsp;
                                                                             </button>
                                                                         </span>
@@ -607,7 +643,7 @@
                                                                 <div class="form-group " id="divEsAnonimo" >
                                                                     <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblEsAnonimo" name="lblEsAnonimo" default_label="Es anónimo :">Es anónimo :</label>
                                                                     <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                                        <asp:CheckBox ID="chkEsAnonimo" runat="server" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:CheckBox>
+                                                                        <asp:CheckBox ID="chkEsAnonimo" disabled="disabled" runat="server" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:CheckBox>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group" id="divTipoDocumento">
@@ -617,10 +653,10 @@
                                                                         <asp:TextBox ID="txtTipoDocumento" runat="server" Text="" ReadOnly="true" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtTipoDocumento" ErrorMessage="El tipo de documento es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                         <span class="input-group-btn">
-                                                                            <button type="button" id="btn_LimpiarTipoDocumento" onclick="limpiarCampo('<%= txtTipoDocumento.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <button type="button" disabled="disabled" id="btn_LimpiarTipoDocumento" onclick="limpiarCampo('<%= txtTipoDocumento.ClientID %>')" class="btn btn-default btn-medium">
                                                                                 <i class="fa fa-close"></i>
                                                                             </button>
-                                                                            <button type="button" id="btn_TipoDocumento" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <button type="button" disabled="disabled" id="btn_TipoDocumento" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
                                                                                 <i class="fa fa-search"></i>&nbsp;
                                                                             </button>
                                                                         </span>
@@ -647,16 +683,16 @@
                                                         <div class="row">
                                                             <div class="col-md-10">
                                                                 <h3>Datos enfoques diferenciales y de género</h3>
-                                                                <div class="form-group " id="divGrupoEtnico">
+                                                                <div class="form-group " id="divGrupoEtnico" >
                                                                     <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class"
                                                                         id="lblGrupoEtnico" name="lblGrupoEtnico"
                                                                         default_label="¿Se reconoce como miembro de algún grupo étnico?">
                                                                         ¿Se reconoce como miembro de algún grupo étnico?
                                                                     </label>
                                                                     <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                                        <asp:RadioButtonList ID="rblGrupoEtnico" runat="server" RepeatDirection="Horizontal">
-                                                                            <asp:ListItem Text="Sí" Value="1"></asp:ListItem>
-                                                                            <asp:ListItem Text="No" Value="0"></asp:ListItem>
+                                                                        <asp:RadioButtonList ID="rblGrupoEtnico"   runat="server" RepeatDirection="Horizontal">
+                                                                            <asp:ListItem  Text="Sí" Value="1"></asp:ListItem>
+                                                                            <asp:ListItem  Text="No" Value="0"></asp:ListItem>
                                                                         </asp:RadioButtonList>
                                                                     </div>
                                                                 </div>
@@ -667,10 +703,10 @@
                                                                         <asp:TextBox ID="txtSexoAsignado" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtSexoAsignado" ErrorMessage="El sexo asignado es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                         <span class="input-group-btn">
-                                                                            <button type="button" id="btn_LimpiarSexoAsignado" onclick="limpiarCampo('<%= txtSexoAsignado.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <button type="button" disabled="disabled" id="btn_LimpiarSexoAsignado" onclick="limpiarCampo('<%= txtSexoAsignado.ClientID %>')" class="btn btn-default btn-medium">
                                                                                 <i class="fa fa-close"></i>
                                                                             </button>
-                                                                            <button type="button" id="btn_SexoAsignado" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <button type="button" disabled="disabled" id="btn_SexoAsignado" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
                                                                                 <i class="fa fa-search"></i>&nbsp;
                                                                             </button>
                                                                         </span>
@@ -683,10 +719,10 @@
                                                                         <asp:TextBox ID="txtIdentidadGenero" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtIdentidadGenero" ErrorMessage="La identidad de género es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                         <span class="input-group-btn">
-                                                                            <button type="button" id="btn_LimpiarIdentidadGenero" onclick="limpiarCampo('<%= txtIdentidadGenero.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <button type="button" disabled="disabled" id="btn_LimpiarIdentidadGenero" onclick="limpiarCampo('<%= txtIdentidadGenero.ClientID %>')" class="btn btn-default btn-medium">
                                                                                 <i class="fa fa-close"></i>
                                                                             </button>
-                                                                            <button type="button" id="btn_IdentidadGenero" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <button type="button" disabled="disabled" id="btn_IdentidadGenero" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
                                                                                 <i class="fa fa-search"></i>&nbsp;
                                                                             </button>
                                                                         </span>
@@ -699,10 +735,10 @@
                                                                         <asp:TextBox ID="txtOrientacionSexual" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtOrientacionSexual" ErrorMessage="La orientación sexual es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                         <span class="input-group-btn">
-                                                                            <button type="button" id="btn_LimpiarOrientacionSexual" onclick="limpiarCampo('<%= txtOrientacionSexual.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <button type="button" disabled="disabled" id="btn_LimpiarOrientacionSexual" onclick="limpiarCampo('<%= txtOrientacionSexual.ClientID %>')" class="btn btn-default btn-medium">
                                                                                 <i class="fa fa-close"></i>
                                                                             </button>
-                                                                            <button type="button" id="btn_OrientacionSexual" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <button type="button" disabled="disabled" id="btn_OrientacionSexual" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
                                                                                 <i class="fa fa-search"></i>&nbsp;
                                                                             </button>
                                                                         </span>
@@ -715,10 +751,10 @@
                                                                         <asp:TextBox ID="txtExpresionGenero" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtExpresionGenero" ErrorMessage="La expresión de género es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                         <span class="input-group-btn">
-                                                                            <button type="button" id="btn_LimpiarExpresionGenero" onclick="limpiarCampo('<%= txtExpresionGenero.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <button type="button" disabled="disabled" id="btn_LimpiarExpresionGenero" onclick="limpiarCampo('<%= txtExpresionGenero.ClientID %>')" class="btn btn-default btn-medium">
                                                                                 <i class="fa fa-close"></i>
                                                                             </button>
-                                                                            <button type="button" id="btn_ExpresionGenero" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <button type="button" disabled="disabled" id="btn_ExpresionGenero" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
                                                                                 <i class="fa fa-search"></i>&nbsp;
                                                                             </button>
                                                                         </span>
@@ -731,10 +767,10 @@
                                                                         <asp:TextBox ID="txtRangoEdad" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtRangoEdad" ErrorMessage="El rango de edad es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                         <span class="input-group-btn">
-                                                                            <button type="button" id="btn_LimpiarRangoEdad" onclick="limpiarCampo('<%= txtRangoEdad.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <button type="button" disabled="disabled" id="btn_LimpiarRangoEdad" onclick="limpiarCampo('<%= txtRangoEdad.ClientID %>')" class="btn btn-default btn-medium">
                                                                                 <i class="fa fa-close"></i>
                                                                             </button>
-                                                                            <button type="button" id="btn_RangoEdad" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <button type="button" disabled="disabled" id="btn_RangoEdad" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
                                                                                 <i class="fa fa-search"></i>&nbsp;
                                                                             </button>
                                                                         </span>
@@ -832,7 +868,7 @@
                                                         <div class="input-group input-group-sm">
                                                             <asp:HiddenField ID="hddCodigoAreaDerecho" runat="server" />
                                                             <asp:TextBox ID="txtAreaDerecho" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
-                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtAreaDerecho" ErrorMessage="El Remitente es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtAreaDerecho" ErrorMessage="El área de derecho es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                             <span class="input-group-btn">
                                                                 <button type="button" id="btn_LimpiarAreaDerecho" onclick="limpiarCampo('<%= txtAreaDerecho.ClientID %>')" class="btn btn-default btn-medium">
                                                                     <i class="fa fa-close"></i>
@@ -880,8 +916,8 @@
                                                     <div class="form-group " id="divAsesoriaEscrita">
                                                         <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblAsesoriaEscrita" name="lblAsesoriaEscrita" default_label="¿La asesoría debe generar respuesta por escrito?">¿La asesoría debe generar respuesta por escrito?</label>
                                                         <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                            <asp:RadioButton ID="respuestaEscritaSi" runat="server" ReadOnly="true" GroupName="respuestaEscrita" Text="Sí" />
-                                                            <asp:RadioButton ID="respuestaEscritaNo" runat="server" ReadOnly="true" GroupName="respuestaEscrita" Text="No" />
+                                                            <asp:RadioButton ID="respuestaEscritaSi" runat="server" ReadOnly="true" GroupName="respuestaEscrita" Text="  Sí" />
+                                                            <asp:RadioButton ID="respuestaEscritaNo" runat="server" ReadOnly="true" GroupName="respuestaEscrita" Text="  No" />
 
                                                         </div>
                                                     </div>
@@ -916,10 +952,10 @@
                                             </h3>
                                             <div id="divCollapse3" class="panel-collapse collapse in">
                                              <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" 
-                                                data-target="#divmodalCatalogo">
-                                              Launch demo modal
-                                            </button>
+<button type="button" class="btn btn-primary" data-toggle="modal" 
+    data-target="#divmodalCatalogo">
+  Launch demo modal
+</button>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group" id="divDecision">
@@ -944,25 +980,26 @@
                                                             <asp:TextBox ID="txtComentarios" runat="server" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework"></asp:TextBox>
                                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ControlToValidate="txtComentarios" ErrorMessage="El comentario es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                         </div>
+                                                      </div>
                                                     </div>
-
-
                                                 </div>
-                                            </div>
                                             </div>
                                         </div>
                                     </div>
-                                        
+                                    
                                     <asp:HiddenField ID="txtCodigoSolicitud" runat="server" Value="3"></asp:HiddenField>
 
                                 </div>
+                                 
                             </div>
                         </div>
+                        <hr/>
+                        <p>Copyright © DOZZIER Proceso. Todos los derechos reservados.</p>   
                     </div>
                 </div>
             </div>
         </div>
-
+        
     </form>
 </body>
 </html>
