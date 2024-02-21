@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>AtencionTramites.Servicios.Utilidades.Excepciones</RootNamespace>
+    <RootNamespace>AtencionTramites.Enumeracion</RootNamespace>
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
