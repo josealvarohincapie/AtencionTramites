@@ -799,7 +799,7 @@
                                             <h3 class="TituloAcordeon">
                                                 <a data-toggle="collapse" href="#divCollapse2" style="color: black; text-decoration: none;">
                                                     <i class="fa fa-chevron-circle-down"></i>
-                                                    &nbsp;Registro de peticionarios
+                                                    &nbsp;Clasificación de la petición
                                                 </a>
                                             </h3>
                                             <div id="divCollapse2" class="panel-collapse collapse in">
@@ -816,12 +816,12 @@
                                                         <div class="input-group input-group-sm">
                                                             <asp:HiddenField ID="hddCodigoTipoPeticion" runat="server" />
                                                             <asp:TextBox ID="txtTipoPeticion" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
-                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtTipoPeticion" ErrorMessage="El tipo de petición es obligatorio" ToolTip="El tipo de petición es obligatorio" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtTipoPeticion" ErrorMessage="El tipo de petición es obligatorio" ToolTip="El tipo de petición es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                             <span class="input-group-btn">
                                                                 <button type="button" id="btn_LimpiarTipoPeticion" onclick="limpiarCampo('<%= txtTipoPeticion.ClientID %>')" class="btn btn-default btn-medium">
                                                                     <i class="fa fa-close"></i>
                                                                 </button>
-                                                                <button type="button" id="btn_TipoPeticion" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                <button type="button" id="btn_TipoPeticion" class="btn btn-success btn-medium btn-margin-catalogo btn-file"data-toggle="modal" data-target="#divmodalCatalogo" usehttppost="0" webapplication="" usedatasource="0">
                                                                     <i class="fa fa-search"></i>&nbsp;
                                                                 </button>
                                                             </span>
@@ -837,7 +837,7 @@
                                                                 <button type="button" id="btn_LimpiarAreaDerecho" onclick="limpiarCampo('<%= txtAreaDerecho.ClientID %>')" class="btn btn-default btn-medium">
                                                                     <i class="fa fa-close"></i>
                                                                 </button>
-                                                                <button type="button" id="btn_AreaDerecho" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                <button type="button" id="btn_AreaDerecho" class="btn btn-success btn-medium btn-margin-catalogo btn-file" data-toggle="modal" data-target="#divmodalCatalogo"usehttppost="0" webapplication="" usedatasource="0">
                                                                     <i class="fa fa-search"></i>&nbsp;
                                                                 </button>
                                                             </span>
@@ -895,7 +895,7 @@
                                                                 <button type="button" id="btn_LimpiarConclusionAsesoria" onclick="limpiarCampo('<%= txtConclusionAsesoria.ClientID %>')" class="btn btn-default btn-medium">
                                                                     <i class="fa fa-close"></i>
                                                                 </button>
-                                                                <button type="button" id="btn_ConclusionAsesoria" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                <button type="button" id="btn_ConclusionAsesoria" class="btn btn-success btn-medium btn-margin-catalogo btn-file" data-toggle="modal" data-target="#divmodalCatalogo" usehttppost="0" webapplication="" usedatasource="0">
                                                                     <i class="fa fa-search"></i>&nbsp;
                                                                 </button>
                                                             </span>
@@ -932,7 +932,7 @@
                                                                 <button type="button" id="btn_LimpiarDecision" onclick="limpiarCampo('<%= txtDecision.ClientID %>')" class="btn btn-default btn-medium">
                                                                     <i class="fa fa-close"></i>
                                                                 </button>
-                                                                <button type="button" id="btn_Decision" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                <button type="button" id="btn_Decision" class="btn btn-success btn-medium btn-margin-catalogo btn-file" data-toggle="modal" data-target="#divmodalCatalogo"usehttppost="0" webapplication="" usedatasource="0">
                                                                     <i class="fa fa-search"></i>&nbsp;
                                                                 </button>
                                                             </span>
