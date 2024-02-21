@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>AtencionTramites.Servicios.Utilidades.Excepciones</RootNamespace>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="AtencionTramites.Servicios.Utilidades.Excepciones">
+      <HintPath>bin\Debug\net8.0\AtencionTramites.Servicios.Utilidades.Excepciones.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
