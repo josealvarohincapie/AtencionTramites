@@ -300,6 +300,13 @@
         #divMenu3 .active {
             display: block;
         }
+        #divMenu4 .tab-pane {
+            display: none;
+        }
+
+        #divMenu4 .active {
+            display: block;
+        }
         #txtAsesoria{
         height: 80px;
         }
@@ -584,8 +591,9 @@
                                 <ul class="nav nav-pills nav-justified">
                                     <li id="liMenu0" class="active"><a data-toggle="tab" href="#menu0">Información del radicado</a></li>
                                     <li id="liMenu1" ><a data-toggle="tab" href="#menu1">Anexos del Radicado recibido</a></li>
-                                    <li id="liMenu2" ><a data-toggle="tab" href="#menu2">Clasificación de la petición</a></li>
-                                    <li id="liMenu3" ><a data-toggle="tab" href="#menu3">Decisión</a></li>
+                                    <li id="liMenu2" ><a data-toggle="tab" href="#menu2">Registro de peticionarios</a></li>
+                                    <li id="liMenu3" ><a data-toggle="tab" href="#menu3">Clasificación de la petición</a></li>
+                                    <li id="liMenu4" ><a data-toggle="tab" href="#menu4">Decisión</a></li>
                                 </ul>
                                 <div class="tab-content">
 
@@ -844,15 +852,91 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="menu2" class="tab-pane fade">
+                                    <div id="menu2" class="tab-pane fade in active">
                                         <div id="divMenu2">
                                             <h3 class="TituloAcordeon">
                                                 <a data-toggle="collapse" href="#divCollapse2" style="color: black; text-decoration: none;">
                                                     <i class="fa fa-chevron-circle-down"></i>
-                                                    &nbsp;Clasificación de la petición
+                                                    &nbsp;Registro de peticionarios
                                                 </a>
                                             </h3>
                                             <div id="divCollapse2" class="panel-collapse collapse in">
+                                            <div class="contenedor">
+                                                <div class="columna">
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <h3>Datos básicos del peticionario</h3>
+                                                            <div class="form-group " id="divEsAnonimo2" >
+                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblEsAnonimo2" name="lblEsAnonimo2" default_label="Es anónimo :">¿Anónimo? :</label>
+                                                                <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+                                                                    <asp:CheckBox ID="chkAnonimo2" runat="server" CssClass="form-control input-xs TextBoxFramework" ></asp:CheckBox>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group" id="divTipoSolicitante2">
+                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblTipoSolicitante2" name="lblTipoSolicitante2" default_label="Tipo de solicitante:">Tipo de solicitante:</label>
+                                                                <div class="input-group input-group-sm">
+                                                                    <asp:HiddenField ID="HiddenField1" runat="server" />
+                                                                    <asp:TextBox ID="txtTipoSolicitante2" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess" ></asp:TextBox>
+                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtTipoSolicitante" ErrorMessage="El tipo de solicitante es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" id="btn_LimpiarTipoSolicitante2" onclick="limpiarCampo('<%= txtTipoSolicitante2.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <i class="fa fa-close"></i>
+                                                                        </button>
+                                                                        <button type="button" id="btn_TipoSolicitante2" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <i class="fa fa-search"></i>&nbsp;
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group" id="divTipoDocumento2">
+                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblTipoDocumento2" name="lblTipoDocumento2" default_label="Tipo documento de identificación:">Tipo documento de identificación:</label>
+                                                                <div class="input-group input-group-sm">
+                                                                    <asp:HiddenField ID="hddCodigoTipoDocumento2" runat="server" />
+                                                                    <asp:TextBox ID="txtTipoDocumento2" runat="server" Text="" ReadOnly="true" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtTipoDocumento2" ErrorMessage="El tipo de documento es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" disabled="disabled" id="btn_LimpiarTipoDocumento2" onclick="limpiarCampo('<%= txtTipoDocumento2.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <i class="fa fa-close"></i>
+                                                                        </button>
+                                                                        <button type="button" disabled="disabled" id="btn_TipoDocumento2" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <i class="fa fa-search"></i>&nbsp;
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group " id="divIdentificacion2">
+                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblIdentificacion2" name="lblIdentificacion2" default_label="Número documento de identificación:">Número documento de identificación:</label>
+                                                                <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+                                                                    <asp:TextBox ID="txtIdentificacion2" runat="server" 
+                                                                        CssClass="form-control input-xs TextBoxFramework" 
+                                                                        ></asp:TextBox>                                                                       
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+
+                                                    </div>
+                                                </div>
+                                                <div class="columna">
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <h3>Datos enfoques diferenciales y de género</h3>
+                                                         </div>
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div id="menu3" class="tab-pane fade">
+                                        <div id="divMenu3">
+                                            <h3 class="TituloAcordeon">
+                                                <a data-toggle="collapse" href="#divCollapse3" style="color: black; text-decoration: none;">
+                                                    <i class="fa fa-chevron-circle-down"></i>
+                                                    &nbsp;Clasificación de la petición
+                                                </a>
+                                            </h3>
+                                            <div id="divCollapse3" class="panel-collapse collapse in">
                                             <div class="row">
                                                 <div class="col-md-6 ">
                                                     <div class="form-group " id="divAsesorias">
@@ -956,15 +1040,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="menu3" class="tab-pane fade">
-                                        <div id="divMenu3">
+                                    <div id="menu4" class="tab-pane fade">
+                                        <div id="divMenu4">
                                             <h3 class="TituloAcordeon">
                                                 <a data-toggle="collapse" href="#divCollapse3" style="color: black; text-decoration: none;">
                                                     <i class="fa fa-chevron-circle-down"></i>
                                                     &nbsp;Decisión
                                                 </a>
                                             </h3>
-                                            <div id="divCollapse3" class="panel-collapse collapse in">
+                                            <div id="divCollapse4" class="panel-collapse collapse in">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group" id="divDecision">
