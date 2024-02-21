@@ -16,22 +16,7 @@ Imports Web.Modelo.dto
 Public Class RegistroDePeticionarios
     Inherits System.Web.UI.Page
 
-    '''<summary>
-    '''Control TxtCodigoSolicitud.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Public WithEvents TxtCodigoSolicitud As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
-    '''Control txtNumeroRadicado.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Public WithEvents TxtNumeroRadicado As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
@@ -42,14 +27,6 @@ Public Class RegistroDePeticionarios
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Public WithEvents hddCodigoCanalAtencion As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
-    '''Control txtCanalAtencion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Public WithEvents txtCanalAtencion As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
@@ -162,14 +139,9 @@ Public Class RegistroDePeticionarios
     '''</remarks>
     Protected WithEvents txtOrientacionSexual As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''Control grdDocumentos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Public WithEvents grdDocumentos As Global.System.Web.UI.WebControls.GridView
+
+    Protected WithEvents txtComentarios As Global.System.Web.UI.WebControls.TextBox
 
 
     Private Sub InitUltDataFromRequest()
@@ -297,6 +269,7 @@ Public Class RegistroDePeticionarios
             tabla.Columns.Add("FechaCreacion", Type.GetType("System.String"))
             tabla.Columns.Add("NombreUsuarioCreacion", Type.GetType("System.String"))
             tabla.Columns.Add("Ver", Type.GetType("System.String"))
+            tabla.Columns.Add("RutaVirtualArchivo", Type.GetType("System.String"))
             For i As Integer = 0 To listaDocumentos.Count - 1
 
                 Dim fila As DataRow
@@ -305,7 +278,8 @@ Public Class RegistroDePeticionarios
                 fila("TituloArchivo") = listaDocumentos(i).TituloArchivo
                 fila("FechaCreacion") = listaDocumentos(i).FechaCreacion.ToString
                 fila("NombreUsuarioCreacion") = listaDocumentos(i).NombreUsuarioCreacion
-                fila("Ver") = listaDocumentos(i).RutaVirtualArchivo
+                fila("Ver") = ""
+                fila("RutaVirtualArchivo") = listaDocumentos(i).RutaVirtualArchivo
 
                 tabla.Rows.Add(fila)
             Next
@@ -319,7 +293,19 @@ Public Class RegistroDePeticionarios
         End Try
     End Sub
 
-    Protected Sub btnVerDocumento_Click(sender As Object, e As ImageClickEventArgs)
-        Response.Write("<script language=""javascript"">alert('Error cargando la información del radicado!');</script>")
+    Protected Sub BtnVerDocumento_Click(sender As Object, e As ImageClickEventArgs)
+
+        Dim row As GridViewRow = DirectCast(DirectCast(sender, ImageButton).NamingContainer, GridViewRow)
+        DirectCast(row.NamingContainer, GridView).SelectedIndex = row.RowIndex
+        Dim texto As String = grdDocumentos.SelectedRow.Cells(4).Text
+        Dim array = texto.Split("//")
+        Dim url As String = "https:/"
+        For i As Integer = 1 To array.Length - 1
+            If array(i).Length > 0 Then
+                url = url & "/" & array(i)
+            End If
+        Next
+        Me.Page.ClientScript.RegisterStartupScript(Me.Page.GetType(), "", "AbrirDocumento();", True)
+        'Response.Write("<script language='javascript'>AbrirDocumento('" & url & "');</script>")
     End Sub
 End Class

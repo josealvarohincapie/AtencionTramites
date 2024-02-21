@@ -16,31 +16,28 @@
 
     <link href="../../Styles/font-awesome.min.css" rel="stylesheet" />
     <link href="../../Plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
-    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="../../Plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <!--
     <link href="Content/jquery-ui.css" rel="stylesheet" />
     <link href="Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
     <link href="Content/DataTables/css/select.bootstrap.min.css" rel="stylesheet" />
     <link href="Content/DataTables/css/dataTables.jqueryui.min.css" rel="stylesheet" />
     <link href="Content/DataTables/css/buttons.jqueryui.min.css" rel="stylesheet" />
-    <link href="../../Plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <!--<link href="Content/inspinia.css" rel="stylesheet" />-->
+    <link href="Content/inspinia.css" rel="stylesheet" />-->
     <!--<link href="Content/animate.css" rel="stylesheet" />-->
-    <!--<link href="Content/Ultimus.css" rel="stylesheet" />-->
-    <link href="Content/dashboard.css" rel="stylesheet" />
-    <script src="../../Plugins/bootstrap/js/bootstrap.min.js"></script>
-
+    <!--<link href="Content/Ultimus.css" rel="stylesheet" />    
+    <link href="../../Styles/dashboard.css" rel="stylesheet" />
+    -->
+    <script type="text/javascript" src="../../Plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- Inclusión de jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <link href="../../Plugins/jquery/jquery.minv3.6.0.js"></script>-->
     <!-- Inclusión de Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
     <!-- <link href="../../Plugins/bootstrap/css/Bootstrap%20v3.4.1.min.css" rel="stylesheet" />-->
     <!-- Inclusión de Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!--  <script src="../../Plugins/bootstrap/js/Bootstrap%20v3.4.1.min.js"></script>-->
-
-
 
     <script type="text/javascript">
         function imprimirPagina() {
@@ -48,30 +45,40 @@
             return false;
         }
 
+        function AbrirDocumento(url) {
+            
+            document.getElementById("menu0").className = "tab-pane fade";
+            document.getElementById("menu1").className = "tab-pane fade in active";
+            document.getElementById("menu2").className = "tab-pane fade";
+            document.getElementById("menu3").className = "tab-pane fade";
+
+            document.getElementById("liMenu0").className = "";
+            document.getElementById("liMenu1").className = "active";
+            document.getElementById("liMenu2").className = "";
+            document.getElementById("liMenu3").className = "";
+
+            window.open(url);
+            return false;
+        }
+
+
         function limpiarCampo(textBoxClientId) {
             document.getElementById(textBoxClientId).value = '';
         }
-        //Inicializacion manual de pestañas
-        $(document).ready(function () {
-            $('.nav-pills a').click(function (e) {
-                e.preventDefault();
-                $(this).tab('show');
-            });
-        });
         function imprimirPagina() {
             window.print();
         }
-        
+
         function validarFormulario() {
             // Forzar la validación de ASP.NET
             ValidatorValidate(document.getElementById('<%=RequiredFieldValidator1.ClientID%>'));
             ValidatorValidate(document.getElementById('<%=RequiredFieldValidator2.ClientID%>'));
             ValidatorValidate(document.getElementById('<%=RequiredFieldValidator3.ClientID%>'));
             ValidatorValidate(document.getElementById('<%=RequiredFieldValidator4.ClientID%>'));
-            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator5.ClientID%>'));
+            
             ValidatorValidate(document.getElementById('<%=RequiredFieldValidator6.ClientID%>'));
             ValidatorValidate(document.getElementById('<%=RequiredFieldValidator7.ClientID%>'));
-            ValidatorValidate(document.getElementById('<%=RequiredFieldValidator8.ClientID%>'));
+            
             ValidatorValidate(document.getElementById('<%=RequiredFieldValidator9.ClientID%>'));
             ValidatorValidate(document.getElementById('<%=RequiredFieldValidator10.ClientID%>'));
             ValidatorValidate(document.getElementById('<%=RequiredFieldValidator11.ClientID%>'));
@@ -92,10 +99,10 @@
             esValidoList[1] = document.getElementById('<%=RequiredFieldValidator2.ClientID%>').isvalid;
             esValidoList[2] = document.getElementById('<%=RequiredFieldValidator3.ClientID%>').isvalid;
             esValidoList[3] = document.getElementById('<%=RequiredFieldValidator4.ClientID%>').isvalid;
-            esValidoList[4] = document.getElementById('<%=RequiredFieldValidator5.ClientID%>').isvalid;
+            esValidoList[4] = document.getElementById('<%=RequiredFieldValidator4.ClientID%>').isvalid;
             esValidoList[5] = document.getElementById('<%=RequiredFieldValidator6.ClientID%>').isvalid;
             esValidoList[6] = document.getElementById('<%=RequiredFieldValidator7.ClientID%>').isvalid;
-            esValidoList[7] = document.getElementById('<%=RequiredFieldValidator8.ClientID%>').isvalid;
+            esValidoList[6] = document.getElementById('<%=RequiredFieldValidator7.ClientID%>').isvalid;
             esValidoList[8] = document.getElementById('<%=RequiredFieldValidator9.ClientID%>').isvalid;
             esValidoList[9] = document.getElementById('<%=RequiredFieldValidator10.ClientID%>').isvalid;
             esValidoList[10] = document.getElementById('<%=RequiredFieldValidator11.ClientID%>').isvalid;
@@ -168,7 +175,6 @@
             editButton.className = "btn btn-primary btn-sm mr-2 btn-success btn-medium btn-margin-catalogo btn-file fa fa-search"; // Asumiendo que quieres un margen a la derecha (mr-2)
             editButton.onclick = function() {
                 // Funcionalidad de edición aquí
-                
                 $('#divmodalCatalogo').modal('show');
             };
             cell2.appendChild(editButton);
@@ -206,9 +212,9 @@
             function toggleConclusionAsesoria() {
                 
                 if ($('#<%= respuestaEscritaNo.ClientID %>').is(':checked')) {
-                    $('#divConclusionAsesoria').show(); 
+                    $('#divConclusionAsesoria').show();
                 } else {
-                    $('#divConclusionAsesoria').hide(); 
+                    $('#divConclusionAsesoria').hide();
                 }
             }
         });
@@ -217,6 +223,12 @@
     <title>Formulario de Asesoría</title>
 
     <style>
+
+        .hiddencol
+        {
+            display: none;
+        }
+
         body {
             background-color: #ffffff;
             color: #000000;
@@ -341,11 +353,9 @@
             opacity: 1;
         }
         .modal-dialog {
-           
             width: 50%; 
             margin: auto; 
         }
-       
         .modal-content {
             position: relative;
             background-color: #fff;
@@ -433,7 +443,6 @@
         .modal-backdrop {
             opacity: 0.3 !important; 
         }
-
     </style>
 </head>
 <body>
@@ -543,11 +552,11 @@
                                         <tr role="row"><th class="center sorting" tabindex="0" aria-controls="tableCatalogo" rowspan="1" colspan="1" aria-label=": Activar para ordenar la columna de manera ascendente" style="width: 0px;" aria-sort="descending"></th><th class="sorting" tabindex="0" aria-controls="tableCatalogo" rowspan="1" colspan="1" aria-label="Código: Activar para ordenar la columna de manera ascendente" style="width: 0px;">Código</th><th class="sorting" tabindex="0" aria-controls="tableCatalogo" rowspan="1" colspan="1" aria-label="Descripción: Activar para ordenar la columna de manera ascendente" style="width: 0px;">Descripción</th></tr>
                                     </thead>
                                 <tbody><tr role="row" class="odd"><td class="center sorting_1">
-            <button type="button" id="btnSeleccionar" class="btn btn-default btn-xs" fdprocessedid="1qcc3b">
+            <button type="button" id="btnSeleccionar1" class="btn btn-default btn-xs" fdprocessedid="1qcc3b">
                 <i class="fa fa-check"></i>&nbsp;&nbsp;...
             </button>
         </td><td>-860093103</td><td>DEFENSORIA DEL PUEBLO</td></tr><tr role="row" class="even"><td class="center sorting_1">
-            <button type="button" id="btnSeleccionar" class="btn btn-default btn-xs" fdprocessedid="hml65v">
+            <button type="button" id="btnSeleccionar2" class="btn btn-default btn-xs" fdprocessedid="hml65v">
                 <i class="fa fa-check"></i>&nbsp;&nbsp;...
             </button>
         </td><td>-1298458332</td><td>PRUEBAS</td></tr></tbody></table><div class="dataTables_paginate paging_simple_numbers" id="tableCatalogo_paginate"><a class="paginate_button previous disabled" aria-controls="tableCatalogo" data-dt-idx="0" tabindex="0" id="tableCatalogo_previous">Anterior</a><span><a class="paginate_button current" aria-controls="tableCatalogo" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="tableCatalogo" data-dt-idx="2" tabindex="0" id="tableCatalogo_next">Siguiente</a></div></div>
@@ -573,10 +582,10 @@
 
                             <div id="divRespuesta" class="myNav">
                                 <ul class="nav nav-pills nav-justified">
-                                    <li class="active"><a data-toggle="tab" href="#menu0">Información del radicado</a></li>
-                                    <li><a data-toggle="tab" href="#menu1">Anexos del Radicado recibido</a></li>
-                                    <li><a data-toggle="tab" href="#menu2">Clasificación de la petición</a></li>
-                                    <li><a data-toggle="tab" href="#menu3">Decisión</a></li>
+                                    <li id="liMenu0" class="active"><a data-toggle="tab" href="#menu0">Información del radicado</a></li>
+                                    <li id="liMenu1" ><a data-toggle="tab" href="#menu1">Anexos del Radicado recibido</a></li>
+                                    <li id="liMenu2" ><a data-toggle="tab" href="#menu2">Clasificación de la petición</a></li>
+                                    <li id="liMenu3" ><a data-toggle="tab" href="#menu3">Decisión</a></li>
                                 </ul>
                                 <div class="tab-content">
 
@@ -621,7 +630,9 @@
                                                                 <div class="form-group " id="divFecha">
                                                                     <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblFecha" name="lblFecha" default_label="Fecha">Fecha:</label>
                                                                     <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                                        <asp:TextBox ID="txtFecha" runat="server" TextMode="Date" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
+                                                                        <asp:TextBox ID="txtFecha" runat="server" 
+                                                                            TextMode="Date"
+                                                                            CssClass="form-control input-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group" id="divTipoSolicitante">
@@ -665,8 +676,9 @@
                                                                 <div class="form-group " id="divIdentificacion">
                                                                     <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblIdentificacion" name="lblIdentificacion" default_label="Número documento de identificación:">Número documento de identificación:</label>
                                                                     <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                                        <asp:TextBox ID="txtIdentificacion" runat="server" CssClass="form-control imput-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
-                                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtIdentificacion" ErrorMessage="El número de identificación es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                        <asp:TextBox ID="txtIdentificacion" runat="server" 
+                                                                            CssClass="form-control input-xs TextBoxFramework" 
+                                                                            ReadOnly="true"></asp:TextBox>                                                                       
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group " id="divRemitente">
@@ -717,7 +729,7 @@
                                                                     <div class="input-group input-group-sm">
                                                                         <asp:HiddenField ID="hddCodigoIdentidadGenero" runat="server" />
                                                                         <asp:TextBox ID="txtIdentidadGenero" ReadOnly="true" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
-                                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtIdentidadGenero" ErrorMessage="La identidad de género es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                        
                                                                         <span class="input-group-btn">
                                                                             <button type="button" disabled="disabled" id="btn_LimpiarIdentidadGenero" onclick="limpiarCampo('<%= txtIdentidadGenero.ClientID %>')" class="btn btn-default btn-medium">
                                                                                 <i class="fa fa-close"></i>
@@ -805,8 +817,9 @@
                                                         CssClass="table table-striped no-footer dataTable"
                                                         Width="0px"
                                                         HorizontalAlign="Center"
+                                                        autogenerateselectbutton="false"  
                                                         UseAccessibleHeader="true">                                                        
-                                                        <Columns>
+                                                        <Columns>                                                                                                                        
                                                              <asp:BoundField DataField="TituloArchivo" HeaderText="Título" 
                                                                 SortExpression="TituloArchivo"  />
                                                             <asp:BoundField DataField="FechaCreacion" HeaderText="Fecha" 
@@ -816,12 +829,13 @@
                                                             <asp:TemplateField ShowHeader="false">
                                                             <ItemTemplate>                                                                
                                                                 <asp:ImageButton ID="btnVerDocumento" runat="server" 
-                                                                    ToolTip="Ver"
+                                                                    ToolTip="Ver" 
                                                                     OnClick="btnVerDocumento_Click"
                                                                     ImageUrl="~/Styles/images/fa-external-link.svg"
                                                                     />
                                                             </ItemTemplate>
                                                             </asp:TemplateField>
+                                                            <asp:BoundField DataField="RutaVirtualArchivo" HeaderText="RutaVirtualArchivo" Visible="true" ItemStyle-CssClass="hiddencol" HeaderStyle-CssClass="hiddencol" />
                                                         </Columns>
                                                     </asp:GridView>
                                                     </div>
@@ -916,8 +930,8 @@
                                                     <div class="form-group " id="divAsesoriaEscrita">
                                                         <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblAsesoriaEscrita" name="lblAsesoriaEscrita" default_label="¿La asesoría debe generar respuesta por escrito?">¿La asesoría debe generar respuesta por escrito?</label>
                                                         <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                            <asp:RadioButton ID="respuestaEscritaSi" runat="server" ReadOnly="true" GroupName="respuestaEscrita" Text="  Sí" />
-                                                            <asp:RadioButton ID="respuestaEscritaNo" runat="server" ReadOnly="true" GroupName="respuestaEscrita" Text="  No" />
+                                                            <asp:RadioButton ID="respuestaEscritaSi" runat="server" ReadOnly="true" GroupName="respuestaEscrita" Text="&nbsp;&nbsp;Sí" />
+                                                            <asp:RadioButton ID="respuestaEscritaNo" runat="server" ReadOnly="true" GroupName="respuestaEscrita" Text="&nbsp;&nbsp;No" />
 
                                                         </div>
                                                     </div>
@@ -985,7 +999,6 @@
                                     <asp:HiddenField ID="txtCodigoSolicitud" runat="server" Value="3"></asp:HiddenField>
 
                                 </div>
-                                 
                             </div>
                         </div>
                         <hr/>
@@ -994,7 +1007,6 @@
                 </div>
             </div>
         </div>
-        
     </form>
 </body>
 </html>
