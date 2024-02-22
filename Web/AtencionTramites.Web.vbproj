@@ -248,12 +248,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB\ClasificacionPeticionDB.vb" />
     <Compile Include="DB\DocumentoDB.vb" />
     <Compile Include="DB\RadicadoDB.vb" />
-    <Compile Include="dto\CatalogoDTO.vb" />
-    <Compile Include="dto\DocumentoDTO.vb" />
-    <Compile Include="dto\ClasificacionPeticionDTO.vb" />
-    <Compile Include="dto\RadicadoDTO.vb" />
+    <Compile Include="DB\Utilidad.vb" />
     <Compile Include="Helpers\DocumentoHelper.vb" />
     <Compile Include="Helpers\RadicadoHelper.vb" />
     <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.designer.vb">
@@ -360,6 +358,10 @@
     <ProjectReference Include="..\LogWriterHelper\LogWriterHelper.vbproj">
       <Project>{c862592c-c334-4a7c-b2c9-d3fec5ff5be6}</Project>
       <Name>LogWriterHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.vbproj">
+      <Project>{83ac54ec-60ef-4191-b223-c67ee38db0f7}</Project>
+      <Name>Modelo</Name>
     </ProjectReference>
     <ProjectReference Include="..\UltimusEIK\UltimusEIK.vbproj">
       <Project>{D229368F-A466-4085-BE15-96A661076A67}</Project>

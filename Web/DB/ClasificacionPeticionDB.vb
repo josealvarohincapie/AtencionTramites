@@ -3,7 +3,7 @@ Imports LogWriterHelper
 Imports Modelo.Modelo.dto
 
 Namespace DB
-    Public Class DocumentoDB
+    Public Class ClasificacionPeticionDB
 
         Private Shared Function GetHelperSQL() As HelperSQL
             Return New HelperSQL("BDDefensoria")
@@ -13,14 +13,14 @@ Namespace DB
         ''' Permite consultar los documentos asociados a un radicado
         ''' </summary>
         ''' <param name="codigoSolicitud">Código único de un radicado</param>
-        ''' <returns>Lista con la información de los documentos asociados a un radicado</returns>
-        Public Shared Function ConsultarDocumentosPorCodigoRadicado(ByVal codigoSolicitud As Integer) As List(Of DocumentoDTO)
+        ''' <returns>Objeto con la información de la clasificación de la solicitud</returns>
+        Public Shared Function ConsultarClasificacionXCodigoSolicitud(ByVal codigoSolicitud As Integer) As List(Of DocumentoDTO)
             Dim strError As String = Nothing
             Dim listaDocumentos As New List(Of DocumentoDTO)()
             Dim dataSet As New DataSet()
 
             Try
-                Dim sql As String = "spConsultarDocumentosPorCodigoRadicado " & Utilidad.IntegerFormat(codigoSolicitud)
+                Dim sql As String = "spConsultarClasificacionPeticion " & Utilidad.IntegerFormat(codigoSolicitud)
 
                 If GetHelperSQL().Consulta(sql, dataSet, strError) Then
                     If dataSet.Tables.Count = 0 Or dataSet.Tables(0).Rows.Count = 0 Then
@@ -72,6 +72,7 @@ Namespace DB
 
             Return listaDocumentos
         End Function
+
 
     End Class
 End Namespace

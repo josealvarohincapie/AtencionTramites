@@ -1,11 +1,6 @@
-﻿Imports Web
-Imports System.Data
-Imports System.IO
-Imports System.Configuration.ConfigurationManager
-Imports LogWriterHelper
-''Imports Modelo.
-Imports System.Globalization
-Imports Web.Modelo.dto
+﻿Imports LogWriterHelper
+Imports Web.DB
+Imports Modelo.Modelo.dto
 
 Public Class RadicadoHelper
 

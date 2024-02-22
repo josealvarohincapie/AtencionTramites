@@ -17,6 +17,7 @@ Namespace Modelo.dto
         Private _folios As Int32
         Private _anexos As String
         Private _esUrgente As Boolean
+        Private _identificacion As String
         Private _tipoDocumento As CatalogoDTO
         Private _subTipoDocumento As CatalogoDTO
         Private _grupoEtnico As CatalogoDTO
@@ -46,7 +47,8 @@ Namespace Modelo.dto
         Private _municipioHechos As CatalogoDTO
         Private _formato As CatalogoDTO
         Private _observaciones As String
-        Private _cedula As String
+        Private _canalAtencion As CatalogoDTO
+        Private _expresionGenero As CatalogoDTO
 
         Public Property CodigoSolicitud As Long
             Get
@@ -444,12 +446,30 @@ Namespace Modelo.dto
             End Set
         End Property
 
-        Public Property Cedula As String
+        Public Property Identificacion As String
             Get
-                Return _cedula
+                Return _identificacion
             End Get
             Set(value As String)
-                _cedula = value
+                _identificacion = value
+            End Set
+        End Property
+
+        Public Property CanalAtencion As CatalogoDTO
+            Get
+                Return _canalAtencion
+            End Get
+            Set(value As CatalogoDTO)
+                _canalAtencion = value
+            End Set
+        End Property
+
+        Public Property ExpresionGenero As CatalogoDTO
+            Get
+                Return _expresionGenero
+            End Get
+            Set(value As CatalogoDTO)
+                _expresionGenero = value
             End Set
         End Property
     End Class

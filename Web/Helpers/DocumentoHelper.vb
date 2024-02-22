@@ -1,6 +1,6 @@
-﻿Imports System.Configuration.ConfigurationManager
-Imports LogWriterHelper
-Imports Web.Modelo.dto
+﻿Imports LogWriterHelper
+Imports Modelo.Modelo.dto
+Imports Web.DB
 
 Public Class DocumentoHelper
 

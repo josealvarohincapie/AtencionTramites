@@ -5,10 +5,6 @@ Namespace Modelo.dto
         Private _codigo As String
         Private _nombre As String
 
-        Public Sub New()
-
-        End Sub
-
         Public Sub New(codigo As String, nombre As String)
             If codigo Is Nothing Then
                 Throw New ArgumentNullException(NameOf(codigo))
