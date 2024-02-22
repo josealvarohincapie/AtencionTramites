@@ -869,7 +869,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="menu2" class="tab-pane fade in active">
+                                    <div id="menu2" class="tab-pane fade">
                                         <div id="divMenu2">
                                             <h3 class="TituloAcordeon">
                                                 <a data-toggle="collapse" href="#divCollapse2" style="color: black; text-decoration: none;">

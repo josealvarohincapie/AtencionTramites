@@ -252,6 +252,7 @@
     <Compile Include="DB\RadicadoDB.vb" />
     <Compile Include="dto\CatalogoDTO.vb" />
     <Compile Include="dto\DocumentoDTO.vb" />
+    <Compile Include="dto\ClasificacionPeticionDTO.vb" />
     <Compile Include="dto\RadicadoDTO.vb" />
     <Compile Include="Helpers\DocumentoHelper.vb" />
     <Compile Include="Helpers\RadicadoHelper.vb" />
