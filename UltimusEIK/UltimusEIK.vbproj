@@ -59,6 +59,9 @@
     <Reference Include="AtencionTramites.Servicios.Utilidades.Mensajes">
       <HintPath>..\AtencionTramites.Servicios.Utilidades.Mensajes\bin\Debug\net8.0\AtencionTramites.Servicios.Utilidades.Mensajes.dll</HintPath>
     </Reference>
+    <Reference Include="Modelo">
+      <HintPath>..\Modelo\bin\Debug\net8.0-windows\Modelo.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
