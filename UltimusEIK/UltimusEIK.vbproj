@@ -226,10 +226,6 @@
     <None Include="Service References\UltimusBIS\UltimusBIS.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\UltEik.dll" />
-    <Content Include="bin\UltEikClientServices.dll" />
-    <Content Include="bin\UltEikStructures.dll" />
-    <Content Include="bin\UltManagedStructs.dll" />
     <None Include="Service References\Tramite_Solicitudes\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
