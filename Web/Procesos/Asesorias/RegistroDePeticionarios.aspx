@@ -878,6 +878,20 @@
                                                 </a>
                                             </h3>
                                             <div id="divCollapse2" class="panel-collapse collapse in">
+                                                <div id="divRegistroPeticionarios" runat="server">
+                                                    <asp:GridView ID="gvPeticionarios" runat="server" AutoGenerateColumns="False">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="Numero" HeaderText="N°" />
+                                                            <asp:CheckBoxField DataField="Anonimo" HeaderText="Anónimo" />
+                                                            <asp:BoundField DataField="Contacto" HeaderText="Contacto" />
+                                                            <asp:BoundField DataField="TipoPersona" HeaderText="Tipo de persona" />
+                                                            <asp:BoundField DataField="TipoDocumento" HeaderText="Tipo de documento" />
+                                                            <asp:BoundField DataField="NumeroDocumento" HeaderText="Número de documento" />
+                                                            <asp:BoundField DataField="NombresApellidosRazonSocial" HeaderText="Nombres y apellidos / Razón social" />
+                                                            <asp:BoundField DataField="Confidencialidad" HeaderText="Confidencialidad" />
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </div>
                                             <div class="contenedor">
                                                 <div class="columna">
                                                     <div class="row">
