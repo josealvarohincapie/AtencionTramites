@@ -3,8 +3,10 @@ Imports LogWriterHelper
 Imports AtencionTramites.Servicios.Utilidades.Mensajes.Compensar.Servicios.Utilidades.Mensajes
 
 Namespace AtencionTramites.Servicios.Utilidades.Mensajes
-    Module HelperMensaje
-        Function Obtener(ByVal codigo As String) As String
+
+    Public Class HelperMensaje
+
+        Public Shared Function Obtener(ByVal codigo As String) As String
             Try
                 Return String.Format("{0}|{1}", codigo, CatalogoMensajes.Instancia.GetMensaje(codigo))
             Catch ex As Exception
@@ -12,5 +14,6 @@ Namespace AtencionTramites.Servicios.Utilidades.Mensajes
                 Return String.Format("Error al obtener el mensaje del archivo mensajes.xml. Razón: {0}", ex.Message)
             End Try
         End Function
-    End Module
+    End Class
+
 End Namespace
