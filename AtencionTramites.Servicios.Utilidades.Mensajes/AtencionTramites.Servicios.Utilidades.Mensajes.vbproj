@@ -7,6 +7,23 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AtencionTramites.Servicios.Utilidades.Excepciones\AtencionTramites.Servicios.Utilidades.Excepciones.vbproj" />
+    <ProjectReference Include="..\LogWriterHelper\LogWriterHelper.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MensajesRecurso.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MensajesRecurso.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="MensajesRecurso.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <LastGenOutput>MensajesRecurso.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
