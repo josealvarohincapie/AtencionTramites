@@ -1,4 +1,4 @@
-Namespace Modelo.dto
+Namespace AtencionTramites.Modelo.dto
 
     Public Class RadicadoDTO
 

@@ -1,4 +1,5 @@
 ﻿Imports Datos
+Imports Datos.AtencionTramites.AccesoDatos
 Imports LogWriterHelper
 Imports System.Data
 
@@ -365,7 +366,7 @@ Public Class DBMethods
             sql += DateFormat(d.FechaEmision) + ","
             sql += StringFormat(d.Observaciones) + ","
             sql += StringFormat(d.RazonSocial) + ","
-            sql += BooleanFormat(d.Opcional) 
+            sql += BooleanFormat(d.Opcional)
 
             If Not GetHelperSQL().EjecutaAccion(sql, strError) Then
                 LogWriter.WriteLog("DBMethods", strError)

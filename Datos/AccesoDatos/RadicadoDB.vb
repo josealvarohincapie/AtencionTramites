@@ -1,8 +1,7 @@
-﻿Imports Datos
-Imports LogWriterHelper
-Imports Modelo.Modelo.dto
+﻿Imports LogWriterHelper
+Imports Modelo.AtencionTramites.Modelo.dto
 
-Namespace DB
+Namespace AtencionTramites.AccesoDatos
 
     Public Class RadicadoDB
 

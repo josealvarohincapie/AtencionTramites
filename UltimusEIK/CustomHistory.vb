@@ -1,4 +1,5 @@
 ﻿Imports System.Xml
+Imports Datos.AtencionTramites.AccesoDatos
 
 Public Class CustomHistory
 
@@ -6,7 +7,7 @@ Public Class CustomHistory
         Dim bResultado As Boolean = False
         Try
             Dim strSql As String = "PA_AdminHistorico_V2 @Opcion=1"
-            Dim FnBD As New Datos.HelperSQL("Correspondencia")
+            Dim FnBD As New HelperSQL("Correspondencia")
             strSql &= ",@Proceso='" & UltData.ProcessName & "',@Incidente=" & UltData.IncidentNo
             strSql &= ",@Usuario='" & UltData.UserID & "',@Etapa='" & UltData.StepLabel & "'"
             strSql &= ",@Inicio='" & UltData.StartTime.ToString("yyyy/MM/dd HH:mm:ss") & "'"

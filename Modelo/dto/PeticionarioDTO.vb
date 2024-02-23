@@ -1,4 +1,4 @@
-﻿Imports Modelo.Modelo.dto
+﻿Imports Modelo.AtencionTramites.Modelo.dto
 
 Public Class PeticionarioDTO
     Private _tipoSolicitante As CatalogoDTO

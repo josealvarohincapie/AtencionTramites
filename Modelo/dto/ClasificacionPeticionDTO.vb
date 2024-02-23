@@ -1,14 +1,15 @@
-Namespace Modelo.dto
+Namespace AtencionTramites.Modelo.dto
 
     Public Class ClasificacionPeticionDTO
 
+        Private _codigoSolicitud As Int64
         Private _tipoPeticion As CatalogoDTO
         Private _areaDerecho As CatalogoDTO
         Private _derechos As List(Of CatalogoDTO)
         Private _descripcionAsesoria As String
         Private _observaciones As String
         Private _respuestaEscrita As Boolean
-        Private _conclusionAsesoria As String
+        Private _conclusionAsesoria As CatalogoDTO
 
         Public Property TipoPeticion As CatalogoDTO
             Get
@@ -64,11 +65,20 @@ Namespace Modelo.dto
             End Set
         End Property
 
-        Public Property ConclusionAsesoria As String
+        Public Property CodigoSolicitud As Long
+            Get
+                Return _codigoSolicitud
+            End Get
+            Set(value As Long)
+                _codigoSolicitud = value
+            End Set
+        End Property
+
+        Public Property ConclusionAsesoria As CatalogoDTO
             Get
                 Return _conclusionAsesoria
             End Get
-            Set(value As String)
+            Set(value As CatalogoDTO)
                 _conclusionAsesoria = value
             End Set
         End Property

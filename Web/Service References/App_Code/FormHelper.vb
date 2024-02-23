@@ -11,6 +11,7 @@ Imports System.IO
 Imports Integracion
 Imports Datos.Enums
 Imports System.Globalization
+Imports Datos.AtencionTramites.AccesoDatos
 
 Public Class FormHelper
 

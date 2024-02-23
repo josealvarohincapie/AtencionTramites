@@ -1,36 +1,38 @@
-﻿Imports LogWriterHelper
-Imports Web.DB
-Imports Modelo.Modelo.dto
+﻿Imports Datos.AtencionTramites.AccesoDatos
+Imports LogWriterHelper
+Imports Modelo.AtencionTramites.Modelo.dto
 
-Public Class RadicadoHelper
+Namespace AtencionTramites.Helpers
+    Public Class RadicadoHelper
 
-    Private Const _RadicadoData As String = "_RadicadoData"
+        Private Const _RadicadoData As String = "_RadicadoData"
 
-    Public Sub New()
+        Public Sub New()
 
-    End Sub
+        End Sub
 
-    Public Shared Sub InitRadicado(ByRef form As RegistroDePeticionarios)
+        Public Shared Sub InitRadicado(ByRef form As RegistroDePeticionarios)
 
-        Try
-            Dim radicado As RadicadoDTO = RadicadoHelper.ConsultarDatosRadicadoPorCodigo(form.TxtCodigoSolicitud.Value)
-        Catch ex As Exception
-            Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
-            LogWriter.WriteLog("RadicadoHelper - " & nombreMetodo, ex)
-        End Try
+            Try
+                Dim radicado As RadicadoDTO = RadicadoHelper.ConsultarDatosRadicadoPorCodigo(form.TxtCodigoSolicitud.Value)
+            Catch ex As Exception
+                Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
+                LogWriter.WriteLog("RadicadoHelper - " & nombreMetodo, ex)
+            End Try
 
-    End Sub
+        End Sub
 
-    Public Shared Function ConsultarDatosRadicadoPorCodigo(codigoSolicitud As Int64) As RadicadoDTO
-        Dim radicado As RadicadoDTO = Nothing
-        Try
-            radicado = RadicadoDB.ConsultarDatosRadicadoPorCodigo(codigoSolicitud)
-        Catch ex As Exception
-            Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
-            LogWriter.WriteLog("RadicadoHelper -" & nombreMetodo, ex)
-        End Try
+        Public Shared Function ConsultarDatosRadicadoPorCodigo(codigoSolicitud As Int64) As RadicadoDTO
+            Dim radicado As RadicadoDTO = Nothing
+            Try
+                radicado = RadicadoDB.ConsultarDatosRadicadoPorCodigo(codigoSolicitud)
+            Catch ex As Exception
+                Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
+                LogWriter.WriteLog("RadicadoHelper -" & nombreMetodo, ex)
+            End Try
 
-        Return radicado
-    End Function
+            Return radicado
+        End Function
 
-End Class
+    End Class
+End Namespace

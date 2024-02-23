@@ -1,4 +1,4 @@
-﻿Namespace DB
+﻿Namespace AtencionTramites.AccesoDatos
 
     Public Class Utilidad
 

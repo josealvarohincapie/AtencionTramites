@@ -1,6 +1,8 @@
 ﻿Imports UltimusEIK
 Imports LogWriterHelper
-Imports Modelo.Modelo.dto
+Imports Modelo.AtencionTramites.Modelo.dto
+Imports Web.AtencionTramites.Helpers
+Imports Datos.AtencionTramites.AccesoDatos
 
 Public Class RegistroDePeticionarios
     Inherits System.Web.UI.Page
@@ -178,7 +180,7 @@ Public Class RegistroDePeticionarios
         Try
             InicializacionRadicado()
             InicializacionDocumentos()
-            'InicializacionClasificacionPeticion()
+            InicializacionClasificacion()
         Catch ex As Exception
             Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
             Response.Write("<script language='javascript'>alert('" & "RegistroDePeticionarios -" & nombreMetodo & "-" & ex.Message & "');</script>")
@@ -190,7 +192,7 @@ Public Class RegistroDePeticionarios
     ''' </summary>
     Private Sub InicializacionRadicado()
         Try
-            Dim radicado As RadicadoDTO = RadicadoHelper.ConsultarDatosRadicadoPorCodigo(TxtCodigoSolicitud.Value)
+            Dim radicado As Modelo.AtencionTramites.Modelo.dto.RadicadoDTO = RadicadoHelper.ConsultarDatosRadicadoPorCodigo(TxtCodigoSolicitud.Value)
             TxtNumeroRadicado.Text = radicado.NumeroRadicado
             txtCanalAtencion.Text = radicado.CanalAtencion.Nombre
             hddCodigoCanalAtencion.Value = radicado.CanalAtencion.Codigo
@@ -249,6 +251,26 @@ Public Class RegistroDePeticionarios
         End Try
     End Sub
 
+    ''' <summary>
+    ''' Permite llenar los campos de la pestaña información del radicado
+    ''' </summary>
+    Private Sub InicializacionClasificacion()
+        Try
+            Dim clasificacion As ClasificacionPeticionDTO = ClasificacionPeticionHelper.ConsultarClasificacionXCodigoSolicitud(TxtCodigoSolicitud.Value)
+            txtDescripcionAsesoria.Text = clasificacion.DescripcionAsesoria
+
+            If clasificacion.AreaDerecho IsNot Nothing Then
+                txtAreaDerecho.Text = clasificacion.AreaDerecho.Nombre
+                hddCodigoAreaDerecho.Value = clasificacion.AreaDerecho.Codigo
+            End If
+        Catch
+            Response.Write("<script language=""javascript"">alert('Error cargando la información de la clasificación de la petición!');</script>")
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Permite llenar el control DataGrid de los documentos
+    ''' </summary>
     Private Sub ObtenerDataGridViewDocumentos()
         Try
             Dim listaDocumentos As List(Of DocumentoDTO) = DocumentoHelper.ConsultarDocumentosPorCodigoRadicado(TxtCodigoSolicitud.Value)
