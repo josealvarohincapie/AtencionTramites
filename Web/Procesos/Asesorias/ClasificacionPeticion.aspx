@@ -697,17 +697,11 @@
                                                     <div class="row">
                                                         <div class="col-md-10">
                                                             <h3>Datos básicos del peticionario</h3>
-                                                            <div class="form-group " id="divEsAnonimo2" >
-                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblEsAnonimo2" name="lblEsAnonimo2" default_label="Es anónimo ">¿Anónimo? </label>
-                                                                <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                                    <asp:CheckBox ID="chkAnonimo2" runat="server" CssClass="form-control input-xs TextBoxFramework" ></asp:CheckBox>
-                                                                </div>
-                                                            </div>
                                                             <div class="form-group" id="divTipoSolicitante2">
                                                                 <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblTipoSolicitante2" name="lblTipoSolicitante2" default_label="Tipo de solicitante:">Tipo de solicitante:</label>
                                                                 <div class="input-group input-group-sm">
                                                                     <asp:HiddenField ID="HiddenField1" runat="server" />
-                                                                    <asp:TextBox ID="txtTipoSolicitante2" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess" ></asp:TextBox>
+                                                                    <asp:TextBox ID="txtTipoSolicitante2" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtTipoSolicitante" ErrorMessage="El tipo de solicitante es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                     <span class="input-group-btn">
                                                                         <button type="button" id="btn_LimpiarTipoSolicitante2" onclick="limpiarCampo('<%= txtTipoSolicitante2.ClientID %>')" class="btn btn-default btn-medium">
@@ -719,6 +713,12 @@
                                                                     </span>
                                                                 </div>
                                                             </div>
+                                                            <div class="form-group " id="divEsAnonimo2">
+                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblEsAnonimo2" name="lblEsAnonimo2" default_label="Es anónimo ">¿Anónimo? </label>
+                                                                <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+                                                                    <asp:CheckBox ID="chkAnonimo2" runat="server" CssClass="form-control input-xs TextBoxFramework"></asp:CheckBox>
+                                                                </div>
+                                                            </div>
                                                             <div class="form-group" id="divTipoDocumento2">
                                                                 <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblTipoDocumento2" name="lblTipoDocumento2" default_label="Tipo documento de identificación:">Tipo documento de identificación:</label>
                                                                 <div class="input-group input-group-sm">
@@ -726,10 +726,10 @@
                                                                     <asp:TextBox ID="txtTipoDocumento2" runat="server" Text="" ReadOnly="true" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtTipoDocumento2" ErrorMessage="El tipo de documento es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                                     <span class="input-group-btn">
-                                                                        <button type="button"  id="btn_LimpiarTipoDocumento2" onclick="limpiarCampo('<%= txtTipoDocumento2.ClientID %>')" class="btn btn-default btn-medium">
+                                                                        <button type="button" id="btn_LimpiarTipoDocumento2" onclick="limpiarCampo('<%= txtTipoDocumento2.ClientID %>')" class="btn btn-default btn-medium">
                                                                             <i class="fa fa-close"></i>
                                                                         </button>
-                                                                        <button type="button"  id="btn_TipoDocumento2" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
+                                                                        <button type="button" id="btn_TipoDocumento2" class="btn btn-success btn-medium btn-margin-catalogo btn-file" usehttppost="0" webapplication="" usedatasource="0">
                                                                             <i class="fa fa-search"></i>&nbsp;
                                                                         </button>
                                                                     </span>
@@ -738,12 +738,82 @@
                                                             <div class="form-group " id="divIdentificacion2">
                                                                 <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblIdentificacion2" name="lblIdentificacion2" default_label="Número documento de identificación:">Número documento de identificación:</label>
                                                                 <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                                    <asp:TextBox ID="txtIdentificacion2" runat="server" 
-                                                                        CssClass="form-control input-xs TextBoxFramework" 
-                                                                        ></asp:TextBox>                                                                       
+                                                                    <asp:TextBox ID="txtIdentificacion2" runat="server"
+                                                                        CssClass="form-control input-xs TextBoxFramework"></asp:TextBox>
                                                                 </div>
                                                             </div>
-                                                            <div class="form-group " id="divConfidencial" >
+                                                            <div class="form-group" id="divRemitente2">
+                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblRemitente2" name="Remitente:">Remitente:</label>
+                                                                <div class="input-group input-group-sm">
+                                                                    <asp:HiddenField ID="hdnRemitente2" runat="server" />
+                                                                    <asp:TextBox ID="txtRemitente2" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator27" runat="server" ControlToValidate="txtRemitente2" ErrorMessage="El remitente es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" id="btn_LimpiarRemitente2" onclick="limpiarCampo('<%= txtRemitente2.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <i class="fa fa-close"></i>
+                                                                        </button>
+                                                                        <button type="button" id="btn_Remitente2" class="btn btn-success btn-medium btn-margin-catalogo btn-file" data-toggle="modal" data-target="#divmodalCatalogo" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <i class="fa fa-search"></i>&nbsp;
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group" id="divEstadoCivil">
+                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblEstadoCivil" name="Estado civil:">Estado civil:</label>
+                                                                <div class="input-group input-group-sm">
+                                                                    <asp:HiddenField ID="hdnEstadoCivil" runat="server" />
+                                                                    <asp:TextBox ID="txtEstadoCivil" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator28" runat="server" ControlToValidate="txtEstadoCivil" ErrorMessage="El estado civil es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" id="btn_LimpiarEstadoCivil" onclick="limpiarCampo('<%= txtEstadoCivil.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <i class="fa fa-close"></i>
+                                                                        </button>
+                                                                        <button type="button" id="btn_EstadoCivil" class="btn btn-success btn-medium btn-margin-catalogo btn-file" data-toggle="modal" data-target="#divmodalCatalogo" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <i class="fa fa-search"></i>&nbsp;
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group" id="divNivelEstudio">
+                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblNivelEstudio" name="Nivel de estudio:">Nivel de estudio:</label>
+                                                                <div class="input-group input-group-sm">
+                                                                    <asp:HiddenField ID="hdnNivelEstudio" runat="server" />
+                                                                    <asp:TextBox ID="txtNivelEstudio" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator29" runat="server" ControlToValidate="txtNivelEstudio" ErrorMessage="El nivel de estudio es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" id="btn_LimpiarNivelEstudio" onclick="limpiarCampo('<%= txtNivelEstudio.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <i class="fa fa-close"></i>
+                                                                        </button>
+                                                                        <button type="button" id="btn_NivelEstudio" class="btn btn-success btn-medium btn-margin-catalogo btn-file" data-toggle="modal" data-target="#divmodalCatalogo" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <i class="fa fa-search"></i>&nbsp;
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group" id="divEstratoSocioeconomico">
+                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblEstratoSocioeconomico" name="Estrato socioeconómico:">Estrato socioeconómico:</label>
+                                                                <div class="input-group input-group-sm">
+                                                                    <asp:HiddenField ID="hdnEstratoSocioeconomico" runat="server" />
+                                                                    <asp:TextBox ID="txtEstratoSocioeconomico" runat="server" Text="" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
+                                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator30" runat="server" ControlToValidate="txtEstratoSocioeconomico" ErrorMessage="El estrato socioeconómico es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
+                                                                    <span class="input-group-btn">
+                                                                        <button type="button" id="btn_LimpiarEstratoSocioeconomico" onclick="limpiarCampo('<%= txtEstratoSocioeconomico.ClientID %>')" class="btn btn-default btn-medium">
+                                                                            <i class="fa fa-close"></i>
+                                                                        </button>
+                                                                        <button type="button" id="btn_EstratoSocioeconomico" class="btn btn-success btn-medium btn-margin-catalogo btn-file" data-toggle="modal" data-target="#divmodalCatalogo" usehttppost="0" webapplication="" usedatasource="0">
+                                                                            <i class="fa fa-search"></i>&nbsp;
+                                                                        </button>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group " id="divNombreIdentitario">
+                                                                <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblNombreIdentitario" name="lblNombreIdentitario" default_label="Nombre identitario o Jurídico:">Nombre identitario o Jurídico:</label>
+                                                                <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
+                                                                    <asp:TextBox ID="txtNombreIdentitario" runat="server"
+                                                                        CssClass="form-control input-xs TextBoxFramework"></asp:TextBox>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group " id="divConfidencial">
                                                                 <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblConfidencial" name="lblConfidencial" default_label="Es confidencial :">¿Confidencial? </label>
                                                                 <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
                                                                     <asp:CheckBox ID="chkConfidencial" runat="server" CssClass="form-control input-xs TextBoxFramework"></asp:CheckBox>
