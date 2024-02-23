@@ -679,18 +679,80 @@
                                             </h3>
                                             <div id="divCollapse2" class="panel-collapse collapse in">
                                                 <div id="divRegistroPeticionarios" runat="server">
-                                                    <asp:GridView ID="gvPeticionarios" runat="server" AutoGenerateColumns="False">
-                                                        <Columns>
-                                                            <asp:BoundField DataField="Numero" HeaderText="N°" />
-                                                            <asp:CheckBoxField DataField="Anonimo" HeaderText="Anónimo" />
-                                                            <asp:BoundField DataField="Contacto" HeaderText="Contacto" />
-                                                            <asp:BoundField DataField="TipoPersona" HeaderText="Tipo de persona" />
-                                                            <asp:BoundField DataField="TipoDocumento" HeaderText="Tipo de documento" />
-                                                            <asp:BoundField DataField="NumeroDocumento" HeaderText="Número de documento" />
-                                                            <asp:BoundField DataField="NombresApellidosRazonSocial" HeaderText="Nombres y apellidos / Razón social" />
-                                                            <asp:BoundField DataField="Confidencialidad" HeaderText="Confidencialidad" />
-                                                        </Columns>
-                                                    </asp:GridView>
+                                                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>N°</th>
+                                                                <th>Anónimo</th>
+                                                                <th>Contacto</th>
+                                                                <th>Tipo de persona</th>
+                                                                <th>Tipo de documento</th>
+                                                                <th>Número de documento</th>
+                                                                <th>Nombres y apellidos / Razón social</th>
+                                                                <th>Confidencialidad</th>
+                                                                <th>Acciones</th>
+                                                                
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>
+                                                                    <input type="checkbox" checked disabled></td>
+                                                                <td>contacto1@example.com</td>
+                                                                <td>Natural</td>
+                                                                <td>T.I</td>
+                                                                <td>12345678</td>
+                                                                <td>Mateo Polanco</td>
+                                                                <td>Alta</td>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                                        <i class="fas fa-pencil-alt"></i>
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-danger btn-sm">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </button>
+                                                                </td>
+                                                                
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2</td>
+                                                                <td>
+                                                                    <input type="checkbox" disabled></td>
+                                                                <td>contacto2@example.com</td>
+                                                                <td>Jurídica</td>
+                                                                <td>C.C</td>
+                                                                <td>87654321</td>
+                                                                <td>Samir Rodríguez</td>
+                                                                <td>Media</td>
+                                                                <td>
+                                                                   <button type="button" class="btn btn-primary btn-sm">
+                                                                       <i class="fas fa-pencil-alt"></i>
+                                                                   </button>
+                                                                    <button type="button" class="btn btn-danger btn-sm">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </button>
+                                                                </td>
+                                                                
+                                                            </tr>
+                                                        </tbody>
+                                                        <script>
+                                                            document.addEventListener('DOMContentLoaded', function () {
+                                                                var totalRegistros = document.querySelector('#example tbody').rows.length;
+                                                                document.querySelector('#totalRegistros').textContent = totalRegistros;
+                                                            });
+                                                        </script>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <td colspan="9" style="text-align: left;">Total de registros: <span id="totalRegistros"></span></td>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    <div style="text-align: right;">
+                                                     <button " type="button" class="btn btn-primary btn-sm">
+                                                     <i class="fas fa-plus"></i>&nbsp;Agregar peticionario</button>
+                                                   </div>
+
                                                 </div>
                                             <div class="contenedor">
                                                 <div class="columna">

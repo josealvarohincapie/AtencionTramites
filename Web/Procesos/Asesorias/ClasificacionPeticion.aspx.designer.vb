@@ -113,15 +113,6 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents divRegistroPeticionarios As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control gvPeticionarios.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents gvPeticionarios As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
     '''Control HiddenField1.
     '''</summary>
     '''<remarks>
