@@ -2,87 +2,38 @@
 Imports LogWriterHelper
 Imports Modelo.AtencionTramites.Modelo.dto
 Imports Web.AtencionTramites.Helpers
-Imports Datos.AtencionTramites.AccesoDatos
 
-Public Class RegistroDePeticionarios
+Public Class ClasificacionPeticion
     Inherits System.Web.UI.Page
 
-    Public WithEvents TxtCodigoSolicitud As Global.System.Web.UI.WebControls.HiddenField
-    Public WithEvents TxtNumeroRadicado As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control hddCodigoCanalAtencion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Public WithEvents hddCodigoCanalAtencion As Global.System.Web.UI.WebControls.HiddenField
-    Public WithEvents txtCanalAtencion As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control txtFecha.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
+    Protected WithEvents hddCodigoAreaDerecho As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents txtAreaDerecho As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents hiddenDerechos As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents txtDescripcionAsesoria As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents hddCodigoRangoEdad As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents txtRangoEdad As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents hddCodigoExpresionGenero As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents txtExpresionGenero As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents hddCodigoIdentidadGenero As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents hddCodigoOrientacionSexual As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents txtIdentidadGenero As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents TxtCodigoSolicitud As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents TxtNumeroRadicado As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents hddCodigoCanalAtencion As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents txtCanalAtencion As Global.System.Web.UI.WebControls.TextBox
     Protected WithEvents txtFecha As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control hddCodigoTipoSolicitante.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Protected WithEvents hddCodigoTipoSolicitante As Global.System.Web.UI.WebControls.HiddenField
 
-    '''<summary>
-    '''Control txtTipoSolicitante.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Protected WithEvents txtTipoSolicitante As Global.System.Web.UI.WebControls.TextBox
 
     Protected WithEvents chkEsAnonimo As Global.System.Web.UI.WebControls.CheckBox
 
-    '''<summary>
-    '''Control hddCodigoTipoDocumento.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Protected WithEvents hddCodigoTipoDocumento As Global.System.Web.UI.WebControls.HiddenField
 
-    '''<summary>
-    '''Control txtTipoDocumento.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Protected WithEvents txtTipoDocumento As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''Control txtIdentificacion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Protected WithEvents txtIdentificacion As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''Control txtRemitente.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Protected WithEvents txtRemitente As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
@@ -103,35 +54,9 @@ Public Class RegistroDePeticionarios
     '''</remarks>
     Protected WithEvents hddCodigoSexoAsignado As Global.System.Web.UI.WebControls.HiddenField
 
-    '''<summary>
-    '''Control txtSexoAsignado.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Protected WithEvents txtSexoAsignado As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control hddCodigoOrientacionSexual.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents hddCodigoOrientacionSexual As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
-    '''Control txtOrientacionSexual.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Protected WithEvents txtOrientacionSexual As Global.System.Web.UI.WebControls.TextBox
-
-    Public WithEvents grdDocumentos As Global.System.Web.UI.WebControls.GridView
-
+    Protected WithEvents grdDocumentos As Global.System.Web.UI.WebControls.GridView
     Protected WithEvents txtComentarios As Global.System.Web.UI.WebControls.TextBox
 
 

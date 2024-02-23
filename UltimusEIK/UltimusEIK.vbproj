@@ -60,7 +60,7 @@
       <HintPath>..\AtencionTramites.Servicios.Utilidades.Mensajes\bin\Debug\net8.0\AtencionTramites.Servicios.Utilidades.Mensajes.dll</HintPath>
     </Reference>
     <Reference Include="Modelo">
-      <HintPath>..\Modelo\bin\Debug\net8.0-windows\Modelo.dll</HintPath>
+      <HintPath>..\Modelo\bin\Debug\Modelo.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

@@ -185,7 +185,7 @@
     <Content Include="Plugins\bootstrap\js\npm.js" />
     <Content Include="Plugins\jquery\jquery.min.js" />
     <Content Include="Procesos\Asesorias\RadicadoSolicitud.aspx" />
-    <Content Include="Procesos\Asesorias\RegistroDePeticionarios.aspx" />
+    <Content Include="Procesos\Asesorias\ClasificacionPeticion.aspx" />
     <Content Include="Scripts\ActividadDialog.js" />
     <Content Include="Scripts\Complementarios.js" />
     <Content Include="Scripts\Documentacion.js" />
@@ -198,6 +198,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+    <Content Include="Scripts\ClasificacionPeticion.js" />
     <Content Include="Styles\bootstrap.min.css" />
     <Content Include="Styles\dashboard.css" />
     <Content Include="Styles\font-awesome.min.css" />
@@ -251,11 +252,11 @@
     <Compile Include="Helpers\DocumentoHelper.vb" />
     <Compile Include="Helpers\ClasificacionPeticionHelper.vb" />
     <Compile Include="Helpers\RadicadoHelper.vb" />
-    <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.designer.vb">
-      <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>
+    <Compile Include="Procesos\Asesorias\ClasificacionPeticion.aspx.designer.vb">
+      <DependentUpon>ClasificacionPeticion.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Procesos\Asesorias\RegistroDePeticionarios.aspx.vb">
-      <DependentUpon>RegistroDePeticionarios.aspx</DependentUpon>
+    <Compile Include="Procesos\Asesorias\ClasificacionPeticion.aspx.vb">
+      <DependentUpon>ClasificacionPeticion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Procesos\Asesorias\RadicadoSolicitud.aspx.designer.vb">
