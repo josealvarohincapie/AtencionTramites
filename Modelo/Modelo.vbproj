@@ -72,6 +72,7 @@
     <Compile Include="dto\CatalogoDTO.vb" />
     <Compile Include="dto\ClasificacionPeticionDTO.vb" />
     <Compile Include="dto\DocumentoDTO.vb" />
+    <Compile Include="dto\PeticionarioDTO.vb" />
     <Compile Include="dto\RadicadoDTO.vb" />
     <Compile Include="dto\TareaBPMDTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
