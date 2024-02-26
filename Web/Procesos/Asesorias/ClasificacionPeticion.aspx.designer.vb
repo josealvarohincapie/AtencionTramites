@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class ClasificacionPeticion
 
     '''<summary>
+    '''Control btnBotones_Completar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnBotones_Completar As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
     '''Control frmRadicado.
     '''</summary>
     '''<remarks>
@@ -21,87 +30,6 @@ Partial Public Class ClasificacionPeticion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents frmRadicado As Global.System.Web.UI.HtmlControls.HtmlForm
-
-    '''<summary>
-    '''Control RequiredFieldValidator1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control RequiredFieldValidator2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control RequiredFieldValidator3.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator3 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control RequiredFieldValidator4.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator4 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control RequiredFieldValidator6.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator6 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control RequiredFieldValidator7.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator7 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control RequiredFieldValidator9.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator9 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control RequiredFieldValidator10.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator10 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control RequiredFieldValidator11.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator11 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control divRegistroPeticionarios.
@@ -113,13 +41,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents divRegistroPeticionarios As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Control HiddenField1.
+    '''Control hddTipoSolicitante2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents HiddenField1 As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents hddTipoSolicitante2 As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
     '''Control txtTipoSolicitante2.
@@ -131,13 +59,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtTipoSolicitante2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator5.
+    '''Control rqfTipoSolicitante2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator5 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rqfTipoSolicitante2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control chkAnonimo2.
@@ -167,13 +95,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtTipoDocumento2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator8.
+    '''Control rqfTipoDocumento2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator8 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rqfTipoDocumento2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control txtIdentificacion2.
@@ -183,6 +111,15 @@ Partial Public Class ClasificacionPeticion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtIdentificacion2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control rqfIdentificacion2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rqfIdentificacion2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hdnRemitente2.
@@ -203,13 +140,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtRemitente2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator27.
+    '''Control rqvRemitente2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator27 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rqvRemitente2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hdnEstadoCivil.
@@ -230,13 +167,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtEstadoCivil As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator28.
+    '''Control rqfEstadoCivil.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator28 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rqfEstadoCivil As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hdnNivelEstudio.
@@ -257,13 +194,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtNivelEstudio As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator29.
+    '''Control rfvNivelEstudio.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator29 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvNivelEstudio As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hdnEstratoSocioeconomico.
@@ -284,13 +221,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtEstratoSocioeconomico As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator30.
+    '''Control rqfEstratoSocioeconomico.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator30 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rqfEstratoSocioeconomico As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control txtNombreIdentitario.
@@ -300,6 +237,15 @@ Partial Public Class ClasificacionPeticion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtNombreIdentitario As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control rqfNombreIdentitario.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rqfNombreIdentitario As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control chkConfidencial.
@@ -419,13 +365,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtNacionalidad As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator14.
+    '''Control rfvNacionalidad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator14 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvNacionalidad As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddCodigoPais.
@@ -446,13 +392,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtPais As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator23.
+    '''Control rfvPais.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator23 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvPais As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddCodigoDepartamento.
@@ -473,13 +419,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtDepartamento As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator24.
+    '''Control rfvDepartamento.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator24 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvDepartamento As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddCodigoCiudad.
@@ -500,13 +446,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtCiudad As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator25.
+    '''Control rfvCiudad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator25 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvCiudad As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddCodigoCentroPoblado.
@@ -527,13 +473,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtCentroPoblado As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator26.
+    '''Control rfvCentroPoblado.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator26 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvCentroPoblado As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control chkCondicionDiscapacidad.
@@ -563,13 +509,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtSituacionDiscapacidad As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator31.
+    '''Control rfvSituacionDiscapacidad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator31 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvSituacionDiscapacidad As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control rblGrupoEtnicoBln2.
@@ -599,13 +545,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtGrupoEtnico2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator32.
+    '''Control rfvGrupoEtnico2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator32 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvGrupoEtnico2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddSexoAsignado2.
@@ -626,13 +572,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtSexoAsignado2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator33.
+    '''Control rfvSexoAsignado2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator33 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvSexoAsignado2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddIdentidadGenero2.
@@ -653,6 +599,15 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtIdentidadGenero2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control rfvIdentidadGenero2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rfvIdentidadGenero2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
     '''Control hddOrientacionSexual2.
     '''</summary>
     '''<remarks>
@@ -671,13 +626,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtOrientacionSexual2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator34.
+    '''Control rfvOrientacionSexual2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator34 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvOrientacionSexual2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddExpresionGenero2.
@@ -698,13 +653,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtExpresionGenero2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator35.
+    '''Control rfvExpresionGenero2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator35 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvExpresionGenero2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddRangoEdad2.
@@ -725,13 +680,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtRangoEdad2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator36.
+    '''Control rfvRangoEdad2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator36 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvRangoEdad2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddCodigoGrupo.
@@ -752,13 +707,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtGrupo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator20.
+    '''Control rfvGrupo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator20 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvGrupo As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddCodigoSubgrupo.
@@ -779,13 +734,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtSubgrupo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator21.
+    '''Control rfvSubgrupo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator21 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvSubgrupo As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddCodigoComunidad.
@@ -806,13 +761,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtComunidad As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator22.
+    '''Control rfvComunidad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator22 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvComunidad As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control txtAsesoria.
@@ -842,31 +797,31 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtTipoPeticion As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator12.
+    '''Control rfvTipoPeticion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator12 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvTipoPeticion As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control RequiredFieldValidator13.
+    '''Control rqrAreaDerecho.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator13 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rqrAreaDerecho As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control RequiredFieldValidator15.
+    '''Control rqfDecripcionAsesoria.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator15 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rqfDecripcionAsesoria As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control txtObservaciones.
@@ -878,13 +833,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtObservaciones As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator16.
+    '''Control rqfObservaciones.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator16 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rqfObservaciones As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control respuestaEscritaSi.
@@ -923,13 +878,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtConclusionAsesoria As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator17.
+    '''Control rqfConclusionAsesoria.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator17 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rqfConclusionAsesoria As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''Control hddCodigoDecision.
@@ -950,20 +905,20 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents txtDecision As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control RequiredFieldValidator18.
+    '''Control rfvDecision.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator18 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvDecision As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control RequiredFieldValidator19.
+    '''Control rfvComentarios.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator19 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents rfvComentarios As Global.System.Web.UI.WebControls.RequiredFieldValidator
 End Class
