@@ -122,7 +122,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\1. Estructuras.sql" />
+    <Content Include="Scripts\1.1. Estructuras - Drop.sql" />
+    <Content Include="Scripts\3. Datos.sql" />
+    <Content Include="Scripts\1.2. Estructuras - Create.sql" />
     <Content Include="Scripts\2. Procedimientos.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
