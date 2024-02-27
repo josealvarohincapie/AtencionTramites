@@ -13,7 +13,7 @@ GO
 * ==============================================================================================================
 * 22/02/2024 José A Hincapié	Permite insertar o modificar un registro de la clasificaciónde la petición
 * =============================================================================================================== */
-ALTER PROCEDURE [dbo].spInsClasificacionPeticion
+create or alter PROCEDURE [dbo].spInsClasificacionPeticion
  @CodigoSolicitud bigint,
  @CodigoTipoPeticion int,
  @CodigoAreaDerecho int,     
@@ -73,12 +73,12 @@ GO
 * ==============================================================================================================
 * 22/02/2024 José A Hincapié	Permite consultar un registro de la clasificaciónde la petición por codigoClasificacion
 * =============================================================================================================== */
-CREATE PROCEDURE [dbo].[spConClasificacionPeticion]
- @CodigoClasificacion bigint
+create or alter PROCEDURE [dbo].[spConClasificacionPeticion]
+ @CodigoSolicitud bigint
 AS    
 BEGIN
-	SELECT [CodigoClasificacion]
-      ,[CodigoSolicitud]
+	SELECT 
+      [CodigoSolicitud]
       ,[CodigoTipoPeticion]
       ,[CodigoAreaDerecho]
 	  , ad.Nombre NombreAreaDerecho
@@ -95,7 +95,7 @@ BEGIN
 	INNER JOIN Catalogo.AreaDerecho ad on ad.Codigo = CodigoAreaDerecho and ad.Habilitado = 1
 	INNER JOIN Catalogo.TipoPeticion tp on tp.Codigo = CodigoTipoPeticion and tp.Habilitado = 1
 	INNER JOIN Catalogo.ConclusionAsesoria ca on ca.Codigo = CodigoConclusionAsesoria and ca.Habilitado = 1
-	WHERE CodigoClasificacion = @CodigoClasificacion	   
+	WHERE CodigoSolicitud = @CodigoSolicitud
 END
 
 GO
@@ -115,7 +115,7 @@ GO
 * ==============================================================================================================
 * 13/02/2024 José A Hincapié	Permite consultar los datos de un radicado a partir del código del radicado
 * =============================================================================================================== */
-CREATE PROCEDURE [dbo].[spConsultarDatosRadicadoPorCodigo]
+create or alter PROCEDURE [dbo].[spConsultarDatosRadicadoPorCodigo]
 @codigoSolicitud bigint
 AS
 	BEGIN
@@ -206,7 +206,7 @@ GO
 * ==============================================================================================================
 * 13/02/2024 José A Hincapié	Permite consultar los documentos asociados a un radicado
 * =============================================================================================================== */
-create PROCEDURE [dbo].[spConsultarDocumentosPorCodigoRadicado]
+create or alter PROCEDURE [dbo].[spConsultarDocumentosPorCodigoRadicado]
 @codigoSolicitud bigint
 AS
 BEGIN
