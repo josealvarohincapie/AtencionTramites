@@ -183,9 +183,9 @@ Public Class ClasificacionPeticion
             txtObservaciones.Text = clasificacion.Observaciones
 
             If clasificacion.RespuestaEscrita Then
-                rblRespuestaEscrita.Items.FindByValue("1").Selected = True
+                'rblRespuestaEscrita.Items.FindByValue("1").Selected = True
             Else
-                rblRespuestaEscrita.Items.FindByValue("0").Selected = True
+                'rblRespuestaEscrita.Items.FindByValue("0").Selected = True
             End If
         Catch
             Response.Write("<script language=""javascript"">alert('Error cargando la información de la clasificación de la petición!');</script>")
@@ -243,6 +243,7 @@ Public Class ClasificacionPeticion
         Me.Page.ClientScript.RegisterStartupScript(Me.Page.GetType(), "", "AbrirDocumento();", True)
         'Response.Write("<script language='javascript'>AbrirDocumento('" & url & "');</script>")
     End Sub
+
     Sub Enviar_OnClick(sender As Object, e As EventArgs)
         txtCanalAtencion.Text = ""
 
@@ -250,12 +251,17 @@ Public Class ClasificacionPeticion
 
     End Sub
 
-    Sub GrabarRegistrarClasificacion_OnClick(sender As Object, e As EventArgs)
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Sub GuardarClasificacion_OnClick(sender As Object, e As EventArgs)
 
-        Dim respuesta As Boolean = ClasificacionPeticionHelper.GuardarRadicarClasificacion(
-            TxtCodigoSolicitud.Value, hddCodigoTipoPeticion.Value, hddCodigoAreaDerecho.Value,
-            txtDescripcionAsesoria.Text, txtObservaciones.Text, respuestaEscrit,
-            hddCodigoConclusionAsesoria.Value, nombreUsuario, idUsuario)
+        'Dim respuesta As Boolean = ClasificacionPeticionHelper.GuardarRadicarClasificacion(
+        '    TxtCodigoSolicitud.Value, hddCodigoTipoPeticion.Value, hddCodigoAreaDerecho.Value,
+        '    txtDescripcionAsesoria.Text, txtObservaciones.Text, respuestaEscrit,
+        '    hddCodigoConclusionAsesoria.Value, nombreUsuario, idUsuario)
         Response.Write("<script language='javascript'>alert('hola');</script>")
     End Sub
 End Class

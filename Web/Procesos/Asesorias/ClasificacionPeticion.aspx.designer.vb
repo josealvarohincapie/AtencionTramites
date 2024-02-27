@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class ClasificacionPeticion
 
     '''<summary>
+    '''Control frmRadicado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents frmRadicado As Global.System.Web.UI.HtmlControls.HtmlForm
+
+    '''<summary>
     '''Control btnBotones_GuardarRadicado.
     '''</summary>
     '''<remarks>
@@ -23,22 +32,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents btnBotones_GuardarRadicado As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
-    '''Control frmRadicado.
+    '''Control btnBotones_Completar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnBotones_Completar As Global.System.Web.UI.HtmlControls.HtmlButton
-
-    '''<summary>
-    '''Control frmRadicado.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents frmRadicado As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
     '''Control divRegistroPeticionarios.
@@ -822,15 +822,6 @@ Partial Public Class ClasificacionPeticion
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents rqfObservaciones As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control rblRespuestaEscrita.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents rblRespuestaEscrita As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
     '''Control hddCodigoConclusionAsesoria.
