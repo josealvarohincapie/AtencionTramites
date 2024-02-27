@@ -184,6 +184,7 @@
     <Content Include="Plugins\bootstrap\js\bootstrap.min.js" />
     <Content Include="Plugins\bootstrap\js\npm.js" />
     <Content Include="Plugins\jquery\jquery.min.js" />
+    <Content Include="Procesos\Asesorias\OnServerClick.aspx" />
     <Content Include="Procesos\Asesorias\RadicadoSolicitud.aspx" />
     <Content Include="Procesos\Asesorias\ClasificacionPeticion.aspx" />
     <Content Include="Scripts\ActividadDialog.js" />
@@ -208,6 +209,9 @@
     <Content Include="Styles\images\cross.png" />
     <Content Include="Styles\images\delete.png" />
     <Content Include="Styles\images\fa-external-link.svg" />
+    <Content Include="Styles\images\floppy-diskRegular.svg" />
+    <Content Include="Styles\images\floppy-disk-regular %282%29.svg" />
+    <Content Include="Styles\images\floppy-disk-regular.svg" />
     <Content Include="Styles\images\inbox.png" />
     <Content Include="Styles\images\logo_defensoria.png" />
     <Content Include="Styles\images\magnifier.png" />

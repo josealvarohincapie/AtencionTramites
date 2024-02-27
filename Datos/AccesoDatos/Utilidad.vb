@@ -64,7 +64,7 @@
             Return i.ToString()
         End Function
 
-        Private Shared Function StringFormat(ByVal s As String) As String
+        Public Shared Function StringFormat(ByVal s As String) As String
             If s Is Nothing Then
                 Return "null"
             Else
@@ -72,15 +72,15 @@
             End If
         End Function
 
-        Private Shared Function BooleanFormat(ByVal b As Boolean) As String
+        Public Shared Function BooleanFormat(ByVal b As Boolean) As String
             Return IIf(b, "1", "0")
         End Function
 
-        Private Shared Function DecimalFormat(ByVal d As Decimal) As String
+        Public Shared Function DecimalFormat(ByVal d As Decimal) As String
             Return d.ToString().Replace(",", ".")
         End Function
 
-        Private Shared Function DateFormat(ByVal d As Date) As String
+        Public Shared Function DateFormat(ByVal d As Date) As String
             If d = Date.MinValue Then
                 Return "null"
             Else

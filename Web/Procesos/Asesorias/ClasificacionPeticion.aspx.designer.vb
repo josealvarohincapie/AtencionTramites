@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class ClasificacionPeticion
 
     '''<summary>
+    '''Control btnBotones_GuardarRadicado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnBotones_GuardarRadicado As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
     '''Control frmRadicado.
     '''</summary>
     '''<remarks>
@@ -815,33 +824,6 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents RequiredFieldValidator22 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control txtAsesoria.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtAsesoria As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control hddCodigoTipoPeticion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents hddCodigoTipoPeticion As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
-    '''Control txtTipoPeticion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtTipoPeticion As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Control RequiredFieldValidator12.
     '''</summary>
     '''<remarks>
@@ -887,22 +869,13 @@ Partial Public Class ClasificacionPeticion
     Protected WithEvents RequiredFieldValidator16 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''Control respuestaEscritaSi.
+    '''Control rblRespuestaEscrita.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents respuestaEscritaSi As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''Control respuestaEscritaNo.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents respuestaEscritaNo As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents rblRespuestaEscrita As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
     '''Control hddCodigoConclusionAsesoria.

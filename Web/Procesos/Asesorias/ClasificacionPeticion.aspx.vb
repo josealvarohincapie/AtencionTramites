@@ -2,6 +2,7 @@
 Imports LogWriterHelper
 Imports Modelo.AtencionTramites.Modelo.dto
 Imports Web.AtencionTramites.Helpers
+Imports Datos.AtencionTramites.AccesoDatos
 
 Public Class ClasificacionPeticion
     Inherits System.Web.UI.Page
@@ -23,42 +24,26 @@ Public Class ClasificacionPeticion
     Protected WithEvents txtCanalAtencion As Global.System.Web.UI.WebControls.TextBox
     Protected WithEvents txtFecha As Global.System.Web.UI.WebControls.TextBox
     Protected WithEvents hddCodigoTipoSolicitante As Global.System.Web.UI.WebControls.HiddenField
-
     Protected WithEvents txtTipoSolicitante As Global.System.Web.UI.WebControls.TextBox
-
     Protected WithEvents chkEsAnonimo As Global.System.Web.UI.WebControls.CheckBox
-
     Protected WithEvents hddCodigoTipoDocumento As Global.System.Web.UI.WebControls.HiddenField
-
     Protected WithEvents txtTipoDocumento As Global.System.Web.UI.WebControls.TextBox
-
     Protected WithEvents txtIdentificacion As Global.System.Web.UI.WebControls.TextBox
-
     Protected WithEvents txtRemitente As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control rblGrupoEtnico.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
+    Protected WithEvents txtAsesoria As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents hddCodigoTipoPeticion As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents txtTipoPeticion As Global.System.Web.UI.WebControls.TextBox
     Protected WithEvents rblGrupoEtnico As Global.System.Web.UI.WebControls.RadioButtonList
-
-    '''<summary>
-    '''Control hddCodigoSexoAsignado.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
     Protected WithEvents hddCodigoSexoAsignado As Global.System.Web.UI.WebControls.HiddenField
-
     Protected WithEvents txtSexoAsignado As Global.System.Web.UI.WebControls.TextBox
     Protected WithEvents txtOrientacionSexual As Global.System.Web.UI.WebControls.TextBox
     Protected WithEvents grdDocumentos As Global.System.Web.UI.WebControls.GridView
     Protected WithEvents txtComentarios As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents respuestaEscritaSi As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents respuestaEscritaNo As Global.System.Web.UI.WebControls.RadioButton
 
+    Dim nombreUsuario As String = "Dacartec"
+    Dim idUsuario As String = "Dacartec"
 
     Private Sub InitUltDataFromRequest()
 
@@ -179,14 +164,28 @@ Public Class ClasificacionPeticion
     ''' <summary>
     ''' Permite llenar los campos de la pestaña información del radicado
     ''' </summary>
+
     Private Sub InicializacionClasificacion()
         Try
             Dim clasificacion As ClasificacionPeticionDTO = ClasificacionPeticionHelper.ConsultarClasificacionXCodigoSolicitud(TxtCodigoSolicitud.Value)
-            txtDescripcionAsesoria.Text = clasificacion.DescripcionAsesoria
+
+            If clasificacion.TipoPeticion IsNot Nothing Then
+                txtTipoPeticion.Text = clasificacion.TipoPeticion.Nombre
+                hddCodigoTipoPeticion.Value = clasificacion.TipoPeticion.Codigo
+            End If
 
             If clasificacion.AreaDerecho IsNot Nothing Then
                 txtAreaDerecho.Text = clasificacion.AreaDerecho.Nombre
                 hddCodigoAreaDerecho.Value = clasificacion.AreaDerecho.Codigo
+            End If
+
+            txtDescripcionAsesoria.Text = clasificacion.DescripcionAsesoria
+            txtObservaciones.Text = clasificacion.Observaciones
+
+            If clasificacion.RespuestaEscrita Then
+                rblRespuestaEscrita.Items.FindByValue("1").Selected = True
+            Else
+                rblRespuestaEscrita.Items.FindByValue("0").Selected = True
             End If
         Catch
             Response.Write("<script language=""javascript"">alert('Error cargando la información de la clasificación de la petición!');</script>")
@@ -224,8 +223,8 @@ Public Class ClasificacionPeticion
             grdDocumentos.DataBind()
         Catch ex As Exception
             Dim nombreMetodo = System.Reflection.MethodBase.GetCurrentMethod().Name
-            LogWriter.WriteLog("RegistroDePeticionarios -" & nombreMetodo, ex)
-            Throw New Exception("RegistroDePeticionarios -" & nombreMetodo & "-" & ex.Message, ex)
+            LogWriter.WriteLog("ClasificacionPeticion -" & nombreMetodo, ex)
+            Throw New Exception("ClasificacionPeticion -" & nombreMetodo & "-" & ex.Message, ex)
         End Try
     End Sub
 
@@ -243,5 +242,14 @@ Public Class ClasificacionPeticion
         Next
         Me.Page.ClientScript.RegisterStartupScript(Me.Page.GetType(), "", "AbrirDocumento();", True)
         'Response.Write("<script language='javascript'>AbrirDocumento('" & url & "');</script>")
+    End Sub
+
+    Sub GrabarRegistrarClasificacion_OnClick(sender As Object, e As EventArgs)
+
+        Dim respuesta As Boolean = ClasificacionPeticionHelper.GuardarRadicarClasificacion(
+            TxtCodigoSolicitud.Value, hddCodigoTipoPeticion.Value, hddCodigoAreaDerecho.Value,
+            txtDescripcionAsesoria.Text, txtObservaciones.Text, respuestaEscrit,
+            hddCodigoConclusionAsesoria.Value, nombreUsuario, idUsuario)
+        Response.Write("<script language='javascript'>alert('hola');</script>")
     End Sub
 End Class

@@ -134,3 +134,58 @@ EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'¿La asesor
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Descripción Asesoria', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'ClasificacionPeticion', @level2type = N'COLUMN', @level2name = N'DescripcionAsesoria';
 
+CREATE TABLE [dbo].[DerechosClasificacion] (
+    [CodigoDerechoClasificacion] BIGINT        IDENTITY (1, 1) NOT NULL,
+    [CodigoSolicitud]            BIGINT        NOT NULL,
+    [CodigoDerecho]              INT           NOT NULL,
+    [FechaCreacion]              DATETIME      NOT NULL,
+    [NombreUsuarioCreacion]      VARCHAR (250) NOT NULL,
+    [IDUsuarioCreacion]          VARCHAR (250) NULL,
+    [FechaUsuarioModifica]       DATETIME      NOT NULL,
+    [NombreUsuarioModifica]      VARCHAR (250) NOT NULL,
+    [Habilitado]                 BIT           NOT NULL,
+    CONSTRAINT [PK_DerechosClasificacion] PRIMARY KEY CLUSTERED ([CodigoDerechoClasificacion] ASC),
+    CONSTRAINT [FK_DerechosClasificacion_Derecho] FOREIGN KEY ([CodigoDerecho]) REFERENCES [Catalogo].[Derecho] ([Codigo]),
+    CONSTRAINT [FK_DerechosClasificacion_Radicado] FOREIGN KEY ([CodigoSolicitud]) REFERENCES [dbo].[Radicado] ([CodigoSolicitud])
+);
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Almacena los derechos asociados a una petición en la clasificación de una petición', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'DerechosClasificacion';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Fecha de creación del registro', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'DerechosClasificacion', @level2type = N'COLUMN', @level2name = N'FechaCreacion';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Nombre usuario creacion del registro', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'DerechosClasificacion', @level2type = N'COLUMN', @level2name = N'NombreUsuarioCreacion';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Fecha usuario modificación', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'DerechosClasificacion', @level2type = N'COLUMN', @level2name = N'FechaUsuarioModifica';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Identificador único del registro', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'DerechosClasificacion', @level2type = N'COLUMN', @level2name = N'CodigoDerechoClasificacion';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'ID usuario creación', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'DerechosClasificacion', @level2type = N'COLUMN', @level2name = N'IDUsuarioCreacion';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Activo:1 - inactivo:0', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'DerechosClasificacion', @level2type = N'COLUMN', @level2name = N'Habilitado';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'FK - Catálogo Derecho', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'DerechosClasificacion', @level2type = N'COLUMN', @level2name = N'CodigoDerecho';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'Nombre usuario modificación', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'DerechosClasificacion', @level2type = N'COLUMN', @level2name = N'NombreUsuarioModifica';
+
+
+GO
+EXECUTE sp_addextendedproperty @name = N'MS_Description', @value = N'FK - Radicado', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'TABLE', @level1name = N'DerechosClasificacion', @level2type = N'COLUMN', @level2name = N'CodigoSolicitud';
+

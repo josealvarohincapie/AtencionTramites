@@ -11,9 +11,9 @@ GO
 * 
 * Fecha      Responsable        Comentarios
 * ==============================================================================================================
-* 22/02/2024 José A Hincapié	Permite insertar un registro de la clasificaciónde la petición
+* 22/02/2024 José A Hincapié	Permite insertar o modificar un registro de la clasificaciónde la petición
 * =============================================================================================================== */
-CREATE PROCEDURE [dbo].[spInsClasificacionPeticion]
+ALTER PROCEDURE [dbo].spInsClasificacionPeticion
  @CodigoSolicitud bigint,
  @CodigoTipoPeticion int,
  @CodigoAreaDerecho int,     
@@ -26,86 +26,34 @@ CREATE PROCEDURE [dbo].[spInsClasificacionPeticion]
  @IDUsuarioCreacion VARCHAR(250) 
 AS    
 BEGIN
-	BEGIN TRY    
-	
-		INSERT INTO ClasificacionPeticion(CodigoSolicitud
-			,[CodigoTipoPeticion]
-			,[CodigoAreaDerecho]
-			,[DescripcionAsesoria]
-			,[Observaciones]
-			,[RespuestaEscrito]
-			,[CodigoConclusionAsesoria]
-			,[FechaCreacion]
-			,[NombreUsuarioCreacion]
+    If exists(Select 1 from ClasificacionPeticion 
+				where CodigoSolicitud = @CodigoSolicitud)
+	Begin
+		Update ClasificacionPeticion 
+	    Set CodigoTipoPeticion = @CodigoTipoPeticion
+            ,[CodigoAreaDerecho] = @CodigoAreaDerecho
+            ,[DescripcionAsesoria] = @DescripcionAsesoria
+            ,[Observaciones] = @Observaciones
+            ,[RespuestaEscrito] = @RespuestaEscrito
+            ,[CodigoConclusionAsesoria] = @CodigoConclusionAsesoria
+            ,[FechaUsuarioModifica] = @FechaCreacion
+            ,[NombreUsuarioModifica] = @NombreUsuarioCreacion		
+		Where CodigoSolicitud = @CodigoSolicitud 
+	End
+	Else
+	Begin
+		INSERT INTO ClasificacionPeticion(
+            CodigoSolicitud, CodigoTipoPeticion, CodigoAreaDerecho
+			, [DescripcionAsesoria] ,[Observaciones] ,[RespuestaEscrito]
+			,[CodigoConclusionAsesoria] ,[FechaCreacion] ,[NombreUsuarioCreacion]
 			,[IDUsuarioCreacion]
 		) VALUES (
-			@CodigoSolicitud,
-			@CodigoTipoPeticion,
-			@CodigoAreaDerecho,     
-			@DescripcionAsesoria,
-			@Observaciones,
-			@RespuestaEscrito,    
-			@CodigoConclusionAsesoria,
-			@FechaCreacion,    
-			@NombreUsuarioCreacion,
+			@CodigoSolicitud, @CodigoTipoPeticion, @CodigoAreaDerecho,
+			@DescripcionAsesoria, @Observaciones, @RespuestaEscrito,    
+			@CodigoConclusionAsesoria, @FechaCreacion, @NombreUsuarioCreacion,
 			@IDUsuarioCreacion
-		)    
-	END TRY    
-	BEGIN CATCH    
-		RAISERROR ('Ocurrio un error al insertar el registro en la tabla ClasificacionPeticion', 15, 3)    
-		RETURN    
-	END CATCH    
-END
-
-GO
-
-IF OBJECT_ID('spModClasificacionPeticion') IS NOT NULL
-      BEGIN
-            DROP Procedure spModClasificacionPeticion
-      END
-GO
-
-/*===============================================================================================================				 
-* Sistema  : Defensoría del Pueblo - Ultimus
-* Archivo  : spModClasificacionPeticion.sql
-* Autor	   : José Álvaro Hincapié Castillo
-* 
-* Fecha      Responsable        Comentarios
-* ==============================================================================================================
-* 22/02/2024 José A Hincapié	Permite modificar un registro de la clasificaciónde la petición
-* =============================================================================================================== */
-CREATE PROCEDURE [dbo].[spModClasificacionPeticion]
- @CodigoClasificacion bigint,
- @CodigoSolicitud bigint,
- @CodigoTipoPeticion int,
- @CodigoAreaDerecho int,     
- @DescripcionAsesoria VARCHAR(40),
- @Observaciones VARCHAR(40),
- @RespuestaEscrito bit,    
- @CodigoConclusionAsesoria int,
- @FechaUsuarioModifica datetime,    
- @NombreUsuarioModifica VARCHAR(250) 
-AS    
-BEGIN
-	BEGIN TRY    
-	
-		UPDATE [dbo].[ClasificacionPeticion]
-		SET 
-			[CodigoSolicitud] = @CodigoSolicitud
-			,[CodigoTipoPeticion] = @CodigoTipoPeticion
-			,[CodigoAreaDerecho] = @CodigoAreaDerecho
-			,[DescripcionAsesoria] = @DescripcionAsesoria
-			,[Observaciones] = @Observaciones
-			,[RespuestaEscrito] = @RespuestaEscrito
-			,[CodigoConclusionAsesoria] = @CodigoConclusionAsesoria
-			,[FechaUsuarioModifica] = @FechaUsuarioModifica
-			,[NombreUsuarioModifica] = @NombreUsuarioModifica		
-		WHERE CodigoClasificacion = @CodigoClasificacion
-	END TRY    
-	BEGIN CATCH    
-		RAISERROR ('Ocurrio un error al modificar el registro en la tabla ClasificacionPeticion', 15, 3)    
-		RETURN    
-	END CATCH    
+		)
+	End
 END
 
 GO
@@ -151,7 +99,6 @@ BEGIN
 END
 
 GO
-
 
 IF OBJECT_ID('spConsultarDatosRadicadoPorCodigo') IS NOT NULL
       BEGIN
