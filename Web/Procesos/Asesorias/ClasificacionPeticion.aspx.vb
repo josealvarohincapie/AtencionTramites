@@ -243,6 +243,12 @@ Public Class ClasificacionPeticion
         Me.Page.ClientScript.RegisterStartupScript(Me.Page.GetType(), "", "AbrirDocumento();", True)
         'Response.Write("<script language='javascript'>AbrirDocumento('" & url & "');</script>")
     End Sub
+    Sub Enviar_OnClick(sender As Object, e As EventArgs)
+        txtCanalAtencion.Text = ""
+
+
+
+    End Sub
 
     Sub GrabarRegistrarClasificacion_OnClick(sender As Object, e As EventArgs)
 
