@@ -1341,7 +1341,7 @@ window.onload = function () {
                                                         <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblTipoPeticion" name="lblTipoPeticion" default_label="Tipo de petición:">Tipo de petición:</label>
                                                         <div class="input-group input-group-sm">
                                                             <asp:HiddenField ID="hddCodigoTipoPeticion" runat="server" />
-                                                            <asp:TextBox ID="txtTipoPeticion" ReadOnly="true"
+                                                            <asp:TextBox ID="txtTipoPeticion" ReadOnly="false"
                                                                 runat="server" 
                                                                 validationgroup="vgClasificacionPeticion" 
                                                                 CssClass="form-control TextBoxCatalogo inputSuccess">
@@ -1368,7 +1368,7 @@ window.onload = function () {
                                                         <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblAreaDerecho" name="lblAreaDerecho" default_label="Área de derecho:">Área de derecho:</label>
                                                         <div class="input-group input-group-sm">
                                                             <asp:HiddenField ID="hddCodigoAreaDerecho" runat="server" />
-                                                            <asp:TextBox ID="txtAreaDerecho" runat="server" ReadOnly="true"
+                                                            <asp:TextBox ID="txtAreaDerecho" runat="server" ReadOnly="false"
                                                                 validationgroup="vgClasificacionPeticion" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                             <asp:RequiredFieldValidator ID="rqrAreaDerecho" runat="server" validationgroup="vgClasificacionPeticion" ControlToValidate="txtAreaDerecho" ErrorMessage="El área de derecho es obligatorio" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                             <span class="input-group-btn">
@@ -1403,7 +1403,7 @@ window.onload = function () {
                                                     <div class="form-group " id="divDescripcionAsesoria">
                                                         <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblDescripcionAsesoria" name="lblDescripcionAsesoria" default_label="Descripción de asesoría:">Descripción de asesoría:</label>
                                                         <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
-                                                            <asp:TextBox ID="txtDescripcionAsesoria" runat="server" ReadOnly="true"
+                                                            <asp:TextBox ID="txtDescripcionAsesoria" runat="server" ReadOnly="false"
                                                                 validationgroup="vgClasificacionPeticion" TextMode="MultiLine" CssClass="form-control imput-xs TextBoxFramework"></asp:TextBox>
                                                             <asp:RequiredFieldValidator ID="rqfDecripcionAsesoria" runat="server" validationgroup="vgClasificacionPeticion" ControlToValidate="txtDescripcionAsesoria" ErrorMessage="La descripción de la asesoría es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                         </div>
@@ -1430,7 +1430,7 @@ window.onload = function () {
                                                         <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblConclusionAsesoria" name="lblConclusionAsesoria" default_label="Conclusión Asesoria:">Conclusión Asesoria:</label>
                                                         <div class="input-group input-group-sm">
                                                             <asp:HiddenField ID="hddCodigoConclusionAsesoria" runat="server" />
-                                                            <asp:TextBox ID="txtConclusionAsesoria" runat="server" ReadOnly="true"
+                                                            <asp:TextBox ID="txtConclusionAsesoria" runat="server" ReadOnly="false"
                                                                 validationgroup="vgClasificacionPeticion" CssClass="form-control TextBoxCatalogo inputSuccess"></asp:TextBox>
                                                             <asp:RequiredFieldValidator ID="rqfConclusionAsesoria" runat="server" validationgroup="vgClasificacionPeticion" ControlToValidate="txtConclusionAsesoria" ErrorMessage="La conclusión de la asesoría es obligatoria" CssClass="text-danger" Display="Dynamic"></asp:RequiredFieldValidator>
                                                             <span class="input-group-btn">

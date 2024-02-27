@@ -13,7 +13,7 @@ GO
 * ==============================================================================================================
 * 22/02/2024 José A Hincapié	Permite insertar o modificar un registro de la clasificaciónde la petición
 * =============================================================================================================== */
-create or alter PROCEDURE [dbo].spInsClasificacionPeticion
+create or alter PROCEDURE [dbo].[spInsClasificacionPeticion]
  @CodigoSolicitud bigint,
  @CodigoTipoPeticion int,
  @CodigoAreaDerecho int,     
@@ -21,11 +21,13 @@ create or alter PROCEDURE [dbo].spInsClasificacionPeticion
  @Observaciones VARCHAR(40),
  @RespuestaEscrito bit,    
  @CodigoConclusionAsesoria int,
- @FechaCreacion datetime,    
  @NombreUsuarioCreacion VARCHAR(250),
  @IDUsuarioCreacion VARCHAR(250) 
 AS    
 BEGIN
+
+	Declare @FechaCreacion datetime = GetDate()
+
     If exists(Select 1 from ClasificacionPeticion 
 				where CodigoSolicitud = @CodigoSolicitud)
 	Begin

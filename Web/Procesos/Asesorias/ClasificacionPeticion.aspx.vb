@@ -262,6 +262,12 @@ Public Class ClasificacionPeticion
         '    TxtCodigoSolicitud.Value, hddCodigoTipoPeticion.Value, hddCodigoAreaDerecho.Value,
         '    txtDescripcionAsesoria.Text, txtObservaciones.Text, respuestaEscrit,
         '    hddCodigoConclusionAsesoria.Value, nombreUsuario, idUsuario)
-        Response.Write("<script language='javascript'>alert('hola');</script>")
+
+        Dim respuesta As Boolean = ClasificacionPeticionHelper.GuardarRadicarClasificacion(
+            TxtCodigoSolicitud.Value, 1, 1,
+            "xxx", txtObservaciones.Text, True,
+            1, nombreUsuario, idUsuario)
+
+        Response.Write("<script language='javascript'>alert('" & respuesta.ToString() & "');</script>")
     End Sub
 End Class

@@ -51,8 +51,8 @@ CREATE TABLE [dbo].[ClasificacionPeticion](
 	[FechaCreacion] [datetime] NOT NULL,
 	[NombreUsuarioCreacion] [varchar](250) NOT NULL,
 	[IDUsuarioCreacion] [varchar](250) NULL,
-	[FechaUsuarioModifica] [datetime] NOT NULL,
-	[NombreUsuarioModifica] [varchar](250) NOT NULL,
+	[FechaUsuarioModifica] [datetime] NULL,
+	[NombreUsuarioModifica] [varchar](250) NULL,
  CONSTRAINT [PK_ClasificacionPeticion] PRIMARY KEY CLUSTERED 
 (
 	[CodigoSolicitud] ASC
