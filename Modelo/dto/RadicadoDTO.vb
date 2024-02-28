@@ -49,7 +49,7 @@ Namespace AtencionTramites.Modelo.dto
         Private _observaciones As String
         Private _canalAtencion As CatalogoDTO
         Private _expresionGenero As CatalogoDTO
-
+        Private _identidadGenero As CatalogoDTO
         Public Property CodigoSolicitud As Long
             Get
                 Return _codigoSolicitud
@@ -470,6 +470,15 @@ Namespace AtencionTramites.Modelo.dto
             End Get
             Set(value As CatalogoDTO)
                 _expresionGenero = value
+            End Set
+        End Property
+
+        Public Property IdentidadGenero As CatalogoDTO
+            Get
+                Return _identidadGenero
+            End Get
+            Set(value As CatalogoDTO)
+                _identidadGenero = value
             End Set
         End Property
     End Class

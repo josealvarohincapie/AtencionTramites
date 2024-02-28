@@ -173,6 +173,14 @@ Namespace AtencionTramites.AccesoDatos
                 radicado.Sexo.Nombre = Utilidad.ParseString(row("NombreSexo"))
             End If
 
+            If IsDBNull(row("CodigoIdentidadGenero")) Then
+                radicado.IdentidadGenero = Nothing
+            Else
+                radicado.IdentidadGenero = New CatalogoDTO()
+                radicado.IdentidadGenero.Codigo = Utilidad.ParseString(row("CodigoIdentidadGenero"))
+                radicado.IdentidadGenero.Nombre = Utilidad.ParseString(row("NombreIdentidadGenero"))
+            End If
+
             If IsDBNull(row("CodigoOrientacionSexual")) Then
                 radicado.OrientacionSexual = Nothing
             Else

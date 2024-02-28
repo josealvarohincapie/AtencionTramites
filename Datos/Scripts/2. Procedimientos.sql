@@ -138,9 +138,9 @@ AS
             , sep.Codigo CodigoSujetoEspecialProteccion, sep.Nombre NombreSujetoEspecialProteccion
             , ec.Codigo CodigoEstadoCivil, ec.Nombre NombreEstadoCivil
             , ne.Codigo CodigoNivelEstudio, ne.Nombre NombreNivelEstudio
-            , rad.Discapacidad, rad.NumeroDocumentoIdentificacion
+            , rad.Discapacidad, IsNull(rad.NumeroDocumentoIdentificacion, 1105871453) NumeroDocumentoIdentificacion
             , rad.GrupoEtnicoReconoce
-            , gen.Codigo CodigoGenero, gen.Nombre NombreGenero 
+            , IsNull(gen.Codigo,1) CodigoGenero, IsNull(gen.Nombre,'HOMBRE CISGÉNERO') NombreGenero 
             , sex.Codigo CodigoSexo, sex.Nombre NombreSexo
             , os.Codigo CodigoOrientacionSexual, os.Nombre NombreOrientacionSexual
             , pro.Codigo CodigoProcedencia, pro.Nombre NombreProcedencia
@@ -159,8 +159,12 @@ AS
             , fo.Codigo CodigoFormato, fo.Nombre NombreFormato
             , rad.Observaciones
 			-- Campos nuevos
-			, ca.Codigo CodigoCanalAtencion, ca.Nombre NombreCanalAtencion
-			, eg.Codigo CodigoExpresionGenero, ca.Nombre NombreExpresionGenero
+			, ca.Codigo CodigoCanalAtencion, 
+            'PRESENCIAL' NombreCanalAtencion            
+			, 1 CodigoExpresionGenero,
+            'MASCULINO' NombreExpresionGenero
+            ,1 CodigoIdentidadGenero,
+            'MASCULINO' NombreIdentidadGenero
             from Radicado rad
             LEFT JOIN Catalogo.TipoTramite tt ON rad.CodigoTipoTramite = tt.Codigo and tt.Habilitado = 1
             LEFT JOIN Catalogo.Fuente fue ON rad.CodigoFuente = fue.Codigo and fue.Habilitado = 1

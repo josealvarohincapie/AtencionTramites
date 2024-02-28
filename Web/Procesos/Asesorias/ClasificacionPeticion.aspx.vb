@@ -123,16 +123,19 @@ Public Class ClasificacionPeticion
                 rblGrupoEtnico.Items.FindByValue("0").Selected = True
             End If
 
-            txtSexoAsignado.Text = radicado.Sexo.Nombre
-            hddCodigoSexoAsignado.Value = radicado.Sexo.Codigo
             If radicado.Genero IsNot Nothing Then
-                txtIdentidadGenero.Text = radicado.Genero.Nombre
-                hddCodigoIdentidadGenero.Value = radicado.Genero.Codigo
+                txtSexoAsignado.Text = radicado.Sexo.Nombre
+                hddCodigoSexoAsignado.Value = radicado.Sexo.Codigo
+            End If
+
+            If radicado.IdentidadGenero IsNot Nothing Then
+                txtIdentidadGenero.Text = radicado.IdentidadGenero.Nombre
+                hddCodigoIdentidadGenero.Value = radicado.IdentidadGenero.Codigo
             End If
 
             If radicado.OrientacionSexual IsNot Nothing Then
                 txtOrientacionSexual.Text = radicado.OrientacionSexual.Nombre
-                hddCodigoIdentidadGenero.Value = radicado.OrientacionSexual.Codigo
+                hddCodigoOrientacionSexual.Value = radicado.OrientacionSexual.Codigo
             End If
             If radicado.ExpresionGenero IsNot Nothing Then
                 txtExpresionGenero.Text = radicado.ExpresionGenero.Nombre

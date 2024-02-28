@@ -382,12 +382,12 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-9">
                         <div class="infoUltimus">
-                            <span><strong>Proceso:</strong> CorrExtEnviada </span>|
-                            <span><strong>Etapa:</strong> Radicar </span>|
+                            <span><strong>Proceso:</strong> Asesorías </span>|
+                            <span><strong>Etapa:</strong> Clasificación de la Petición </span>|
                             <span><strong>Incidente:</strong> 144 </span>
                             <br />
                             <span><strong>Usuario:</strong> DACARTEC </span>|
-                            <span><strong>Fecha:</strong> 15-febrero-2024 </span>
+                            <span><strong>Fecha:</strong> 28-febrero-2024 </span>
                         </div>
                     </div>
                 </div>
@@ -557,7 +557,7 @@
                                                                     <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label ControlsForms #custom_class" id="lblFecha" name="lblFecha" default_label="Fecha">Fecha:</label>
                                                                     <div class="input-group col-lg-8 col-md-8 col-sm-8 col-xs-8 ">
                                                                         <asp:TextBox ID="txtFecha" runat="server" 
-                                                                            TextMode="Date"
+                                                                            TextMode="DateTime" 
                                                                             CssClass="form-control input-xs TextBoxFramework" ReadOnly="true"></asp:TextBox>
                                                                     </div>
                                                                 </div>
