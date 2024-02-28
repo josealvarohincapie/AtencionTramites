@@ -19,7 +19,7 @@ Namespace AtencionTramites.AccesoDatos
             Dim dataSet As New DataSet()
 
             Try
-                Dim sql As String = "spConsultarClasificacionPeticion " & Utilidad.IntegerFormat(codigoSolicitud)
+                Dim sql As String = "spConClasificacionPeticion " & Utilidad.IntegerFormat(codigoSolicitud)
 
                 If GetHelperSQL().Consulta(sql, dataSet, strError) Then
                     If dataSet.Tables.Count = 0 Or dataSet.Tables(0).Rows.Count = 0 Then

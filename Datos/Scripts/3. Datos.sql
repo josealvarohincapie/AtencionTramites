@@ -4,6 +4,13 @@ GO
 delete from Catalogo.TipoPeticion;
 delete from Catalogo.Derecho;
 delete from Catalogo.AreaDerecho;
+delete from Catalogo.ConclusionAsesoria;
+
+IF NOT EXISTS(SELECT codigo FROM [Catalogo].ConclusionAsesoria WHERE codigo = 1)
+BEGIN
+	INSERT INTO Catalogo.ConclusionAsesoria (Codigo,Nombre,Habilitado) VALUES (1,'Petición absuelta',1); 
+END
+GO
 
 IF NOT EXISTS(SELECT codigo FROM [Catalogo].[TipoPeticion] WHERE codigo = 1)
 BEGIN

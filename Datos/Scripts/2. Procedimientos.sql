@@ -81,13 +81,15 @@ AS
 BEGIN
 	SELECT 
       [CodigoSolicitud]
-      ,[CodigoTipoPeticion]
+      ,CodigoTipoPeticion
+      ,tp.nombre NombreTipoPeticion
       ,[CodigoAreaDerecho]
 	  , ad.Nombre NombreAreaDerecho
       ,[DescripcionAsesoria]
       ,[Observaciones]
       ,[RespuestaEscrito]
       ,[CodigoConclusionAsesoria]
+      ,ca.nombre NombreConclusionAsesoria
       ,[FechaCreacion]
       ,[NombreUsuarioCreacion]
       ,[IDUsuarioCreacion]

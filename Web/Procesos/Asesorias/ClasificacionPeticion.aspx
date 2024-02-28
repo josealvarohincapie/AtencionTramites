@@ -38,135 +38,109 @@
     <!-- Inclusión de Bootstrap JS -->
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!--  <script src="../../Plugins/bootstrap/js/Bootstrap%20v3.4.1.min.js"></script>-->
-    <!-- <script type="text/javascript" src="../../Scripts/ClasificacionPeticion.js"></script>>-->
+    <script type="text/javascript" src="../../Scripts/ClasificacionPeticion.js"></script>>
         
     <title>Formulario de Asesoría</title>
     <script>
 
-        function imprimirPagina() {
-            window.print();
-            return false;
-        }
-
-        function AbrirDocumento(url) {
-
-            document.getElementById("menu0").className = "tab-pane fade";
-            document.getElementById("menu1").className = "tab-pane fade in active";
-            document.getElementById("menu2").className = "tab-pane fade";
-            document.getElementById("menu3").className = "tab-pane fade";
-
-            document.getElementById("liMenu0").className = "";
-            document.getElementById("liMenu1").className = "active";
-            document.getElementById("liMenu2").className = "";
-            document.getElementById("liMenu3").className = "";
-
-            window.open(url);
-            return false;
-        }
-
-
         function limpiarCampo(textBoxClientId) {
             document.getElementById(textBoxClientId).value = '';
         }
-        function imprimirPagina() {
-            window.print();
-        }
-
        
-function agregarDerecho() {
-    $('#liMenu1').hide();
-    //$('#liMenu1').show();
-    var table = document.getElementById("tablaDerechos").getElementsByTagName('tbody')[0];
-    var newRow = table.insertRow(table.rows.length);
+        function agregarDerecho() {
+            $('#liMenu1').hide();
+            //$('#liMenu1').show();
+            var table = document.getElementById("tablaDerechos").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
 
-    // Celda para el input de derechos
-    var cell1 = newRow.insertCell(0);
-    var derechoInput = document.createElement("input");
-    derechoInput.type = "text";
-    derechoInput.className = "form-control";
-    derechoInput.name = "derecho[]"; // Usa corchetes para indicar que es un array
-    cell1.appendChild(derechoInput);
+            // Celda para el input de derechos
+            var cell1 = newRow.insertCell(0);
+            var derechoInput = document.createElement("input");
+            derechoInput.type = "text";
+            derechoInput.className = "form-control";
+            derechoInput.name = "derecho[]"; // Usa corchetes para indicar que es un array
+            cell1.appendChild(derechoInput);
 
-    // Celda para los botones
-    var cell2 = newRow.insertCell(1);
-    // Botón Eliminar
-    var deleteButton = document.createElement("button");
-    deleteButton.innerHTML = "";
-    deleteButton.className = "btn btn-sm fa fa-close";
-    deleteButton.onclick = function () {
-        var row = this.parentNode.parentNode;
-        row.parentNode.removeChild(row);
-    };
-    cell2.appendChild(deleteButton);
-    // Botón Editar
-    var editButton = document.createElement("button");
-    editButton.innerHTML = "";
-    editButton.className = "btn btn-primary btn-sm mr-2 btn-success btn-medium btn-margin-catalogo btn-file fa fa-search"; // Asumiendo que quieres un margen a la derecha (mr-2)
-    editButton.onclick = function () {
-        // Funcionalidad de edición aquí
-        $('#divmodalCatalogo').modal('show');
-    };
-    cell2.appendChild(editButton);
-
-
-}
-function guardarDerechos() {
-    var derechos = [];
-    document.querySelectorAll('[name="derecho[]"]').forEach(function (element) {
-        derechos.push(element.value);
-    });
-    document.getElementById('<%= hiddenDerechos.ClientID %>').value = JSON.stringify(derechos);
-
-}
-document.addEventListener("DOMContentLoaded", function () {
-    var checkbox = document.getElementById('<%= chkEsAnonimo.ClientID %>');
-    checkbox.addEventListener('click', function (e) {
-        e.preventDefault();
-    });
-});
-$(document).ready(function () {
-    $('#<%= rblGrupoEtnico.ClientID %> input[type=radio]').click(function (e) {
-        e.preventDefault();
-    });
-});
-$(document).ready(function () {
-
-    toggleConclusionAsesoria();
+            // Celda para los botones
+            var cell2 = newRow.insertCell(1);
+            // Botón Eliminar
+            var deleteButton = document.createElement("button");
+            deleteButton.innerHTML = "";
+            deleteButton.className = "btn btn-sm fa fa-close";
+            deleteButton.onclick = function () {
+                var row = this.parentNode.parentNode;
+                row.parentNode.removeChild(row);
+            };
+            cell2.appendChild(deleteButton);
+            // Botón Editar
+            var editButton = document.createElement("button");
+            editButton.innerHTML = "";
+            editButton.className = "btn btn-primary btn-sm mr-2 btn-success btn-medium btn-margin-catalogo btn-file fa fa-search"; // Asumiendo que quieres un margen a la derecha (mr-2)
+            editButton.onclick = function () {
+                // Funcionalidad de edición aquí
+                $('#divmodalCatalogo').modal('show');
+            };
+            cell2.appendChild(editButton);
 
 
-    $('input[name$="respuestaEscrita"]').change(function () {
-        toggleConclusionAsesoria();
-    });
-
-    function toggleConclusionAsesoria() {
-
-        if ($('#<%= respuestaEscritaNo.ClientID %>').is(':checked')) {
-            $('#divConclusionAsesoria').show();
-        } else {
-            $('#divConclusionAsesoria').hide();
         }
-    }
-});
-window.onload = function () {
+        function guardarDerechos() {
+            var derechos = [];
+            document.querySelectorAll('[name="derecho[]"]').forEach(function (element) {
+                derechos.push(element.value);
+            });
+            document.getElementById('<%= hiddenDerechos.ClientID %>').value = JSON.stringify(derechos);
 
-    var contactoCheckbox = document.getElementById('<%= chkContacto.ClientID %>');
-    var correoDiv = document.getElementById('divCorreo');
-    var telefonoDiv = document.getElementById('divTelefono');
-    var direccionDiv = document.getElementById('divDireccion');
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            var checkbox = document.getElementById('<%= chkEsAnonimo.ClientID %>');
+            checkbox.addEventListener('click', function (e) {
+                e.preventDefault();
+            });
+        });
+        $(document).ready(function () {
+            $('#<%= rblGrupoEtnico.ClientID %> input[type=radio]').click(function (e) {
+                e.preventDefault();
+            });
+        });
+        $(document).ready(function () {
 
-    toggleContacto(contactoCheckbox.checked);
+            toggleConclusionAsesoria();
 
-    contactoCheckbox.addEventListener('change', function () {
-        toggleContacto(this.checked);
-    });
 
-    function toggleContacto(show) {
+            $('input[name$="respuestaEscrita"]').change(function () {
+                toggleConclusionAsesoria();
+            });
 
-        correoDiv.style.display = show ? 'block' : 'none';
-        telefonoDiv.style.display = show ? 'block' : 'none';
-        direccionDiv.style.display = show ? 'block' : 'none';
-    }
-}
+            function toggleConclusionAsesoria() {
+
+                if ($('#<%= respuestaEscritaNo.ClientID %>').is(':checked')) {
+                    $('#divConclusionAsesoria').show();
+                } else {
+                    $('#divConclusionAsesoria').hide();
+                }
+            }
+        });
+        window.onload = function () {
+
+            var contactoCheckbox = document.getElementById('<%= chkContacto.ClientID %>');
+            var correoDiv = document.getElementById('divCorreo');
+            var telefonoDiv = document.getElementById('divTelefono');
+            var direccionDiv = document.getElementById('divDireccion');
+
+            toggleContacto(contactoCheckbox.checked);
+
+            contactoCheckbox.addEventListener('change', function () {
+                toggleContacto(this.checked);
+            });
+
+            function toggleContacto(show) {
+
+                correoDiv.style.display = show ? 'block' : 'none';
+                telefonoDiv.style.display = show ? 'block' : 'none';
+                direccionDiv.style.display = show ? 'block' : 'none';
+            }
+        }
     </script>
     <style>
 
@@ -445,10 +419,11 @@ window.onload = function () {
             <div class="row SubMenuBar">
                 <div class=" col-xs-12 col-md-12 col-lg-12">
                     <div class="btn-group">
+                         <a data-toggle="collapse" href="#frmBody">
                         <button type="button" class="btn btn-default btn-sm" id="btnHeaderToggle">
                             <strong>&nbsp;&nbsp;<i class="fa fa-chevron-circle-up"></i></strong>
                         </button>
-
+                        </a>
                         <button type="button" class="btn btn-warning btn-sm" onclick="imprimirPagina()" id="btnBotones_ImprimirPantalla">
                             <strong>&nbsp;<i class="fa fa-print"></i><span class="hidden-sm hidden-xs">&nbsp;Imprimir Pantalla</span></strong>
                         </button>
@@ -456,14 +431,10 @@ window.onload = function () {
                             OnServerClick="GuardarClasificacion_OnClick"
                             class="btn btn-success btn-sm" 
                             id="btnBotones_GuardarRadicado"
-                            validationgroup="vgClasificacionPeticion">
+                            validationgroup="vgClasificacionPeticion"
+                            onclick="activarPestaniaClasificacion();"
+                            >
                             <strong>&nbsp;<i class="fa fa-floppy-o"></i><span class="hidden-sm hidden-xs">&nbsp;Guardar</span></strong>
-                        </button>
-                        <button type="button" class="btn btn-warning btn-sm" id="btnBotones_VerTramites">
-                            <strong>&nbsp;<i class="fa fa-eye"></i><span class="hidden-sm hidden-xs">&nbsp;Ver trámites</span></strong>
-                        </button>
-                        <button type="button" class="btn btn-default btn-sm" id="btnBotones_VerEtiqueta">
-                            <strong>&nbsp;<i class="fa fa-eye"></i><span class="hidden-sm hidden-xs">&nbsp;Ver etiqueta</span></strong>
                         </button>
                         <button type="button" runat="server" class="btn btn-danger btn-sm" id="btnBotones_Completar" OnServerClick="Enviar_OnClick" validationgroup="vgDecision" >
                             <strong><i class="fa fa-circle-o"></i><span class="hidden-sm hidden-xs">&nbsp;Enviar</span></strong>

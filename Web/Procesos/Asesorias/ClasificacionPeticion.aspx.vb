@@ -75,6 +75,8 @@ Public Class ClasificacionPeticion
         Try
             If Not IsPostBack Then
                 Session.Clear()
+
+
                 Inicializacion()
             End If
 
@@ -187,6 +189,12 @@ Public Class ClasificacionPeticion
             Else
                 'rblRespuestaEscrita.Items.FindByValue("0").Selected = True
             End If
+
+            If clasificacion.ConclusionAsesoria IsNot Nothing Then
+                txtConclusionAsesoria.Text = clasificacion.ConclusionAsesoria.Nombre
+                hddCodigoConclusionAsesoria.Value = clasificacion.ConclusionAsesoria.Codigo
+            End If
+
         Catch
             Response.Write("<script language=""javascript"">alert('Error cargando la información de la clasificación de la petición!');</script>")
         End Try
@@ -265,9 +273,13 @@ Public Class ClasificacionPeticion
 
         Dim respuesta As Boolean = ClasificacionPeticionHelper.GuardarRadicarClasificacion(
             TxtCodigoSolicitud.Value, 1, 1,
-            "xxx", txtObservaciones.Text, True,
+            txtDescripcionAsesoria.Text, txtObservaciones.Text, True,
             1, nombreUsuario, idUsuario)
 
-        Response.Write("<script language='javascript'>alert('" & respuesta.ToString() & "');</script>")
+        If respuesta Then
+            Response.Write("<script language='javascript'>alert('CLasificación de la petición actualizada');</script>")
+        Else
+            Response.Write("<script language='javascript'>alert('La actualización de la clasificación falló, por favor verifique');</script>")
+        End If
     End Sub
 End Class

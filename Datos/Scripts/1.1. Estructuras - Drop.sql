@@ -120,3 +120,15 @@ GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Catalogo].[Derecho]') AND type in (N'U'))
 DROP TABLE [Catalogo].[Derecho]
 GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Catalogo].[AreaDerecho]') AND type in (N'U'))
+DROP TABLE [Catalogo].[AreaDerecho]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Catalogo].[TipoPeticion]') AND type in (N'U'))
+DROP TABLE [Catalogo].[TipoPeticion]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[Catalogo].[ConclusionAsesoria]') AND type in (N'U'))
+DROP TABLE [Catalogo].[ConclusionAsesoria]
+GO
