@@ -418,12 +418,12 @@
             </div>
             <div class="row SubMenuBar">
                 <div class=" col-xs-12 col-md-12 col-lg-12">
-                    <div class="btn-group">
-                         <a data-toggle="collapse" href="#frmBody">
-                        <button type="button" class="btn btn-default btn-sm" id="btnHeaderToggle">
-                            <strong>&nbsp;&nbsp;<i class="fa fa-chevron-circle-up"></i></strong>
+                    <div class="btn-group">                         
+                        <button type="button" class="btn btn-default " id="btnHeaderToggle"
+                            data-toggle="collapse" href="#divCollapseBody" 
+                            style="color: black; text-decoration: none;">
+                               <i class="fa fa-chevron-circle-up"></i>
                         </button>
-                        </a>
                         <button type="button" class="btn btn-warning btn-sm" onclick="imprimirPagina()" id="btnBotones_ImprimirPantalla">
                             <strong>&nbsp;<i class="fa fa-print"></i><span class="hidden-sm hidden-xs">&nbsp;Imprimir Pantalla</span></strong>
                         </button>
@@ -444,6 +444,7 @@
                 </div>
             </div>
         </div>
+        <div id="divCollapseBody" class="panel-collapse collapse in">
         <!-- Modal -->
         <div class="modal fade" id="divmodalCatalogo" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" style="display: none;">
             <div class="modal-dialog ">
@@ -499,6 +500,7 @@
                 </div>
             </div>
         </div>
+        
         <div id="frmBody" class="row" style="position: relative; top: 210px">
             <div class="col-xs-12 col-md-12 col-lg-12  ">
                 <div class="starter-template" id="divStarterTemplate2">
@@ -1469,6 +1471,7 @@
                 </div>
             </div>
         </div>
-    </form>
+        </div>
+            </form>
 </body>
 </html>
