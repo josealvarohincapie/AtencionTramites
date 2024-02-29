@@ -230,3 +230,126 @@ BEGIN
 END
 
 GO
+USE [defensoria]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+/*===============================================================================================================				 
+* Sistema  : Defensoría del Pueblo - Ultimus
+* Archivo  : spConDerechosClasificacionPorSolicitud.sql
+* Autor	   : Mateo Polanco Rodríguez
+* 
+* Fecha      Responsable        Comentarios
+* ==============================================================================================================
+* 29/02/2024 Mateo Polanco	Permite consultar los derechos de la clasificación  por codigoSolicitud
+* =============================================================================================================== */
+
+CREATE PROCEDURE [dbo].[spConDerechosClasificacionPorSolicitud]
+    @CodigoSolicitud bigint
+AS    
+BEGIN
+    SELECT 
+        dc.[CodigoDerechoClasificacion]
+        ,dc.[CodigoSolicitud]
+        ,dc.[CodigoDerecho]
+        ,dc.[FechaCreacion]
+        ,dc.[NombreUsuarioCreacion]
+        ,dc.[IDUsuarioCreacion]
+        ,dc.[FechaUsuarioModifica]
+        ,dc.[NombreUsuarioModifica]
+        ,dc.[Habilitado]
+    FROM [dbo].[DerechosClasificacion] dc
+    INNER JOIN Catalogo.Derecho der ON der.Codigo = dc.CodigoDerecho AND der.Habilitado = 1
+    WHERE dc.CodigoSolicitud = @CodigoSolicitud AND dc.Habilitado = 1 
+END
+USE [defensoria]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+/*===============================================================================================================				 
+* Sistema  : Defensoría del Pueblo - Ultimus
+* Archivo  : spEliminarDerechoClasificacionPorCodigoSolicitud.sql
+* Autor	   : Mateo Polanco Rodríguez
+* 
+* Fecha      Responsable        Comentarios
+* ==============================================================================================================
+* 29/02/2024 Mateo Polanco	Permite eliminar el derecho de la clasificación  por codigoSolicitud
+* =============================================================================================================== */
+
+CREATE PROCEDURE [dbo].[spEliminarDerechoClasificacionPorCodigoSolicitud]
+    @CodigoDerechoClasificacion bigint
+AS
+BEGIN
+    
+    UPDATE [dbo].[DerechosClasificacion]
+    SET Habilitado = 0 
+    WHERE CodigoDerechoClasificacion = @CodigoDerechoClasificacion
+END
+GO
+USE [defensoria]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+/*===============================================================================================================				 
+* Sistema  : Defensoría del Pueblo - Ultimus
+* Archivo  : spInsertarDerechoClasificacion.sql
+* Autor	   : Mateo Polanco Rodríguez
+* 
+* Fecha      Responsable        Comentarios
+* ==============================================================================================================
+* 29/02/2024 Mateo Polanco	Permite insertar los derechos de la clasificación  
+* =============================================================================================================== */
+
+CREATE PROCEDURE [dbo].[spInsertarDerechoClasificacion]
+    @CodigoDerechoClasificacion bigint,
+    @CodigoSolicitud bigint,
+    @CodigoDerecho bigint,
+    @NombreUsuarioCreacion nvarchar(100),
+    @IDUsuarioCreacion bigint
+AS
+BEGIN
+  
+    IF NOT EXISTS (
+        SELECT 1 
+        FROM [dbo].[DerechosClasificacion]
+        WHERE CodigoDerecho = @CodigoDerecho
+        AND CodigoSolicitud = @CodigoSolicitud
+        AND Habilitado = 1
+    )
+    BEGIN
+       
+        INSERT INTO [dbo].[DerechosClasificacion] (
+            CodigoDerechoClasificacion,
+            CodigoSolicitud,
+            CodigoDerecho,
+            FechaCreacion,
+            NombreUsuarioCreacion,
+            IDUsuarioCreacion,
+            Habilitado
+        ) VALUES (
+            @CodigoDerechoClasificacion,
+            @CodigoSolicitud,
+            @CodigoDerecho,
+            GETDATE(), 
+            @NombreUsuarioCreacion,
+            @IDUsuarioCreacion,
+            1 
+        )
+    END
+    ELSE
+    BEGIN
+       
+        RAISERROR ('Este derecho ya se encuentra asociado a la solicitu, favor revisar', 16, 1);
+    END
+END
+GO
